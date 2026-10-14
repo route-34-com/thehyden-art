@@ -4,14 +4,18 @@ Website for **thehyden.art**: hand-painted Indian heritage wallpapers, murals, w
 
 ## Client rules (from Mrudhula, follow every time)
 - **Brand name is always written `thehyden.art`**, never "The Hyden Art".
-- **White background, black text only.** No coloured text. Since the 14 Oct 2026 rebuild the interface is strictly monochrome (no pastel panels or accents); the old pastels (blush `#f7ddd8`, sage `#dfe9da`, sky `#dbe9ee`, butter `#f5ecc8`, lilac `#e8e2f1`) are not a rule either way.
-- **Font: Hoefler Text Regular.** It is an Apple system font (Macs/iPhones only). The stack is `"Hoefler Text","EB Garamond",Garamond,Georgia,serif`; EB Garamond loads from Google Fonts as the look-alike fallback for Windows/Android. Weights stay 400.
 - **Theme: "tradition and contemporary".** Reference sites she gave: houseofikari.com (full-screen image landing) and kalakaarihaath.com.
-- **No empty space.** Her works should follow one after another, with short text only where it explains something.
-- **Hover effects: open to improvement**, but monochrome and restrained. She did reject the tilting cards and the petal burst, so don't bring those back.
-- **Selling points to show:** designed by an architect (not just a seller: she understands each project's needs); supplies all over the world; installs all over India; works for homes **and commercial spaces**.
-- **No AI for the logo.** AI imagery/video is fine for the website itself.
-- Don't invent prices, specs or policies. Reuse her existing copy.
+- **Selling points to show:** designed by an architect (not just a seller); supplies all over the world; installs all over India; homes **and commercial spaces**.
+- **No AI for the logo**, and don't redesign it. AI imagery/video is fine for the website itself.
+- Don't invent prices, specs, policies, testimonials or credentials. Reuse her existing copy; her quote and bio are verbatim.
+- Rejected, don't bring back: tilting cards, the petal-burst hover, the drawn (SVG) try-on room, AI logo monograms.
+- **Original rules (white background, black text, Hoefler Text only) were lifted by Hari on 14 Oct 2026** ("no colour palette nor font limitation, go crazy"). The current direction is his, below.
+
+## Hari's working preferences
+- Never put instructions or design explanations on the page ("scroll sideways to…", "every colour is taken from…"); it's shown to the client as the real site.
+- Text must never be clipped: no overflow:hidden masks around headings (italic tails and descenders got cut repeatedly). Check every heading after changes.
+- He finds scroll-pinned/scrubbed gimmicks "primitive" in general, but asked for the long scrolling hero. Keep token use low; one screenshot per check.
+- He likes the live coming-soon page's feel (Fraunces + DM Sans, cream, lotus pink) as a "premium" reference.
 
 ## Logo and brand assets (`brand/`)
 - Her final logo: black circle with a white letterform and a green parrot perched on it, with "thehyden.art" underneath. She designs her own logos; don't redesign it.
@@ -24,39 +28,44 @@ Website for **thehyden.art**: hand-painted Indian heritage wallpapers, murals, w
 
 ## Files
 ```
-index.html     THE SITE (14 Oct 2026: the "v5 + Library" design was promoted here; Hari: "just keep the v5 library version"). Inline CSS+JS + library.css/library.js + netmap.js, no build step
-netmap.js      generated world/India network-map data + renderer (svg.netmap[data-map])
-proposed-old.html  (v5 + Library) is now ALSO being edited (14 Oct 2026, Hari): thehyden.art loader before the page; buttons in the New version's shape (black pill + round arrow) whose hover is a SILVER shine (silver disc, light streak sweeps across, silver rim), not a brown flood, also on the Instagram pills; the 4 selling-point tiles replaced by one horizontal ruled row (i.–iv., Hoefler, small arched photo / set-square / India-map graphic each); #designs is one section whose background changes to each painting's colour on scroll (no separate coloured boxes). Backup before: backups/2026-10-14/proposed-old.before-loader-buttons.html
-gallery.js     159 Instagram works (img/g/NNN.jpg) with categories room/art/studio
-settings.js    WhatsApp number, form endpoint, PLACEHOLDER price rates
-img/           photos used by the page (w*.jpg rooms, wall-*.jpg designs, g/ gallery, mrudula.jpg)
+index.html     THE SITE (redesign, 14 Oct 2026 night). Inline CSS + JS, no build step
+library.css/js The Wallpaper Library (walnut cabinet of rolls; classes L-, ids lib-). Used by index.html
+tryon.js       "Try it on your wall" (3 real rooms with CSS clip-path walls, your-own-photo drag/resize, before/after, tints). Used
+netmap.js      World + India maps (world: India to 20 countries in black; India: outline + 18 cities). Used
+gallery.js     159 Instagram works (img/g/NNN.jpg), categories room/art/studio
+settings.js    WhatsApp number (button appears when set); other fields unused
+site.css/js    from the other session's "fresh build" (saved as backups/2026-10-14/index.fresh-build.html); NOT used now
+img/           w*.jpg rooms, wall-*.jpg flat designs, g/ gallery, ring/ (480px carousel images), shelf/ (walnut + roll textures),
+               motif/ cut-outs, band/ strips, hero-trellis.jpg (cropped trellis, unused now), mrudula.jpg
 brand/         logo, favicons, client photos
-coming-soon/   SOURCE OF THE LIVE SITE (see Deployment), don't delete
-backups/       earlier versions of index.html (dated folder)
+coming-soon/   SOURCE OF THE LIVE SITE, don't delete
+backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the older v5+Library commit
 ```
-There are no other pages. The shop/backend, the alternate designs (v2–v6), the demos and the old logo explorations were all deleted on 14 Oct 2026 at the user's request.
 
-## Retired versions
-All earlier versions (old index, proposed.html "New", proposed-v1/v4/v5, whites.html, demo-shelf.html, compare.js) are in backups/2026-10-14/. The section list below describes an earlier build; the live structure is in index.html comments (INTRO, IN THE ROUND, COLLECTIONS, DESIGNS, PATTERNS = Wallpaper Library, COMMERCIAL, ARCHIVE = Gallery, FOUNDER, ENQUIRE).
-
-## Homepage sections (index.html, rebuilt 14 Oct 2026 from Hari's "master prompt")
-Editorial gallery, pure black on white: no pastel or tinted panels, no coloured accents (the artwork supplies the colour). Hierarchy through size and spacing only, weight 400 everywhere. The previous version is at `backups/2026-10-14/index.before-rebuild.html` (it had try-on, estimate, FAQ; deliberately not carried over).
-1. **Nav**: logo-512 + "thehyden.art", links Designs / Projects / Studio / Archive / Enquire, Instagram. A compact fixed nav (`.float`) slides in only after the hero has scrolled away, so nothing ever overlaps the hero.
-2. **Hero**: three installed rooms (w08 large, w04, w05) sized between the nav and a caption line. No text on the images.
-3. **Intro** (`.intro`): the h1 plus the four selling points as a ruled 2×2 grid.
-4. **Designs** (`#designs`): 15 numbered pieces, each the flat artwork (`wall-*.jpg`) next to the same design installed (`img/g/NNN.jpg`), with its name and Instagram post link. Rows are "justified": each figure has `--ar` (its aspect ratio) as flex-grow, so heights match and nothing is cropped. On phones `.row` stacks; `.row.keep` stays side by side.
-5. **Projects** (`#projects`): the five storefronts + "We supply all over the world." / "We install all over India."
-6. **Studio** (`#studio`): Mrudhula's photo, her quote and bio (her copy), w06 motif studies.
-7. **Archive** (`#archive`): gallery.js grid, filters, Show more, shared white lightbox (keys, swipe, Instagram link).
-8. **Enquire** (`#enquire`): Instagram DM button; a WhatsApp button appears only when `settings.js` has her number. No form until she gives an email/endpoint. Full logo beside it.
-Motion: fade-up reveals, hero fade-in, slow image zoom on hover, drawn underlines, button frame thickening + arrow nudge. All disabled under reduced motion. `settings.js` price rates are no longer used by the page.
+## Homepage sections (current index.html)
+- **Type and colour:** headings DM Serif Display (400, italic accents), body DM Sans; hero headline in Playfair Display 700 (italic 600), all black. Tried and rejected: Bodoni Moda (too thin), Fraunces (right thickness, wrong face), Cormorant Garamond. Button hover fills walnut brown with white label (green was rejected). Never put a transform on .btn i (it lifts the fill over the label). Instagram links are the small gradient Instagram logo (svg .igi, gradient #ig-g defined after <body>). Whites only: #ffffff, #faf8f5, #f4f1ec, #efebe4 by section; text charcoal #2d2a26; accent walnut brown #7a4a2a (--gold; pale --turmeric #e6d8c8; deeper #5a3219 in the hero italic). Pink, then indigo, were replaced on Hari's request, 14 Oct.
+1. **Nav**: logo + thehyden.art, links (Murals, Library, Try it on, Projects, Gallery, Founder, Enquire); frosted white once you scroll; full-screen menu on phones.
+2. **Hero (long scroll)**: Nabhi Kamalam pastel mural pinned in a 420svh section (image 300svh tall); the painting pans upward with scroll; the headline block is fixed at the viewport centre the whole time (no easing); once the hero's bottom edge rises to meet it, it stops there and leaves with the hero (JS: y=min(y1, y0+scroll past the pin)). No white wash over the art. Uses `img/wall-pastel-tall.jpg` (1600x2164): her original on top, unchanged, plus ~900px of extra water below built WITHOUT AI from her own water texture and lotus cut-outs, with the kolam borders tiled (407px repeat). Script: `backups/2026-10-14/extend-hero.py`. Mirroring/repeating the whole mural looked bad and was dropped. AI outpainting (Runway) was blocked: 0 credits. A taller file from her is still best.
+3. **Manifesto** (heading + room photo img/g/043 at 5:4 on the right) + four selling points with black line icons (compass, networked globe (9 nodes), networked India outline from netmap.js (18 cities, 28 links), house + office); **marquee** of design names.
+4. **The Painted Wheel**: 3D rotating ring of 12 paintings (backs visible), drag or sideways scroll, tap to open.
+5. **The murals**: 8 designs in a 2-column grid; each card = painting (2/3) + room photo (1/3) side by side, name row with Instagram logo; wipe-in reveals; lightbox.
+5b. **Motif band** (.motif-band) between murals and library: her kolam (img/motif/kolam.png, repeat-x) with lamp, lotus, elephant, origami bird, lamp cut-outs.
+6. **The Wallpaper Library** (library.css/js), cabinet full width.
+7. **Try it on your wall** (tryon.js). Living hall = img/rooms/living.jpg (img/g/125 with the framed print removed by harmonic fill, no AI; script backups/2026-10-14/deframe-living.py; wall clipped above the sideboard, cut around the three vases). Murals sit in a .T-mu layer sized to the wall height (room `wb`), so they aren't hidden behind furniture; Zoom slider scales patterns and murals. Before/after + Zoom live in the right panel. The old 051 room was dropped because the plant cut-out left a patch.
+8. **Cafés & kitchens**: 5 storefronts + world and India maps (netmap.js). Only USA and UK are verified client countries; the other 18 world markers were Hari's request ("top places").
+9. **Gallery**: masonry of gallery.js with filters and Show more.
+10. **Founder**: photo, "Hi, I'm *Mrudhula.*", quote, bio, credential pills, three process photos.
+11. **Begin with your wall**: Instagram DM button (WhatsApp when set).
 
 ## Deployment (Cloudflare)
 - Domain **thehyden.art** is registered at **GoDaddy**; nameservers point to Cloudflare (`emely`/`kurt.ns.cloudflare.com`). `.art` can't be transferred to Cloudflare Registrar.
 - Hosting is on the **route34official@gmail.com** Cloudflare account (ID `c23ea81bff07813e7402cccf14d0527b`). Don't use the other accounts the wrangler login can see (harikrishnasaravana23, Curiodotfun).
 - **Live now: the coming-soon page only.** Worker `thehyden-coming-soon`, deployed from `coming-soon/` with `npx wrangler deploy` (its `wrangler.toml` pins the account and the custom domains thehyden.art + www). The page is in the classic style with a phone layout that centres everything.
-- **The main site (index.html) is NOT deployed.** Only deploy when Hari explicitly says so. The site is fully static (no backend needed). When launching, deploy it as a static-assets Worker and move the custom domains from the coming-soon worker. Don't publish `CLAUDE.md`, `backups/`, `coming-soon/` or `.playwright-mcp/` (test screenshots) as part of the site (use an assets ignore list or a separate `public/` folder).
+- **The main site (index.html) is NOT deployed.** Only deploy when Hari explicitly says so. The site is fully static (no backend needed). When launching, deploy it as a static-assets Worker and move the custom domains from the coming-soon worker. Don't publish `CLAUDE.md`, `backups/`, `coming-soon/`, `recordings/` or `.playwright-mcp/` (test screenshots) as part of the site (use an assets ignore list or a separate `public/` folder).
 - Always confirm with Hari before any deploy; he prefers local previews first.
+
+## Walkthrough video
+`recordings/thehyden-art-walkthrough.mp4` (1:16, 1440x900, 30fps, made 14 Oct 2026). Made with `recordings/tour.js` (playwright-core 1.57 + cached Chrome for Testing, server on :8811): the page runs at 0.25x (JS clock override + CDP Animation.setPlaybackRate, rAF on a 60 Hz virtual grid, all images decoded first), frames come from a CDP screencast, then each output frame is picked at exact 1.5x virtual steps (3 ticks/frame) and encoded with ffmpeg. Real-time recordVideo had ~20 visible freezes; BeginFrame control isn't supported on macOS. A capture takes ~8 min.
 
 ## Local preview
 ```
@@ -66,12 +75,12 @@ open http://localhost:8811/index.html
 `http.server` is single-threaded, so run one headless test browser at a time; parallel loads caused false "broken image" results. Close leftover test browsers afterwards (`pgrep -f remote-debugging-pipe`) and never touch Hari's own Chrome.
 
 ## Still needed from her
-- Her **WhatsApp number** (`settings.js` → `whatsapp`; chat buttons fall back to Instagram DM until then).
-- **Real prices**: `ratePerSqFt` and `installPerSqFt` in settings.js are placeholders (₹150–220 and ₹25).
-- **Form endpoint** (e.g. FormSubmit with her email) to take the enquiry form out of demo mode.
-- Higher-resolution hero photos if available (current ones are about 1,100px wide and look soft on big screens).
+- **WhatsApp number** (settings.js → `whatsapp`) and an enquiry email if a form is wanted.
+- **Higher-resolution / taller mural files** for the hero (current ones are 950 to 1800px wide and look soft full-screen).
+- Confirm: Telugu spellings (తోట, నాభి కమలం), the Bodoni wordmark font, and which countries/cities she has actually supplied or installed in.
+- Real prices only if she wants them shown (none are on the site).
 
 ## Parked / history
 - **Parrot "delivers an offer" animation**: the parrot sat on the "t" of the nav wordmark; clicking it made the parrot fly across, drop a sealed envelope, and the envelope opened into a closable offer sheet. It was **removed on 14 Oct 2026** because it needs to be "way better". The last working version is at `backups/2026-10-13/index.with-parrot-animation.html` (GSAP 3.15 from jsDelivr; wings cut from her painting). Only rebuild it when asked.
-- Rejected along the way: dark/maroon themes, coloured text, the drawn (SVG) try-on room, text over the hero image, tilting hover cards, the petal-burst hover, AI-generated logo monograms.
+- Rejected along the way: the drawn (SVG) try-on room, tilting hover cards, the petal-burst hover, AI logo monograms, colourful network-arc maps, the clay background, the navy/gold and coming-soon colour passes (superseded by whites).
 - AI hero video ideas (fal.ai / Kling / Veo) were explored and shelved.

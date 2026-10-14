@@ -105,3 +105,6 @@
 
 /* no italics anywhere (client preference) */
 .L-lib *,.L-preview *{font-style:normal!important}
+
+@media (hover:none){.L-roll .L-tag{display:none}}
+@media (max-width:860px){.L-bays .L-bay:nth-child(5){display:none}}
