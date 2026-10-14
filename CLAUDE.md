@@ -30,7 +30,7 @@ Website for **thehyden.art**: hand-painted Indian heritage wallpapers, murals, w
 ```
 index.html     THE SITE (redesign, 14 Oct 2026 night). Inline CSS + JS, no build step
 library.css/js The Wallpaper Library (walnut cabinet of rolls; classes L-, ids lib-). Used by index.html
-tryon.js       "Try it on your wall" (3 real rooms with CSS clip-path walls, your-own-photo drag/resize, before/after, tints). Used
+tryon.js       "Try it on your wall" (3 real rooms with CSS clip-path walls, your own photo or live camera mapped with four corner dots via matrix3d, "Hold this view" freezes the camera frame, before/after, tints). Used
 netmap.js      World + India maps (world: India to 20 countries in black; India: outline + 18 cities). Used
 gallery.js     159 Instagram works (img/g/NNN.jpg), categories room/art/studio
 settings.js    WhatsApp number (button appears when set); other fields unused
@@ -38,6 +38,10 @@ site.css/js    from the other session's "fresh build" (saved as backups/2026-10-
 img/           w*.jpg rooms, wall-*.jpg flat designs, g/ gallery, ring/ (480px carousel images), shelf/ (walnut + roll textures),
                motif/ cut-outs, band/ strips, hero-trellis.jpg (cropped trellis, unused now), mrudula.jpg
 brand/         logo, favicons, client photos
+mocks/         review mocks, NOT part of the site, never deploy: animations.html (kolam draw, brush reveal, lightbox grow, roller swap, brush underline),
+               signature.html (5 concepts: paint the wall, blueprint to room, camera on your wall, mural diorama, made-to-measure Thota),
+               colours.html (live accent switcher over index.html: walnut, kumkum, lotus rani, peacock teal, parrot green, temple ochre, jamun, indigo)
+README.md      how to run, change content and deploy (same format as other Route34 client repos)
 coming-soon/   SOURCE OF THE LIVE SITE, don't delete
 backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the older v5+Library commit
 ```
@@ -57,6 +61,11 @@ backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the
 10. **Founder**: photo, "Hi, I'm *Mrudhula.*", quote, bio, credential pills, three process photos.
 11. **Begin with your wall**: Instagram DM button (WhatsApp when set).
 
+## Ideas reviewed on 15 Oct 2026
+- Of the five signature concepts, only the camera/photo four-corner try-on (concept 3) went into the site. "Paint the wall" was built and then removed at the user's request; it lives on in mocks/signature.html.
+- Accent colour change is still open: mocks/colours.html shows eight options from her paintings. Pink and indigo were already replaced once (14 Oct), so check with Hari before picking those.
+- Research behind the concepts (competitor sites, visualiser tech, conversion data) is in the Route34 workspace at reports/Interactive wallpaper site concepts.md, not in this repo.
+
 ## Deployment (Cloudflare)
 - Domain **thehyden.art** is registered at **GoDaddy**; nameservers point to Cloudflare (`emely`/`kurt.ns.cloudflare.com`). `.art` can't be transferred to Cloudflare Registrar.
 - Hosting is on the **route34official@gmail.com** Cloudflare account (ID `c23ea81bff07813e7402cccf14d0527b`). Don't use the other accounts the wrangler login can see (harikrishnasaravana23, Curiodotfun).
@@ -71,6 +80,7 @@ backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the
 ```
 cd ~/hyden-art && python3 -m http.server 8811 --bind 127.0.0.1
 open http://localhost:8811/index.html
+# Windows: python -m http.server 8811 --bind 127.0.0.1, then open the URL in a browser
 ```
 `http.server` is single-threaded, so run one headless test browser at a time; parallel loads caused false "broken image" results. Close leftover test browsers afterwards (`pgrep -f remote-debugging-pipe`) and never touch Hari's own Chrome.
 

@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Signature Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2d2a26;--paper:#fff;--w2:#faf8f5;--w3:#f4f1ec;--w4:#efebe4;--gold:#7a4a2a;--turmeric:#e6d8c8;--ease:cubic-bezier(.22,.8,.2,1);--serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans","Helvetica Neue",Arial,sans-serif;--hero:"Playfair Display",Georgia,serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans)}
+header{padding:56px 16px 24px;max-width:1100px;margin:auto}
+header h1{font:400 clamp(36px,6vw,64px)/1.1 var(--serif)}
+header p{max-width:680px;margin-top:12px;color:#5b554e}
+nav.jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+nav.jump a{font:500 13px/1 var(--sans);padding:9px 14px;border:1px solid var(--w4);border-radius:99px;color:var(--ink);text-decoration:none}
+section{padding:56px 16px;border-top:1px solid var(--w4)}
+section:nth-of-type(even){background:var(--w2)}
+.wrap{max-width:1100px;margin:auto}
+.tag{font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h2{font:400 clamp(28px,4vw,42px)/1.15 var(--serif);margin:10px 0 8px}
+h2 em{font-style:italic}
+.why{max-width:680px;color:#5b554e}
+.sells{margin-top:8px;font-size:14px;color:var(--gold);font-weight:500}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px;align-items:center}
+.bar button,.bar label.b{font:500 14px/1 var(--sans);padding:11px 18px;border-radius:99px;border:1px solid var(--ink);background:none;color:var(--ink);cursor:pointer}
+.bar button.on{background:var(--ink);color:#fff}
+.bar button.go{background:var(--gold);border-color:var(--gold);color:#fff}
+.bar input[type=file]{display:none}
+.stage{display:flex;justify-content:center}
+.stage>div:not([class]){width:min(720px,100%)}
+
+.pw{position:relative;width:min(640px,100%);aspect-ratio:1;overflow:hidden;background:#e9e1d6;cursor:none;touch-action:none;user-select:none}
+.pw img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pw canvas{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:multiply;clip-path:polygon(0% 0%,100% 0%,100% 64%,23.6% 64%,23.6% 61%,22.8% 60.2%,22% 60%,22% 58.9%,20.9% 58.9%,20.9% 60%,19.6% 60.4%,19% 61.5%,19% 64%,16.9% 64%,16.9% 56.5%,16.2% 55.4%,11.7% 55.4%,11% 56.5%,11% 59.6%,10.6% 60.2%,4.4% 60.2%,4.4% 64%,0% 64%)}
+.pw .brush{position:absolute;left:0;top:0;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:1.5px solid rgba(45,42,38,.55);pointer-events:none;opacity:0;transition:opacity .3s}
+.pw .brush:after{content:"";position:absolute;inset:22px;border-radius:50%;background:var(--gold)}
+.pw.hover .brush{opacity:1}
+.pw .head{position:absolute;left:0;right:0;top:20%;text-align:center;pointer-events:none;opacity:0;transform:translateY(16px);transition:opacity 1s var(--ease),transform 1.2s var(--ease)}
+.pw .head h3{font:700 clamp(30px,6vw,54px)/1.05 var(--hero);color:#fff;text-shadow:0 2px 24px rgba(40,25,10,.45)}
+.pw .head h3 em{font-style:italic;font-weight:600}
+.pw .head p{margin-top:10px;font:500 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#fff;text-shadow:0 1px 10px rgba(40,25,10,.5)}
+.pw.done .head{opacity:1;transform:none}
+.meter{font:500 13px/1 var(--sans);color:#5b554e}
+
+.bp{position:relative;width:min(640px,100%);aspect-ratio:772/800;overflow:hidden;background:var(--w2) linear-gradient(rgba(122,74,42,.06) 1px,transparent 1px) 0 0/100% 20px,var(--w2) linear-gradient(90deg,rgba(122,74,42,.06) 1px,transparent 1px) 0 0/20px 100%}
+.bp img{position:absolute;inset:0;width:100%;height:100%;display:block}
+.bp .lines{clip-path:inset(0 calc(100% - var(--d,0%)) 0 0)}
+.bp .photo{-webkit-mask-image:linear-gradient(90deg,#000 calc(var(--r,0%) - 14%),transparent var(--r,0%));mask-image:linear-gradient(90deg,#000 calc(var(--r,0%) - 14%),transparent var(--r,0%))}
+.bp svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.bp svg .dim{stroke:var(--gold);stroke-width:1.2;fill:none}
+.bp svg text{font:500 11px var(--sans);fill:var(--gold);letter-spacing:.08em;paint-order:stroke;stroke:#faf8f5;stroke-width:5px;stroke-linejoin:round}
+.bp svg .tb text{fill:var(--ink)}
+.bp .pen{position:absolute;top:0;bottom:0;width:2px;background:var(--gold);left:var(--d,0%);opacity:var(--po,0);box-shadow:0 0 12px rgba(122,74,42,.5)}
+.scrub{width:min(640px,100%);margin:14px auto 0;display:flex;gap:12px;align-items:center;font:500 13px/1 var(--sans);color:#5b554e}
+.scrub input{flex:1;accent-color:var(--gold)}
+
+.cam{position:relative;width:min(720px,100%);aspect-ratio:4/3;overflow:hidden;background:#1d1a17;touch-action:none}
+.cam video,.cam .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cam .art{position:absolute;left:0;top:0;transform-origin:0 0;background-size:cover;background-position:center;mix-blend-mode:multiply;opacity:.92;pointer-events:none}
+.cam .h{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:rgba(255,255,255,.9);border:2px solid var(--gold);cursor:grab;box-shadow:0 2px 8px rgba(0,0,0,.35);touch-action:none}
+.cam .h:active{cursor:grabbing}
+.cam .msg{position:absolute;left:12px;bottom:12px;right:12px;color:#fff;font:500 13px/1.4 var(--sans);text-shadow:0 1px 6px #000;pointer-events:none}
+.chips{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;justify-content:center}
+.chips button{width:56px;height:56px;border-radius:50%;border:2px solid transparent;background-size:cover;background-position:center;cursor:pointer;padding:0}
+.chips button.on{border-color:var(--ink)}
+
+.dio{position:relative;width:min(560px,100%);aspect-ratio:4/5;perspective:900px;touch-action:pan-y;overflow:hidden;background:#faf8f5}
+.dio .scene{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .25s ease-out}
+.dio .ly{position:absolute;will-change:transform;transition:transform .2s ease-out}
+.dio .back{inset:-6%;background:url(../img/wall-nabhi.jpg) center/cover;filter:saturate(.95)}
+.dio .haze{inset:-6%;background:linear-gradient(180deg,rgba(255,250,240,.0) 40%,rgba(255,248,236,.35))}
+.dio .frame{inset:-12%;pointer-events:none}
+.dio .frame svg{width:100%;height:100%;display:block}
+.dio img.ly{height:auto;filter:drop-shadow(0 18px 18px rgba(40,25,10,.28))}
+
+.mm{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.mm .ctl{display:grid;gap:14px}
+.mm label{font:500 13px/1.2 var(--sans);color:#5b554e;display:grid;gap:6px}
+.mm input[type=range]{accent-color:var(--gold)}
+.mm .num{display:flex;gap:8px;align-items:center}
+.mm .num input{width:80px;font:500 16px var(--sans);padding:8px 10px;border:1px solid var(--w4);border-radius:8px}
+.mm .units{display:flex;gap:6px}
+.mm .units button{font:500 13px/1 var(--sans);padding:8px 14px;border-radius:99px;border:1px solid var(--ink);background:none;cursor:pointer}
+.mm .units button.on{background:var(--ink);color:#fff}
+.mm .out{font:400 22px/1.3 var(--serif)}
+.mm .send{font:500 14px/1 var(--sans);padding:13px 18px;border-radius:99px;border:0;background:var(--gold);color:#fff;cursor:pointer}
+.mm canvas{width:100%;height:auto;display:block;background:var(--w2)}
+.note{margin-top:14px;font-size:13px;color:#8a837a;max-width:680px}
+@media (max-width:760px){.mm{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs><linearGradient id="ig-g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f9ce34"/><stop offset=".5" stop-color="#ee2a7b"/><stop offset="1" stop-color="#6228d7"/></linearGradient></defs></svg>
+<header>
+  <span class="tag">thehyden.art · internal mock</span>
+  <h1>Signature concepts</h1>
+  <p>Five ideas built to be the thing people remember and share. Each one uses her real paintings and rooms. Try each one and pick which to build properly.</p>
+  <nav class="jump"><a href="#c1">1 Paint the wall</a><a href="#c2">2 Blueprint to room</a><a href="#c3">3 On your wall</a><a href="#c4">4 Step into it</a><a href="#c5">5 Made to measure</a></nav>
+</header>
+
+<section id="c1"><div class="wrap">
+  <span class="tag">1 · Hero</span>
+  <h2>You paint <em>the wall</em></h2>
+  <p class="why">The site opens on an empty room. Move the cursor or drag a finger, and Nabhi Kamalam appears in brushstrokes wherever you paint. After about a third of the wall, the rest fills in by itself and the headline lands. If nobody touches it, a ghost brush paints a stroke to show the way.</p>
+  <p class="sells">Sells: hand-painted, felt instead of read.</p>
+  <div class="bar"><button class="go" id="pw-reset">Start again</button><span class="meter" id="pw-meter">0% painted</span></div>
+  <div class="stage"><div class="pw" id="pw">
+    <img src="../img/rooms/living.jpg" alt="An empty living room wall">
+    <canvas></canvas>
+    <div class="head"><h3>Painted by hand, <em>for your wall.</em></h3><p>thehyden.art</p></div>
+    <div class="brush"></div>
+  </div></div>
+</div></section>
+
+<section id="c2"><div class="wrap">
+  <span class="tag">2 · Founder section or Projects</span>
+  <h2>From the drawing board <em>to the wall</em></h2>
+  <p class="why">The room starts as an architect's elevation: lines draw in with dimension marks and a title block. Then the real finished room washes in over the drawing. Drag the slider to scrub. The linework is traced from her own photo by edge detection, no AI.</p>
+  <p class="sells">Sells: designed by an architect, not just a seller.</p>
+  <div class="bar"><button class="go" id="bp-play">Play</button></div>
+  <div class="stage"><div class="bp" id="bp">
+    <img class="lines" src="img/043-lines.png" alt="">
+    <img class="photo" src="../img/g/043.jpg" alt="A living room with a temple mural by thehyden.art">
+    <svg viewBox="0 0 772 800" preserveAspectRatio="none" id="bp-svg">
+      <g class="dim">
+        <path d="M148 32 L148 18 M770 32 L770 18 M148 25 L770 25"/>
+        <path d="M148 22 l6 6 M770 22 l-6 6"/>
+        <path d="M752 60 L766 60 M752 640 L766 640 M759 60 L759 640"/>
+        <path d="M30 760 L250 760 M30 754 L30 766 M250 754 L250 766"/>
+      </g>
+      <text x="420" y="16" text-anchor="middle">WALL A · FEATURE MURAL</text>
+      <text x="748" y="350" text-anchor="end" transform="rotate(-90 748 350)">WALL HEIGHT</text>
+      <text x="30" y="784">ELEVATION A · 1:50</text>
+      <g class="tb"><path class="dim" d="M520 720 h240 v68 h-240 Z M520 744 h240"/><text x="530" y="737">thehyden.art</text><text x="530" y="762">Designed by Mrudhula, B.Arch</text><text x="530" y="780">Hand-painted mural</text></g>
+    </svg>
+    <div class="pen"></div>
+  </div></div>
+  <div class="scrub"><span>Drawing</span><input type="range" id="bp-r" min="0" max="100" value="0"><span>Painted</span></div>
+</div></section>
+
+<section id="c3"><div class="wrap">
+  <span class="tag">3 · Sales tool</span>
+  <h2>See it on <em>your wall</em>, live</h2>
+  <p class="why">On a phone, tap Camera, point at your wall and drag the four corners onto its edges. The mural sits on your actual wall in perspective, blended with your room's light. No app. On a laptop, use a photo or the demo room.</p>
+  <p class="sells">Sells: removes the "will it suit my room?" doubt. The strongest enquiry driver.</p>
+  <div class="bar"><button class="go" id="cam-start">Camera</button><label class="b">Use a photo<input type="file" accept="image/*" id="cam-file"></label><button id="cam-demo" class="on">Demo room</button><button id="cam-blend" class="on">Blend with light</button></div>
+  <div class="stage"><div>
+    <div class="cam" id="cam">
+      <img class="bgimg" src="../img/rooms/living.jpg" alt="Room">
+      <video playsinline muted autoplay hidden></video>
+      <div class="art"></div>
+      <span class="h"></span><span class="h"></span><span class="h"></span><span class="h"></span>
+      <div class="msg">Drag the four dots onto the corners of your wall.</div>
+    </div>
+    <div class="chips" id="cam-chips"></div>
+  </div></div>
+  <p class="note">The camera needs HTTPS on a phone (fine on the live domain). Instagram's in-app browser may block it, so the real version would show a short "open in browser" prompt there.</p>
+</div></section>
+
+<section id="c4"><div class="wrap">
+  <span class="tag">4 · Murals section opener</span>
+  <h2>Step <em>into</em> the mural</h2>
+  <p class="why">The painting is split into depth layers behind a carved jharokha arch: the mural at the back, nandi and lamps in the middle, the parrot and lotus up front. Layers move at different speeds with the mouse, or with the phone's tilt. The real version would split one of her murals into layers by hand, with no AI.</p>
+  <p class="sells">Sells: her art as a world, not a product photo.</p>
+  <div class="bar"><button id="dio-gyro">Use phone tilt</button></div>
+  <div class="stage"><div class="dio" id="dio"><div class="scene">
+    <div class="ly back" data-z="-40"></div>
+    <div class="ly haze" data-z="-30"></div>
+    <img class="ly" data-z="-10" src="../img/motif/lamp.png" alt="" style="width:11%;left:16%;top:6%">
+    <img class="ly" data-z="-10" src="../img/motif/lamp.png" alt="" style="width:11%;right:16%;top:6%">
+    <img class="ly" data-z="10" src="../img/motif/nandi.png" alt="" style="width:42%;left:4%;bottom:12%">
+    <img class="ly" data-z="18" src="../img/motif/coconut.png" alt="" style="width:30%;right:6%;bottom:14%">
+    <img class="ly" data-z="34" src="../img/motif/parrot.png" alt="" style="width:20%;right:12%;top:20%;transform-origin:center">
+    <img class="ly" data-z="44" src="../img/motif/lotus.png" alt="" style="width:20%;left:10%;bottom:2%">
+    <img class="ly" data-z="48" src="../img/motif/lotus.png" alt="" style="width:16%;left:44%;bottom:0%">
+    <img class="ly" data-z="44" src="../img/motif/lotus.png" alt="" style="width:18%;right:8%;bottom:3%">
+    <div class="ly frame" data-z="60"><svg viewBox="0 0 400 500" preserveAspectRatio="none"><path fill="#faf8f5" fill-rule="evenodd" d="M-20 -20 H420 V520 H-20 Z M40 480 V200 C40 120 90 80 130 70 C160 62 180 40 200 14 C220 40 240 62 270 70 C310 80 360 120 360 200 V480 Z"/><path fill="none" stroke="#7a4a2a" stroke-width="2" d="M40 480 V200 C40 120 90 80 130 70 C160 62 180 40 200 14 C220 40 240 62 270 70 C310 80 360 120 360 200 V480 Z"/><path fill="none" stroke="#7a4a2a" stroke-width="1" stroke-dasharray="2 5" d="M30 490 V198 C30 112 84 70 126 60 C154 52 178 30 200 0 C222 30 246 52 274 60 C316 70 370 112 370 198 V490"/></svg></div>
+  </div></div></div>
+</div></section>
+
+<section id="c5"><div class="wrap">
+  <span class="tag">5 · Enquiry</span>
+  <h2>A mural <em>sized to your wall</em></h2>
+  <p class="why">Type your wall's size. Thota recomposes live: the two trees hold the edges, and the palm grove spreads out or repeats as the wall grows, so nothing is just stretched or cropped. A 5'6" figure shows the scale, the way an architect draws it. Then one tap sends the size to Mrudhula.</p>
+  <p class="sells">Sells: made to measure, by an architect.</p>
+  <div class="mm">
+    <div class="ctl">
+      <div class="units" id="mm-units"><button data-u="ft" class="on">feet</button><button data-u="m">metres</button></div>
+      <label>Width<div class="num"><input type="number" id="mm-w" step="0.5"><span class="u">ft</span></div><input type="range" id="mm-wr"></label>
+      <label>Height<div class="num"><input type="number" id="mm-h" step="0.5"><span class="u">ft</span></div><input type="range" id="mm-hr"></label>
+      <div class="out" id="mm-out"></div>
+      <button class="send" id="mm-send">Send this wall to Mrudhula</button>
+      <span class="meter" id="mm-sent"></span>
+    </div>
+    <canvas id="mm-c" width="1200" height="760"></canvas>
+  </div>
+</div></section>
+
+<script>
+(function(){
+var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function load(src){return new Promise(function(r){var i=new Image();i.onload=function(){r(i)};i.src=src})}
+
+/* 1 paint the wall */
+(function(){
+  var box=document.getElementById("pw"),cv=box.querySelector("canvas"),ctx=cv.getContext("2d"),brush=box.querySelector(".brush"),meter=document.getElementById("pw-meter");
+  var mask=document.createElement("canvas"),mx=mask.getContext("2d"),probe=document.createElement("canvas"),px=probe.getContext("2d",{willReadFrequently:true});
+  probe.width=64;probe.height=41;
+  var art,W,H,last=null,done=false,filling=false,idle,touched=false,dirty=true;
+  function size(){var r=box.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);W=cv.width=mask.width=Math.round(r.width*d);H=cv.height=mask.height=Math.round(r.height*d)}
+  function stamp(x,y,r){
+    for(var i=0;i<14;i++){var a=Math.random()*Math.PI*2,d=Math.random()*r*.55;
+      mx.globalAlpha=.18+Math.random()*.3;mx.beginPath();mx.arc(x+Math.cos(a)*d,y+Math.sin(a)*d,r*(.25+Math.random()*.35),0,7);mx.fill()}
+    mx.globalAlpha=1;dirty=true}
+  function stroke(x,y,r){if(!last){last=[x,y];stamp(x,y,r);return}
+    var dx=x-last[0],dy=y-last[1],n=Math.max(1,Math.hypot(dx,dy)/(r*.25));
+    for(var i=1;i<=n;i++)stamp(last[0]+dx*i/n,last[1]+dy*i/n,r);last=[x,y]}
+  function render(){if(!art||!dirty)return;dirty=false;
+    ctx.globalCompositeOperation="source-over";ctx.clearRect(0,0,W,H);ctx.drawImage(mask,0,0);
+    ctx.globalCompositeOperation="source-in";
+    var wh=H*.64,s=Math.max(W/art.width,wh/art.height),dw=art.width*s,dh=art.height*s;
+    ctx.drawImage(art,(W-dw)/2,(wh-dh)/2,dw,dh)}
+  function coverage(){px.clearRect(0,0,64,41);px.drawImage(mask,0,0,W,H*.64,0,0,64,41);
+    var d=px.getImageData(0,0,64,41).data,c=0;for(var i=3;i<d.length;i+=4)if(d[i]>90)c++;return c/(64*41)}
+  function fillRest(){if(filling)return;filling=true;var t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/1300);
+      for(var i=0;i<6;i++){last=null;stamp(Math.random()*W,Math.random()*H*.66,W*(.08+k*.14))}
+      if(k<1)requestAnimationFrame(step);else{mx.fillStyle="#000";mx.fillRect(0,0,W,H);dirty=true;box.classList.add("done");done=true;meter.textContent="100% painted"}})(t0)}
+  function ghost(){if(touched||done)return;var t0=performance.now(),y=H*.3;last=null;
+    (function step(t){if(touched)return;var k=Math.min(1,(t-t0)/1400);stroke(W*(.15+k*.5),y+Math.sin(k*6)*H*.04,W*.05);if(k<1)requestAnimationFrame(step);else last=null})(t0)}
+  function pos(e){var r=box.getBoundingClientRect(),d=W/r.width;return[(e.clientX-r.left)*d,(e.clientY-r.top)*d,e.clientX-r.left,e.clientY-r.top]}
+  var down=false,checkN=0;
+  box.addEventListener("pointerenter",function(e){if(e.pointerType==="mouse")box.classList.add("hover")});
+  box.addEventListener("pointerleave",function(){box.classList.remove("hover");last=null});
+  box.addEventListener("pointerdown",function(e){down=true;last=null;box.setPointerCapture(e.pointerId)});
+  box.addEventListener("pointerup",function(){down=false;last=null});
+  box.addEventListener("pointermove",function(e){var p=pos(e);brush.style.transform="translate("+p[2]+"px,"+p[3]+"px)";
+    if(done||filling)return;if(e.pointerType!=="mouse"&&!down)return;touched=true;clearTimeout(idle);
+    if(p[1]>H*.66){last=null;return}
+    stroke(p[0],p[1],W*.055);
+    if(++checkN%8===0){var c=coverage();meter.textContent=Math.round(c*100)+"% painted";if(c>.33)fillRest()}});
+  (function loop(){render();requestAnimationFrame(loop)})();
+  function reset(){size();mx.clearRect(0,0,W,H);mx.fillStyle="#000";done=filling=touched=false;last=null;box.classList.remove("done");dirty=true;meter.textContent="0% painted";
+    clearTimeout(idle);if(reduce){fillRest();return}idle=setTimeout(ghost,2200)}
+  document.getElementById("pw-reset").onclick=reset;
+  addEventListener("resize",function(){if(done){size();mx.fillStyle="#000";mx.fillRect(0,0,W,H);dirty=true}});
+  load("../img/wall-nabhi.jpg").then(function(i){art=i;reset()});
+})();
+
+/* 2 blueprint to room */
+(function(){
+  var bp=document.getElementById("bp"),r=document.getElementById("bp-r"),dims=bp.querySelectorAll("#bp-svg .dim, #bp-svg .dim path"),texts=bp.querySelectorAll("#bp-svg text"),raf;
+  var paths=bp.querySelectorAll("#bp-svg path");
+  paths.forEach(function(p){var l=p.getTotalLength();p.style.strokeDasharray=l;p.dataset.l=l});
+  function set(v){
+    var a=Math.min(1,v/45),b=Math.max(0,(v-50)/50);
+    bp.style.setProperty("--d",(a*100)+"%");bp.style.setProperty("--po",a>0&&a<1?1:0);
+    bp.style.setProperty("--r",(b*114)+"%");
+    paths.forEach(function(p){p.style.strokeDashoffset=p.dataset.l*(1-Math.min(1,Math.max(0,(v-20)/30)))});
+    var so=1-Math.min(1,Math.max(0,(v-70)/25));
+    bp.querySelector("svg").style.opacity=so;
+    texts.forEach(function(t){t.style.opacity=Math.min(1,Math.max(0,(v-30)/15))});
+    bp.querySelector(".lines").style.opacity=1-b*.85}
+  r.oninput=function(){cancelAnimationFrame(raf);set(+r.value)};
+  function play(){cancelAnimationFrame(raf);var t0=performance.now(),D=reduce?1:5200;
+    (function step(t){var k=Math.min(1,(t-t0)/D),v=k*100;r.value=v;set(v);if(k<1)raf=requestAnimationFrame(step)})(t0)}
+  document.getElementById("bp-play").onclick=play;set(0);
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();play()}},{threshold:.5}).observe(bp);
+})();
+
+/* 3 live camera on your wall */
+(function(){
+  var cam=document.getElementById("cam"),vid=cam.querySelector("video"),bg=cam.querySelector(".bgimg"),art=cam.querySelector(".art"),hs=cam.querySelectorAll(".h"),stream=null;
+  var designs=["thota","nabhi","white-lotus","parrot","kolam","trellis"],pts=[[.04,.05],[.96,.05],[.96,.6],[.04,.6]];
+  var chips=document.getElementById("cam-chips");
+  designs.forEach(function(n,i){var b=document.createElement("button");b.style.backgroundImage="url(../img/wall-"+n+".jpg)";b.setAttribute("aria-label",n);if(!i)b.className="on";
+    b.onclick=function(){chips.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b)});art.style.backgroundImage=b.style.backgroundImage};chips.appendChild(b)});
+  art.style.backgroundImage="url(../img/wall-thota.jpg)";
+  function solve(A,b){var n=b.length;for(var i=0;i<n;i++){var m=i;for(var k=i+1;k<n;k++)if(Math.abs(A[k][i])>Math.abs(A[m][i]))m=k;
+      var t=A[i];A[i]=A[m];A[m]=t;t=b[i];b[i]=b[m];b[m]=t;
+      for(k=i+1;k<n;k++){var f=A[k][i]/A[i][i];for(var j=i;j<n;j++)A[k][j]-=f*A[i][j];b[k]-=f*b[i]}}
+    var x=new Array(n);for(i=n-1;i>=0;i--){var s=b[i];for(j=i+1;j<n;j++)s-=A[i][j]*x[j];x[i]=s/A[i][i]}return x}
+  function draw(){var W=cam.clientWidth,H=cam.clientHeight,w=600,h=400,src=[[0,0],[w,0],[w,h],[0,h]],A=[],b=[];
+    var dst=pts.map(function(p){return[p[0]*W,p[1]*H]});
+    for(var i=0;i<4;i++){var x=src[i][0],y=src[i][1],X=dst[i][0],Y=dst[i][1];
+      A.push([x,y,1,0,0,0,-X*x,-X*y]);b.push(X);A.push([0,0,0,x,y,1,-Y*x,-Y*y]);b.push(Y)}
+    var h8=solve(A,b);art.style.width=w+"px";art.style.height=h+"px";
+    art.style.transform="matrix3d("+[h8[0],h8[3],0,h8[6],h8[1],h8[4],0,h8[7],0,0,1,0,h8[2],h8[5],0,1].join(",")+")";
+    hs.forEach(function(el,i){el.style.left=dst[i][0]+"px";el.style.top=dst[i][1]+"px"})}
+  hs.forEach(function(el,i){el.addEventListener("pointerdown",function(e){el.setPointerCapture(e.pointerId);
+    function mv(ev){var r=cam.getBoundingClientRect();pts[i]=[Math.min(1,Math.max(0,(ev.clientX-r.left)/r.width)),Math.min(1,Math.max(0,(ev.clientY-r.top)/r.height))];draw()}
+    function up(){el.removeEventListener("pointermove",mv);el.removeEventListener("pointerup",up)}
+    el.addEventListener("pointermove",mv);el.addEventListener("pointerup",up)})});
+  function stop(){if(stream){stream.getTracks().forEach(function(t){t.stop()});stream=null}vid.hidden=true}
+  function modeBtn(id){["cam-start","cam-demo"].forEach(function(x){document.getElementById(x).classList.toggle("on",x===id)})}
+  document.getElementById("cam-start").onclick=function(){
+    if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){cam.querySelector(".msg").textContent="Camera isn't available here (needs HTTPS or a supported browser).";return}
+    navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false}).then(function(s){stream=s;vid.srcObject=s;vid.hidden=false;bg.style.visibility="hidden";modeBtn("cam-start");
+      cam.querySelector(".msg").textContent="Point at your wall, then drag the dots onto its corners."}).catch(function(err){cam.querySelector(".msg").textContent="Camera blocked: "+err.name})};
+  document.getElementById("cam-demo").onclick=function(){stop();bg.src="../img/rooms/living.jpg";bg.style.visibility="visible";pts=[[.04,.05],[.96,.05],[.96,.6],[.04,.6]];modeBtn("cam-demo");draw()};
+  document.getElementById("cam-file").onchange=function(e){var f=e.target.files[0];if(!f)return;stop();bg.src=URL.createObjectURL(f);bg.style.visibility="visible";modeBtn("");
+    cam.querySelector(".msg").textContent="Drag the dots onto the corners of your wall."};
+  document.getElementById("cam-blend").onclick=function(){var on=this.classList.toggle("on");art.style.mixBlendMode=on?"multiply":"normal";art.style.opacity=on?.92:1};
+  addEventListener("resize",draw);draw();
+})();
+
+/* 4 diorama */
+(function(){
+  var dio=document.getElementById("dio"),scene=dio.querySelector(".scene"),ls=[].slice.call(dio.querySelectorAll(".ly")),tx=0,ty=0,cx=0,cy=0,auto=true,t0=performance.now();
+  ls.forEach(function(l){l._base=l.style.transform||""});
+  function apply(){cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;
+    if(auto){var t=(performance.now()-t0)/1000;tx=Math.sin(t*.6)*.35;ty=Math.cos(t*.45)*.2}
+    scene.style.transform="rotateY("+(cx*5)+"deg) rotateX("+(-cy*4)+"deg)";
+    ls.forEach(function(l){var z=+l.dataset.z;l.style.transform="translate3d("+(cx*z*.6)+"px,"+(cy*z*.45)+"px,0)"+(l.classList.contains("frame")?"":" scale("+(1+z*.0012)+")")});
+    requestAnimationFrame(apply)}
+  if(!reduce)apply();
+  dio.addEventListener("pointermove",function(e){if(e.pointerType!=="mouse")return;auto=false;var r=dio.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*2-1;ty=(e.clientY-r.top)/r.height*2-1});
+  dio.addEventListener("pointerleave",function(){auto=true;t0=performance.now()});
+  document.getElementById("dio-gyro").onclick=function(){var go=function(){addEventListener("deviceorientation",function(e){if(e.gamma==null)return;auto=false;tx=Math.max(-1,Math.min(1,e.gamma/25));ty=Math.max(-1,Math.min(1,(e.beta-45)/25))})};
+    if(window.DeviceOrientationEvent&&DeviceOrientationEvent.requestPermission)DeviceOrientationEvent.requestPermission().then(function(s){if(s==="granted")go()});else go();this.classList.add("on")};
+})();
+
+/* 5 made to measure */
+(function(){
+  var cv=document.getElementById("mm-c"),ctx=cv.getContext("2d"),unit="ft",FT=.3048;
+  var wI=document.getElementById("mm-w"),hI=document.getElementById("mm-h"),wR=document.getElementById("mm-wr"),hR=document.getElementById("mm-hr"),out=document.getElementById("mm-out");
+  var wallM=[12*FT,9*FT],slices=null,bgc="#ece5db";
+  var SY=40,SH=560,parts={L:[70,640],C:[600,1350],R:[1280,1800]},F=60;
+  function cut(img,x0,x1,fl,fr){var c=document.createElement("canvas"),g=c.getContext("2d");c.width=x1-x0;c.height=SH;g.drawImage(img,x0,SY,c.width,SH,0,0,c.width,SH);
+    g.globalCompositeOperation="destination-in";var gr=g.createLinearGradient(0,0,c.width,0),f=F/c.width;
+    gr.addColorStop(0,fl?"rgba(0,0,0,0)":"#000");gr.addColorStop(f,"#000");gr.addColorStop(1-f,"#000");gr.addColorStop(1,fr?"rgba(0,0,0,0)":"#000");
+    g.fillStyle=gr;g.fillRect(0,0,c.width,SH);return c}
+  function sample(img){var c=document.createElement("canvas");c.width=c.height=1;var g=c.getContext("2d");g.drawImage(img,650,60,100,60,0,0,1,1);var d=g.getImageData(0,0,1,1).data;return"rgb("+d[0]+","+d[1]+","+d[2]+")"}
+  function fmt(m){return unit==="ft"?+(m/FT).toFixed(1):+m.toFixed(2)}
+  function sync(){var lim=unit==="ft"?[[4,30],[7,14]]:[[1.2,9],[2.1,4.3]];
+    wR.min=lim[0][0];wR.max=lim[0][1];hR.min=lim[1][0];hR.max=lim[1][1];wR.step=hR.step=unit==="ft"?.5:.05;
+    wI.value=wR.value=fmt(wallM[0]);hI.value=hR.value=fmt(wallM[1]);document.querySelectorAll(".mm .u").forEach(function(s){s.textContent=unit});
+    var sq=wallM[0]*wallM[1];out.textContent=fmt(wallM[0])+" × "+fmt(wallM[1])+" "+unit+" · "+(unit==="ft"?Math.round(sq/FT/FT)+" sq ft":sq.toFixed(1)+" m²");draw()}
+  function setFrom(which,v){v=parseFloat(v);if(!(v>0))return;var m=unit==="ft"?v*FT:v;wallM[which]=m;sync()}
+  wR.oninput=function(){setFrom(0,wR.value)};hR.oninput=function(){setFrom(1,hR.value)};wI.onchange=function(){setFrom(0,wI.value)};hI.onchange=function(){setFrom(1,hI.value)};
+  document.querySelectorAll("#mm-units button").forEach(function(b){b.onclick=function(){unit=b.dataset.u;document.querySelectorAll("#mm-units button").forEach(function(x){x.classList.toggle("on",x===b)});sync()}});
+  function figure(x,base,h){var u=h/8;ctx.save();ctx.strokeStyle="#2d2a26";ctx.lineWidth=2;ctx.lineCap="round";
+    ctx.beginPath();ctx.arc(x,base-h+u*.55,u*.5,0,7);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,base-h+u*1.1);ctx.lineTo(x,base-h*.48);ctx.moveTo(x-u*.9,base-h*.62);ctx.lineTo(x,base-h+u*1.6);ctx.lineTo(x+u*.9,base-h*.62);
+    ctx.moveTo(x-u*.55,base);ctx.lineTo(x,base-h*.48);ctx.lineTo(x+u*.55,base);ctx.stroke();ctx.restore()}
+  function dimH(x0,x1,y,label){ctx.save();ctx.strokeStyle=ctx.fillStyle="#7a4a2a";ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(x0,y);ctx.lineTo(x1,y);ctx.moveTo(x0,y-8);ctx.lineTo(x0,y+8);ctx.moveTo(x1,y-8);ctx.lineTo(x1,y+8);ctx.stroke();
+    ctx.font="500 20px DM Sans";ctx.textAlign="center";ctx.fillStyle="#faf8f5";var tw=ctx.measureText(label).width+16;ctx.fillRect((x0+x1)/2-tw/2,y-12,tw,24);ctx.fillStyle="#7a4a2a";ctx.fillText(label,(x0+x1)/2,y+7);ctx.restore()}
+  function dimV(x,y0,y1,label){ctx.save();ctx.strokeStyle="#7a4a2a";ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(x,y0);ctx.lineTo(x,y1);ctx.moveTo(x-8,y0);ctx.lineTo(x+8,y0);ctx.moveTo(x-8,y1);ctx.lineTo(x+8,y1);ctx.stroke();
+    ctx.translate(x,(y0+y1)/2);ctx.rotate(-Math.PI/2);ctx.font="500 20px DM Sans";ctx.textAlign="center";var tw=ctx.measureText(label).width+16;ctx.fillStyle="#faf8f5";ctx.fillRect(-tw/2,-12,tw,24);ctx.fillStyle="#7a4a2a";ctx.fillText(label,0,7);ctx.restore()}
+  function draw(){if(!slices)return;var CW=cv.width,CH=cv.height,pad=70,maxW=CW-pad*2,maxH=CH-pad*2-20;
+    var pxm=Math.min(maxW/Math.max(wallM[0],2.4),560/Math.max(wallM[1],2.4)),nh=Math.round(wallM[1]*pxm+pad*2+30);if(cv.height!==nh){cv.height=nh;CH=nh}var Ww=wallM[0]*pxm,Wh=wallM[1]*pxm,x0=(CW-Ww)/2,y0=pad,base=y0+Wh;
+    ctx.clearRect(0,0,CW,CH);ctx.fillStyle="#faf8f5";ctx.fillRect(0,0,CW,CH);
+    ctx.save();ctx.beginPath();ctx.rect(x0,y0,Ww,Wh);ctx.clip();ctx.fillStyle=bgc;ctx.fillRect(x0,y0,Ww,Wh);
+    var s=Wh/SH,L=slices.L,C=slices.C,R=slices.R,lw=L.width*s,cw=C.width*s,rw=R.width*s,nat=(1800-70)*s;
+    if(Ww<nat){var off=x0+(Ww-nat)/2;ctx.drawImage(L,off,y0,lw,Wh);ctx.drawImage(C,off+(600-70)*s,y0,cw,Wh);ctx.drawImage(R,off+(1280-70)*s,y0,rw,Wh)}
+    else{var gap0=x0+lw-F*s,gap1=x0+Ww-rw+F*s,gw=gap1-gap0,n=Math.max(1,Math.round(gw/(cw*1.15)));
+      for(var i=0;i<n;i++){var cxp=gap0+gw*(i+.5)/n;ctx.drawImage(C,cxp-cw/2,y0,cw,Wh)}
+      ctx.drawImage(L,x0,y0,lw,Wh);ctx.drawImage(R,x0+Ww-rw,y0,rw,Wh)}
+    ctx.restore();
+    ctx.strokeStyle="#2d2a26";ctx.lineWidth=2;ctx.strokeRect(x0,y0,Ww,Wh);
+    ctx.beginPath();ctx.moveTo(pad*.4,base);ctx.lineTo(CW-pad*.4,base);ctx.stroke();
+    figure(x0+Math.min(Ww*.18,1.2*pxm)+20,base,1.68*pxm);
+    dimH(x0,x0+Ww,y0-32,fmt(wallM[0])+" "+unit);dimV(x0+Ww+32,y0,base,fmt(wallM[1])+" "+unit)}
+  document.getElementById("mm-send").onclick=function(){var msg="Hi Mrudhula, I'd like a mural for my wall: "+fmt(wallM[0])+" x "+fmt(wallM[1])+" "+unit+" (design: Thota).";
+    (navigator.clipboard?navigator.clipboard.writeText(msg):Promise.reject()).then(function(){document.getElementById("mm-sent").textContent="Copied: \""+msg+"\" (live site would open WhatsApp with this filled in)."},function(){document.getElementById("mm-sent").textContent=msg})};
+  load("../img/wall-thota.jpg").then(function(img){bgc=sample(img);slices={L:cut(img,parts.L[0],parts.L[1],false,true),C:cut(img,parts.C[0],parts.C[1],true,true),R:cut(img,parts.R[0],parts.R[1],true,false)};sync()});
+})();
+})();
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* Try it on your wall: her designs on real rooms from her projects (wall clipped so furniture stays in front),
-   or on a visitor's own photo (drag + resize). Restored from the original site, restyled. */
+   or on a visitor's own photo or live camera (four-corner perspective). Restored from the original site, restyled. */
 (function(){
   var $=function(id){return document.getElementById(id)}, room=$('T-room'); if(!room) return;
   var wall=$('T-wall'), tag=$('T-tag'), thumbs=$('T-thumbs'), pick=$('T-pick'), tg=$('T-tints'), plain=$('T-plain'), handle=$('T-handle'), base=$('T-base');
@@ -65,25 +65,45 @@
   $('T-scale').oninput=function(e){scale=+e.target.value;paint()};
   function setRoom(k){var r=ROOMS[k];room.dataset.room=k;base.src=r.img;base.alt=r.alt;
     room.style.setProperty('--clip',r.clip);room.style.setProperty('--shade',r.shade);room.style.setProperty('--ar',r.ar);room.style.setProperty('--wb',(r.wb||100)+'%');room.style.setProperty('--photo','url('+r.img+')')}
-  document.querySelectorAll('.T-rooms button').forEach(function(b){b.onclick=function(){
-    setRoom(b.dataset.room);room.classList.remove('own');['left','top','width','height'].forEach(function(p){wall.style[p]=''});paint();
-    document.querySelectorAll('.T-rooms button').forEach(function(x){x.setAttribute('aria-pressed',x===b)})}});
-  /* your own wall */
-  $('T-file').onchange=function(e){var f=e.target.files[0];if(!f)return;
-    var own=$('T-own');own.src=URL.createObjectURL(f);own.onload=function(){room.style.setProperty('--ar',own.naturalWidth/own.naturalHeight)};
-    room.classList.add('own');room.dataset.room='own';
-    wall.style.left='10%';wall.style.top='8%';wall.style.width='80%';wall.style.height='55%';
+  document.querySelectorAll('.T-rooms button[data-room]').forEach(function(b){b.onclick=function(){
+    stopCam();setRoom(b.dataset.room);room.classList.remove('own');wall.style.transform='';paint();
+    document.querySelectorAll('.T-rooms [aria-pressed]').forEach(function(x){x.setAttribute('aria-pressed',x===b)})}});
+  /* your own wall: photo or live camera, mapped with four corners */
+  var own=$('T-own'), cam=$('T-cam'), camBtn=$('T-camera'), snap=$('T-snap'), pts=[], stream=null, W0=600, H0=400;
+  var pins=[].slice.call(room.querySelectorAll('.T-pt'));
+  function solve(A,b){var n=b.length,i,j,k;
+    for(i=0;i<n;i++){var m=i;for(k=i+1;k<n;k++)if(Math.abs(A[k][i])>Math.abs(A[m][i]))m=k;
+      var t=A[i];A[i]=A[m];A[m]=t;t=b[i];b[i]=b[m];b[m]=t;
+      for(k=i+1;k<n;k++){var f=A[k][i]/A[i][i];for(j=i;j<n;j++)A[k][j]-=f*A[i][j];b[k]-=f*b[i]}}
+    var x=[];for(i=n-1;i>=0;i--){var v=b[i];for(j=i+1;j<n;j++)v-=A[i][j]*x[j];x[i]=v/A[i][i]}return x}
+  function warp(){if(!room.classList.contains('own'))return;
+    var R=room.getBoundingClientRect(),src=[[0,0],[W0,0],[W0,H0],[0,H0]],A=[],b=[];
+    pts.forEach(function(p,i){var x=src[i][0],y=src[i][1],X=p[0]*R.width,Y=p[1]*R.height;
+      A.push([x,y,1,0,0,0,-X*x,-X*y]);b.push(X);A.push([0,0,0,x,y,1,-Y*x,-Y*y]);b.push(Y);
+      pins[i].style.left=p[0]*100+'%';pins[i].style.top=p[1]*100+'%'});
+    var h=solve(A,b);wall.style.transform='matrix3d('+[h[0],h[3],0,h[6],h[1],h[4],0,h[7],0,0,1,0,h[2],h[5],0,1].join(',')+')'}
+  function ownMode(ar){room.classList.add('own');room.dataset.room='own';room.style.setProperty('--ar',ar);
+    pts=[[.12,.1],[.88,.1],[.88,.6],[.12,.6]];
     room.classList.remove('comparing');$('T-compare').setAttribute('aria-pressed',false);setSplit(0);
-    document.querySelectorAll('.T-rooms button').forEach(function(x){x.setAttribute('aria-pressed',false)})};
-  var drag=null;
-  wall.addEventListener('pointerdown',function(e){if(!room.classList.contains('own'))return;
-    var r=room.getBoundingClientRect(),w=wall.getBoundingClientRect();
-    drag={resize:e.target.classList.contains('T-grip'),x:e.clientX,y:e.clientY,l:w.left-r.left,t:w.top-r.top,w:w.width,h:w.height,r:r};
-    wall.setPointerCapture(e.pointerId);e.preventDefault()});
-  wall.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-drag.x,dy=e.clientY-drag.y,R=drag.r,pc=function(v,d){return v/d*100+'%'};
-    if(drag.resize){wall.style.width=pc(Math.max(40,drag.w+dx),R.width);wall.style.height=pc(Math.max(40,drag.h+dy),R.height)}
-    else{wall.style.left=pc(drag.l+dx,R.width);wall.style.top=pc(drag.t+dy,R.height)}});
-  wall.addEventListener('pointerup',function(){drag=null});
+    document.querySelectorAll('.T-rooms [aria-pressed]').forEach(function(x){x.setAttribute('aria-pressed',false)});
+    requestAnimationFrame(warp)}
+  function stopCam(){if(stream){stream.getTracks().forEach(function(t){t.stop()});stream=null}room.classList.remove('cam');snap.hidden=true}
+  $('T-file').onchange=function(e){var f=e.target.files[0];if(!f)return;stopCam();
+    own.onload=function(){own.onload=null;ownMode(own.naturalWidth/own.naturalHeight)};own.src=URL.createObjectURL(f)};
+  if(!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia))camBtn.hidden=true;
+  camBtn.onclick=function(){
+    navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280}},audio:false}).then(function(s){
+      stopCam();stream=s;cam.srcObject=s;
+      cam.onloadedmetadata=function(){cam.play();room.classList.add('cam');snap.hidden=false;ownMode(cam.videoWidth/cam.videoHeight);camBtn.setAttribute('aria-pressed',true)};
+    }).catch(function(){camBtn.hidden=true;$('T-file').click()})};
+  snap.onclick=function(){if(!stream)return;var c=document.createElement('canvas');c.width=cam.videoWidth;c.height=cam.videoHeight;
+    c.getContext('2d').drawImage(cam,0,0);own.onload=null;own.src=c.toDataURL('image/jpeg',.9);stopCam()};
+  pins.forEach(function(el,i){
+    el.addEventListener('pointerdown',function(e){el.setPointerCapture(e.pointerId);el.dragging=true;e.preventDefault()});
+    el.addEventListener('pointermove',function(e){if(!el.dragging)return;var r=room.getBoundingClientRect(),c=function(v){return Math.min(1,Math.max(0,v))};
+      pts[i]=[c((e.clientX-r.left)/r.width),c((e.clientY-r.top)/r.height)];warp()});
+    el.addEventListener('pointerup',function(){el.dragging=false})});
+  addEventListener('resize',warp);
   /* before and after */
   function setSplit(p){p=p&&Math.min(96,Math.max(4,p));plain.style.clipPath='inset(0 '+(100-p)+'% 0 0)';handle.style.left=p+'%'}
   $('T-compare').onclick=function(){var on=room.classList.toggle('comparing');this.setAttribute('aria-pressed',on);setSplit(on?50:0)};

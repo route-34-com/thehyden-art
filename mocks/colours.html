@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accent Colours</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2d2a26;--line:#e4ded5}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{display:grid;grid-template-rows:auto 1fr;background:#faf8f5;color:var(--ink);font:400 14px/1.4 "DM Sans",Arial,sans-serif}
+.bar{display:flex;gap:10px;overflow-x:auto;padding:12px 16px;border-bottom:1px solid var(--line);background:#fff}
+.sw{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border:1px solid var(--line);border-radius:99px;background:#fff;cursor:pointer;font:500 13px/1.2 "DM Sans",Arial,sans-serif;color:var(--ink);text-align:left}
+.sw.on{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.sw i{width:30px;height:30px;border-radius:50%;flex:0 0 auto;background:linear-gradient(135deg,var(--a) 50%,var(--p) 50%);border:1px solid rgba(0,0,0,.08)}
+.sw small{display:block;color:#8a837a;font-weight:400}
+iframe{width:100%;height:100%;border:0;display:block}
+</style>
+</head>
+<body>
+<div class="bar" id="bar"></div>
+<iframe id="site" src="../index.html" title="thehyden.art with the chosen accent"></iframe>
+<script>
+var P=[
+  ["Walnut","current","#7a4a2a","#e6d8c8","#5a3219"],
+  ["Kumkum red","temple, festive","#a8322d","#f3dad5","#7d211d"],
+  ["Lotus rani","from Nabhi's lotus","#a52d64","#f4d8e4","#7c1f4a"],
+  ["Peacock teal","from her teal patterns","#1f6b6b","#d4e7e4","#134c4c"],
+  ["Parrot green","the logo's parrot","#4c7536","#dde8d1","#33521f"],
+  ["Temple ochre","turmeric and brass","#946313","#f2e4c4","#6e4a0d"],
+  ["Jamun","deep plum","#5e2b52","#ead9e5","#421d3a"],
+  ["Indigo","block-print blue","#2f4277","#d8deef","#1f2d55"]
+];
+var bar=document.getElementById("bar"),site=document.getElementById("site"),cur=0;
+function apply(){var d=site.contentDocument;if(!d||!d.head)return;var s=d.getElementById("accent-mock");
+  if(!s){s=d.createElement("style");s.id="accent-mock";d.head.appendChild(s)}
+  var p=P[cur];s.textContent=":root{--gold:"+p[2]+"!important;--turmeric:"+p[3]+"!important}.hero-long h1 em{color:"+p[4]+"!important}"}
+P.forEach(function(p,i){var b=document.createElement("button");b.className="sw"+(i?"":" on");b.style.setProperty("--a",p[2]);b.style.setProperty("--p",p[3]);
+  b.innerHTML="<i></i><span>"+p[0]+"<small>"+p[1]+"</small></span>";
+  b.onclick=function(){cur=i;bar.querySelectorAll(".sw").forEach(function(x){x.classList.toggle("on",x===b)});apply()};bar.appendChild(b)});
+site.addEventListener("load",apply);
+</script>
+</body>
+</html>
