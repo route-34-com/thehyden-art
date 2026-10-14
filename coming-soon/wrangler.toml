@@ -1,0 +1,12 @@
+name = "thehyden-coming-soon"
+account_id = "c23ea81bff07813e7402cccf14d0527b"
+compatibility_date = "2025-09-01"
+
+routes = [
+  { pattern = "thehyden.art", custom_domain = true },
+  { pattern = "www.thehyden.art", custom_domain = true }
+]
+
+[assets]
+directory = "./public"
+not_found_handling = "single-page-application"

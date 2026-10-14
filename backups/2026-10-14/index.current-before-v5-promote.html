@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>thehyden.art · hand-painted Indian heritage wallpapers</title>
+<meta name="description" content="thehyden.art: hand-painted Indian heritage wallpapers, murals, wall decals and wall frames, designed by an architect for homes and commercial spaces. Supplied worldwide, installed across India.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="thehyden.art">
+<meta property="og:description" content="Hand-painted Indian heritage wallpapers, murals, wall decals and wall frames, designed by an architect.">
+<meta property="og:image" content="img/w08.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="brand/fav-32.png">
+<link rel="apple-touch-icon" href="brand/fav-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap">
+<link rel="preload" as="image" href="img/w08.jpg" fetchpriority="high">
+<style>
+:root{
+  --ink:#000; --paper:#fff; --rule:rgba(0,0,0,.16);
+  --serif:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;
+  --g:6px;               /* the gutter between artworks */
+  --pad:clamp(16px,3vw,40px);
+  --nav:72px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--nav)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-weight:400;font-size:18px;line-height:1.55;font-synthesis:none;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,p,figure,blockquote,ul{margin:0;padding:0}
+h1,h2,h3,h4,b,strong,th,button,input,select,textarea{font-weight:400;font-family:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{color:inherit;background:none;border:0;padding:0;cursor:pointer;font-size:inherit}
+::selection{background:#000;color:#fff}
+:focus-visible{outline:1px solid #000;outline-offset:3px}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;background:#fff;border:1px solid #000;padding:8px 14px;z-index:100}
+.skip:focus{top:12px}
+
+/* type */
+.label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;line-height:1.4}
+.num{font-variant-numeric:oldstyle-nums;letter-spacing:.06em}
+.display{font-size:clamp(30px,4.2vw,62px);line-height:1.08;letter-spacing:-.012em}
+.lede{font-size:clamp(19px,1.6vw,23px);line-height:1.5}
+.it{font-style:italic}
+
+/* links: underline that draws in from the left */
+.ul{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .5s var(--ease);padding-bottom:2px}
+.ul:hover,.ul:focus-visible,.ul[aria-current="true"]{background-size:100% 1px}
+.ul.on{background-size:100% 1px}
+.ul.on:hover{animation:redraw .7s var(--ease)}
+@keyframes redraw{0%{background-size:100% 1px;background-position:100% 100%}49%{background-size:0 1px;background-position:100% 100%}50%{background-position:0 100%}100%{background-size:100% 1px;background-position:0 100%}}
+
+/* buttons: hairline frame that doubles, arrow that travels */
+.btn{display:inline-flex;align-items:center;gap:14px;border:1px solid #000;padding:15px 22px 14px;font-size:16px;letter-spacing:.02em;line-height:1;transition:box-shadow .35s var(--ease)}
+.btn .ar{display:inline-block;transition:transform .45s var(--ease)}
+.btn:hover{box-shadow:inset 0 0 0 1px #000}
+.btn:hover .ar{transform:translateX(5px)}
+.ar-ne{display:inline-block;transition:transform .45s var(--ease)}
+a:hover .ar-ne{transform:translate(3px,-3px)}
+
+/* ---------- navigation ---------- */
+.nav{height:var(--nav);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:#fff;position:relative;z-index:20}
+.brand{display:flex;align-items:center;gap:12px;font-size:21px;letter-spacing:.01em}
+.brand img{width:44px;height:44px}
+.nav-links{display:flex;gap:clamp(18px,2.4vw,36px);font-size:16px}
+.nav-end{display:flex;align-items:center;gap:22px;font-size:16px}
+.menu-btn{display:none;font-size:16px}
+.float{position:fixed;inset:0 0 auto 0;border-bottom:1px solid var(--rule);transform:translateY(-101%);transition:transform .6s var(--ease);z-index:40}
+.float.show{transform:none}
+.float .brand img{width:36px;height:36px}
+.float{height:60px}
+
+/* mobile sheet */
+.sheet{position:fixed;inset:0;background:#fff;z-index:60;display:flex;flex-direction:column;padding:0 var(--pad) 32px;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility 0s .4s}
+.sheet.open{opacity:1;visibility:visible;transition:opacity .4s var(--ease)}
+.sheet-top{height:var(--nav);display:flex;align-items:center;justify-content:space-between}
+.sheet nav{display:flex;flex-direction:column;gap:6px;margin-top:5vh}
+.sheet nav a{font-size:clamp(32px,9vw,44px);line-height:1.25}
+.sheet .foot{margin-top:auto;display:flex;justify-content:space-between;font-size:16px}
+
+/* ---------- hero: image only, nothing on top ---------- */
+.hero{display:grid;grid-template-columns:1.38fr 1fr;grid-template-rows:1fr 1fr;gap:var(--g);padding:0 var(--g);height:calc(100svh - var(--nav) - 44px);min-height:480px;max-height:1100px}
+.hero figure{overflow:hidden;position:relative;background:#fff}
+.hero figure:first-child{grid-row:1/3}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero-cap{display:grid;grid-template-columns:1.38fr 1fr;gap:var(--g);padding:0 var(--g);height:44px;align-items:center;font-size:14px}
+.hero-cap span{padding-left:10px}
+.hero-cap span:last-child{display:flex;justify-content:space-between;padding-right:10px}
+
+/* ---------- intro + four selling points ---------- */
+.intro{display:grid;grid-template-columns:5fr 7fr;gap:clamp(28px,5vw,80px);padding:clamp(48px,7vw,96px) var(--pad) clamp(44px,6vw,80px);border-top:1px solid var(--rule)}
+.intro .display{max-width:13em}
+.intro .lede{margin-top:22px;max-width:30em}
+.points{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #000;align-self:start}
+.point{padding:20px 22px 24px 0;border-bottom:1px solid var(--rule)}
+.point:nth-child(odd){border-right:1px solid var(--rule)}
+.point:nth-child(even){padding-left:22px}
+.point h3{font-size:clamp(21px,1.8vw,26px);line-height:1.2;margin:12px 0 8px}
+.point p{font-size:16px;line-height:1.5;max-width:22em}
+
+/* ---------- section heads ---------- */
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:clamp(40px,5vw,64px) var(--pad) 22px;border-top:1px solid var(--rule)}
+.head .display{font-size:clamp(28px,3.4vw,48px)}
+.head p{font-size:16px;max-width:28em;text-align:right}
+
+/* ---------- design sequence: justified rows, no cropping ---------- */
+.seq{padding:0 var(--g)}
+.piece{margin-bottom:clamp(26px,3vw,40px)}
+.row{display:flex;gap:var(--g)}
+.row figure{flex:var(--ar) 1 0;min-width:0;overflow:hidden;cursor:zoom-in;position:relative}
+.row img{width:100%;aspect-ratio:var(--ar);object-fit:cover}
+.row figure img,.tile img,.proj img,.studio figure img{transition:transform 1.6s var(--ease)}
+.row figure:hover img,.tile:hover img,.proj:hover img,.studio figure:hover img{transform:scale(1.035)}
+.cap{display:grid;grid-template-columns:3.2em 1fr auto;align-items:baseline;gap:12px;padding:12px calc(var(--pad) - var(--g)) 0}
+.cap h3{font-size:clamp(20px,1.7vw,25px);line-height:1.25}
+.cap h3 .it{font-size:.8em}
+.cap .meta{font-size:15px;display:flex;gap:26px}
+.cap .num{font-size:15px}
+
+/* ---------- commercial projects ---------- */
+.projects{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--g);padding:0 var(--g)}
+.proj .ph{overflow:hidden;aspect-ratio:4/5}
+.proj img{width:100%;height:100%;object-fit:cover}
+.proj figcaption{padding:12px 10px 0;font-size:15px;line-height:1.4}
+.proj figcaption span{display:block;font-size:20px;margin-bottom:2px}
+.reach{display:grid;grid-template-columns:1fr 1fr;gap:var(--g);margin:clamp(30px,4vw,48px) var(--pad) clamp(40px,5vw,64px);border-top:1px solid #000}
+.reach p{font-size:clamp(22px,2.4vw,34px);line-height:1.2;padding:18px 0 0}
+.reach p span{display:block;font-size:16px;margin-top:6px}
+
+/* ---------- studio ---------- */
+.studio{display:grid;grid-template-columns:4fr 5fr 3fr;gap:var(--g);padding:0 var(--g);align-items:stretch;margin-bottom:clamp(36px,4.5vw,60px)}
+.studio figure{overflow:hidden}
+.studio figure img{width:100%;height:100%;object-fit:cover}
+.studio .txt{padding:clamp(24px,3.5vw,56px) clamp(20px,3vw,48px);display:flex;flex-direction:column;justify-content:center;border-top:1px solid #000;border-bottom:1px solid #000}
+.studio blockquote{font-size:clamp(22px,2.1vw,30px);line-height:1.3;font-style:italic}
+.studio .bio{margin-top:24px;font-size:17px;max-width:32em}
+.studio .who{margin-top:22px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px}
+.studio .w06{display:grid;grid-template-rows:1fr auto}
+.studio .w06 figcaption{font-size:14px;padding:10px 4px 0}
+
+/* ---------- archive ---------- */
+.filters{display:flex;gap:24px;flex-wrap:wrap;font-size:16px}
+.filters button .n{font-size:13px;margin-left:4px}
+.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--g);padding:0 var(--g)}
+.tile{overflow:hidden;aspect-ratio:1;cursor:zoom-in;display:block;width:100%}
+.tile img{width:100%;height:100%;object-fit:cover}
+.more{display:flex;justify-content:center;padding:28px 0 0}
+
+/* ---------- enquire ---------- */
+.enquire{display:grid;grid-template-columns:7fr 5fr;gap:clamp(28px,5vw,80px);align-items:center;padding:clamp(48px,7vw,96px) var(--pad);border-top:1px solid var(--rule);margin-top:clamp(48px,6vw,80px)}
+.enquire .lede{margin-top:20px;max-width:28em}
+.enquire .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.enquire .logo{justify-self:center;width:min(100%,340px)}
+.enquire .logo img{width:100%}
+.note{font-size:15px;margin-top:18px}
+
+/* ---------- footer ---------- */
+footer{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;padding:28px var(--pad) 32px;border-top:1px solid #000;font-size:15px}
+footer .links{display:flex;gap:26px;flex-wrap:wrap;justify-content:flex-end}
+
+/* ---------- lightbox (white, like a gallery wall) ---------- */
+.lb{position:fixed;inset:0;background:#fff;z-index:80;display:grid;grid-template-rows:60px 1fr auto;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility 0s .35s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .35s var(--ease)}
+.lb-top{display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);font-size:15px}
+.lb-stage{position:relative;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 72px}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;transition:opacity .3s}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;font-size:24px;display:grid;place-items:center}
+.lb-nav:hover .ar{transform:translateX(var(--d))}
+.lb-nav .ar{transition:transform .4s var(--ease);display:inline-block}
+.lb-prev{left:8px;--d:-4px}.lb-next{right:8px;--d:4px}
+.lb-bot{display:flex;justify-content:space-between;gap:20px;padding:16px var(--pad) 22px;font-size:16px}
+
+/* ---------- reveal on scroll ---------- */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1.1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero figure img{opacity:0;transform:scale(1.04);transition:opacity 1.4s var(--ease),transform 2.4s var(--ease)}
+.js .hero.in figure img{opacity:1;transform:none}
+.js .hero.in figure:nth-child(2) img{transition-delay:.15s}
+.js .hero.in figure:nth-child(3) img{transition-delay:.3s}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .nav-links{display:none}
+  .menu-btn{display:inline-block}
+  .projects{grid-template-columns:repeat(3,1fr)}
+  .grid{grid-template-columns:repeat(4,1fr)}
+  .studio{grid-template-columns:1fr 1fr}
+  .studio .txt{grid-column:1/-1;grid-row:1}
+}
+@media (max-width:820px){
+  .intro,.enquire{grid-template-columns:1fr}
+  .enquire .logo{justify-self:start;width:200px}
+  .head{flex-direction:column;align-items:flex-start;gap:12px}
+  .head p{text-align:left}
+}
+@media (max-width:640px){
+  body{font-size:17px}
+  :root{--nav:64px;--g:4px}
+  .brand{font-size:19px}.brand img{width:38px;height:38px}
+  .nav-end .ig{display:none}
+  .hero{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;height:auto;min-height:0}
+  .hero figure:first-child{grid-column:1/3;grid-row:1;aspect-ratio:1}
+  .hero figure:not(:first-child){aspect-ratio:1}
+  .hero-cap{display:block;height:auto;padding:10px 12px 12px;font-size:14px}
+  .hero-cap span,.hero-cap span:last-child{display:inline;padding:0}
+  .hero-cap .c1::after{content:" · "}
+  .hero-cap a{display:none}
+  .points{grid-template-columns:1fr}
+  .point:nth-child(n){padding:18px 0 20px;border-right:0}
+  .row{flex-wrap:wrap}
+  .row figure{flex:1 1 100%}
+  .row.keep figure{flex:var(--ar) 1 0}
+  .row.keep{flex-wrap:nowrap}
+  .cap{grid-template-columns:2.4em 1fr;padding:10px 12px 0}
+  .cap .meta{grid-column:2;gap:18px}
+  .projects{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+  .projects::-webkit-scrollbar{display:none}
+  .proj{scroll-snap-align:start}
+  .reach{grid-template-columns:1fr}
+  .studio{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .lb-stage{padding:0 8px}
+  .lb-nav{top:auto;bottom:-58px;transform:none}
+  .lb-bot{padding-right:140px;flex-direction:column;gap:4px}
+  footer{grid-template-columns:1fr}
+  footer .links{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important;transition-delay:0s!important}
+  .js .rv,.js .hero figure img{opacity:1;transform:none}
+  .row figure:hover img,.tile:hover img,.proj:hover img,.studio figure:hover img{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <a class="brand" href="#top" aria-label="thehyden.art, home"><img src="brand/logo-512.png" width="44" height="44" alt="">thehyden.art</a>
+  <nav class="nav-links" aria-label="Main">
+    <a class="ul" href="#designs">Designs</a>
+    <a class="ul" href="#projects">Projects</a>
+    <a class="ul" href="#studio">Studio</a>
+    <a class="ul" href="#archive">Archive</a>
+    <a class="ul" href="#enquire">Enquire</a>
+  </nav>
+  <div class="nav-end">
+    <a class="ul ig" href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a>
+    <button class="menu-btn ul" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
+  </div>
+</header>
+
+<header class="nav float" aria-hidden="true">
+  <a class="brand" href="#top" tabindex="-1"><img src="brand/logo-512.png" width="36" height="36" alt="">thehyden.art</a>
+  <nav class="nav-links">
+    <a class="ul" href="#designs" tabindex="-1">Designs</a>
+    <a class="ul" href="#projects" tabindex="-1">Projects</a>
+    <a class="ul" href="#studio" tabindex="-1">Studio</a>
+    <a class="ul" href="#archive" tabindex="-1">Archive</a>
+    <a class="ul" href="#enquire" tabindex="-1">Enquire</a>
+  </nav>
+  <div class="nav-end">
+    <a class="ul ig" href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener" tabindex="-1">Instagram <span class="ar-ne">↗</span></a>
+    <button class="menu-btn ul" type="button" tabindex="-1">Menu</button>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="sheet-top">
+    <a class="brand" href="#top"><img src="brand/logo-512.png" width="38" height="38" alt="">thehyden.art</a>
+    <button class="ul" type="button" data-close>Close</button>
+  </div>
+  <nav aria-label="Menu">
+    <a href="#designs">Designs</a>
+    <a href="#projects">Projects</a>
+    <a href="#studio">Studio</a>
+    <a href="#archive">Archive</a>
+    <a href="#enquire">Enquire</a>
+  </nav>
+  <div class="foot"><a class="ul on" href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener">Instagram ↗</a><span>thehyden.art</span></div>
+</div>
+
+<main id="main">
+
+<!-- HERO: three installed rooms, nothing on top of them -->
+<section class="hero" aria-label="thehyden.art wallpapers, installed">
+  <figure><img src="img/w08.jpg" width="1100" height="1100" alt="Parrot garden wallpaper behind a scalloped mirror and a green console, with a woman in a pink sari walking past" fetchpriority="high" style="object-position:50% 50%"></figure>
+  <figure><img src="img/w04.jpg" width="1100" height="1096" alt="Floral trellis wallpaper around a vanity nook with an oval mirror" style="object-position:50% 62%"></figure>
+  <figure><img src="img/w05.jpg" width="1100" height="1100" alt="A bedroom wrapped in a blossom and songbird wallpaper" style="object-position:50% 38%"></figure>
+</section>
+<div class="hero-cap" aria-hidden="true">
+  <span class="c1">Parrot garden, installed</span>
+  <span><span>Floral trellis &nbsp;·&nbsp; Blossoms</span></span>
+</div>
+
+<!-- INTRO + SELLING POINTS -->
+<section class="intro" aria-labelledby="h-intro">
+  <div class="rv">
+    <h1 class="display" id="h-intro">Hand-painted Indian heritage, made for <span class="it">your walls.</span></h1>
+    <p class="lede">Wallpapers, murals, wall decals and wall frames by thehyden.art: tradition and contemporary, for homes and commercial spaces.</p>
+  </div>
+  <ul class="points rv" aria-label="Why thehyden.art">
+    <li class="point"><span class="label num">01</span><h3>Architect-designed</h3><p>Designed by an architect, not just a seller. Each design starts from the space and what the project needs.</p></li>
+    <li class="point"><span class="label num">02</span><h3>Worldwide supply</h3><p>We supply all over the world.</p></li>
+    <li class="point"><span class="label num">03</span><h3>India-wide installation</h3><p>We install all over India.</p></li>
+    <li class="point"><span class="label num">04</span><h3>Homes &amp; commercial spaces</h3><p>For residences, and for cafés and restaurants in India and abroad.</p></li>
+  </ul>
+</section>
+
+<!-- DESIGNS: each one as the artwork and the artwork on a wall -->
+<section id="designs" aria-labelledby="h-designs">
+  <div class="head">
+    <h2 class="display" id="h-designs">The designs</h2>
+    <p>Each design shown twice: as she painted it, and on a wall.</p>
+  </div>
+
+  <div class="seq" data-group="designs">
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:2.326"><img src="img/wall-thota.jpg" width="1800" height="774" loading="lazy" alt="Thota, a garden mural of trees, palms and birds"></figure>
+        <figure style="--ar:1"><img src="img/g/017.jpg" width="800" height="800" loading="lazy" alt="Thota mural behind a bed, with a woman seated on it"></figure>
+      </div>
+      <div class="cap"><span class="num">01</span><h3>Thota <span class="it">mural</span></h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/Dcf1YU4SlSd/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:1"><img src="img/g/047.jpg" width="800" height="800" loading="lazy" alt="Rooted Reverie mural of a South Indian village in a living room"></figure>
+        <figure style="--ar:.971"><img src="img/wall-rooted.jpg" width="950" height="978" loading="lazy" alt="Rooted Reverie, a mural of a temple gopuram and village life"></figure>
+      </div>
+      <div class="cap"><span class="num">02</span><h3>Rooted Reverie <span class="it">mural</span></h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DUF1PLPk_ly/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:1.381"><img src="img/wall-white-lotus.jpg" width="1188" height="860" loading="lazy" alt="White Lotus, a mural of Nandi, palms and kolam on terracotta"></figure>
+        <figure style="--ar:1"><img src="img/g/035.jpg" width="800" height="800" loading="lazy" alt="White Lotus mural on a terracotta living-room wall"></figure>
+      </div>
+      <div class="cap"><span class="num">03</span><h3>White Lotus <span class="it">mural</span></h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/Da2VGkGyjoe/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:1"><img src="img/g/052.jpg" width="800" height="800" loading="lazy" alt="Lotus Whispers vines above a bed"></figure>
+        <figure style="--ar:2.527"><img src="img/wall-lotus-whispers.jpg" width="1238" height="490" loading="lazy" alt="Lotus Whispers, hanging lotus vines on blush"></figure>
+      </div>
+      <div class="cap"><span class="num">04</span><h3>Lotus Whispers</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DUA1cRcExpb/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:.646"><img src="img/wall-blush.jpg" width="576" height="892" loading="lazy" alt="Blush Botanica, branches and leaves in soft blush tones"></figure>
+        <figure style="--ar:1"><img src="img/g/070.jpg" width="800" height="800" loading="lazy" alt="Blush Botanica wallpaper in a sitting room with arches"></figure>
+      </div>
+      <div class="cap"><span class="num">05</span><h3>Blush Botanica</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DPX_3r8E0Lh/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:1"><img src="img/g/084.jpg" width="800" height="800" loading="lazy" alt="Folkscape mural behind a cane bed"></figure>
+        <figure style="--ar:1.311"><img src="img/wall-folkscape.jpg" width="792" height="604" loading="lazy" alt="Folkscape, palms and a peacock in a misty landscape"></figure>
+      </div>
+      <div class="cap"><span class="num">06</span><h3>Folkscape <span class="it">mural</span></h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DMhgOi3zvX7/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:1.689"><img src="img/wall-whispers.jpg" width="1520" height="900" loading="lazy" alt="Whispers in Bloom, white branches and birds on teal"></figure>
+        <figure style="--ar:1.015"><img src="img/g/085.jpg" width="800" height="788" loading="lazy" alt="Whispers in Bloom wallpaper along a staircase"></figure>
+      </div>
+      <div class="cap"><span class="num">07</span><h3>Whispers in Bloom</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DLxqWZET1ek/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:1"><img src="img/w11.jpg" width="1100" height="1100" loading="lazy" alt="Nabhi Kamalam: Vishnu resting on the cosmic waters, a lotus rising above, framed in gold"></figure>
+        <figure style="--ar:1"><img src="img/w09.jpg" width="1080" height="1080" loading="lazy" alt="A hand stitching beads onto the Nabhi Kamalam lotus"></figure>
+        <figure style="--ar:1.026"><img src="img/wall-palms.jpg" width="1400" height="1364" loading="lazy" alt="Detail of the stitched lotus and palms in Nabhi Kamalam"></figure>
+      </div>
+      <div class="cap"><span class="num">08</span><h3>Nabhi Kamalam: The Origin of the Cosmos <span class="it">wall frame</span></h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DdFBt24E4U4/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:1"><img src="img/g/068.jpg" width="800" height="800" loading="lazy" alt="Motif and Monkey wallpaper behind a cane headboard"></figure>
+        <figure style="--ar:1.526"><img src="img/wall-monkey.jpg" width="1520" height="996" loading="lazy" alt="Motif and Monkey, monkeys among paisley motifs"></figure>
+      </div>
+      <div class="cap"><span class="num">09</span><h3>Motif &amp; Monkey</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DObbmTnk81l/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:1.262"><img src="img/wall-origami.jpg" width="1520" height="1204" loading="lazy" alt="Lotus blooms and origami birds on white"></figure>
+        <figure style="--ar:1"><img src="img/g/053.jpg" width="800" height="800" loading="lazy" alt="Lotus blooms and origami birds wallpaper behind a bed"></figure>
+      </div>
+      <div class="cap"><span class="num">10</span><h3>Lotus blooms &amp; origami birds</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DUSnnn6kwWB/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:1"><img src="img/g/023.jpg" width="800" height="800" loading="lazy" alt="The Playroom wallpaper behind a child's bed"></figure>
+        <figure style="--ar:1.557"><img src="img/wall-playroom.jpg" width="1520" height="976" loading="lazy" alt="The Playroom, wooden horses and birds on a checked grid"></figure>
+      </div>
+      <div class="cap"><span class="num">11</span><h3>The Playroom</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DcBsEJWnU9q/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:.824"><img src="img/wall-kolam.jpg" width="1520" height="1844" loading="lazy" alt="Coconut and Kolam, coconuts and kolam patterns on white"></figure>
+        <figure style="--ar:.976"><img src="img/g/150.jpg" width="781" height="800" loading="lazy" alt="Coconut and Kolam wallpaper behind wall shelves"></figure>
+      </div>
+      <div class="cap"><span class="num">12</span><h3>Coconut &amp; Kolam</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/C8zHOmTSrOI/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:1"><img src="img/g/163.jpg" width="800" height="800" loading="lazy" alt="Kerosene lamps and candle stands wallpaper above a console"></figure>
+        <figure style="--ar:2.275"><img src="img/wall-lamps.jpg" width="1520" height="668" loading="lazy" alt="Kerosene lamps and candle stands, a repeating pattern"></figure>
+      </div>
+      <div class="cap"><span class="num">13</span><h3>Kerosene lamps &amp; candle stands</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/C8buStkqcY5/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row keep">
+        <figure style="--ar:1.667"><img src="img/wall-muggu.jpg" width="1520" height="912" loading="lazy" alt="Muggu and pink elephants in muggu frames"></figure>
+        <figure style="--ar:1"><img src="img/g/166.jpg" width="800" height="800" loading="lazy" alt="Muggu and pink elephants wallpaper behind an armchair"></figure>
+      </div>
+      <div class="cap"><span class="num">14</span><h3>Muggu &amp; pink elephants</h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/C8WPCcjPzXY/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+    <article class="piece rv">
+      <div class="row">
+        <figure style="--ar:.964"><img src="img/wall-parrot.jpg" width="1520" height="1576" loading="lazy" alt="Parrot garden, parrots among blossoming branches"></figure>
+        <figure style="--ar:.735"><img src="img/wall-trellis.jpg" width="1520" height="2068" loading="lazy" alt="Floral trellis, soft florals on cream"></figure>
+        <figure style="--ar:1.362"><img src="img/wall-blossom.jpg" width="1520" height="1116" loading="lazy" alt="Blossoms, branches and songbirds"></figure>
+      </div>
+      <div class="cap"><span class="num">15</span><h3>Parrot garden, Floral trellis, Blossoms <span class="it">the rooms at the top of the page</span></h3><p class="meta"><a class="ul" href="https://www.instagram.com/p/DdLXJJkymg4/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a></p></div>
+    </article>
+
+  </div>
+</section>
+
+<!-- COMMERCIAL PROJECTS -->
+<section id="projects" aria-labelledby="h-projects">
+  <div class="head">
+    <h2 class="display" id="h-projects">Commercial spaces</h2>
+    <p>Cafés and restaurants in India, the USA and the UK.</p>
+  </div>
+  <ul class="projects rv">
+    <li class="proj"><figure><div class="ph"><img src="brand/clients/mikro.jpg" width="640" height="800" loading="lazy" alt="Mikro storefront sign"></div><figcaption><span>Mikro</span>Neighbourhood café · Hyderabad, India</figcaption></figure></li>
+    <li class="proj"><figure><div class="ph"><img src="brand/clients/house-of-telugu.jpg" width="640" height="800" loading="lazy" alt="House of Telugu storefront sign"></div><figcaption><span>House of Telugu</span>Restaurant · Goa, India</figcaption></figure></li>
+    <li class="proj"><figure><div class="ph"><img src="brand/clients/peacock-restaurant.jpg" width="640" height="800" loading="lazy" alt="Peacock Restaurant storefront sign"></div><figcaption><span>Peacock Restaurant</span>Indian restaurant · USA</figcaption></figure></li>
+    <li class="proj"><figure><div class="ph"><img src="brand/clients/godavari-restaurant.jpg" width="640" height="800" loading="lazy" alt="Godavari Restaurant storefront sign"></div><figcaption><span>Godavari Restaurant</span>South Indian kitchen · UK</figcaption></figure></li>
+    <li class="proj"><figure><div class="ph"><img src="brand/clients/gaurangs-kitchen.jpg" width="640" height="800" loading="lazy" alt="Gaurang’s Kitchen storefront sign"></div><figcaption><span>Gaurang’s Kitchen</span>Menu designed by Mrudhula</figcaption></figure></li>
+  </ul>
+  <div class="reach rv">
+    <p>We supply all over the world.</p>
+    <p>We install all over India.</p>
+  </div>
+</section>
+
+<!-- STUDIO / FOUNDER -->
+<section id="studio" aria-labelledby="h-studio">
+  <div class="head">
+    <h2 class="display" id="h-studio">The studio</h2>
+    <p>thehyden.art is led by Mrudhula, an architect, artist and designer.</p>
+  </div>
+  <div class="studio rv">
+    <figure><img src="img/mrudula.jpg" width="932" height="1100" loading="lazy" alt="Mrudhula, founder of thehyden.art, on a sofa in front of a living plant wall"></figure>
+    <div class="txt">
+      <blockquote>“thehyden.art isn’t just about artworks and wallpapers; it’s about storytelling, connection, and the celebration of timeless beauty.”</blockquote>
+      <p class="bio">An architect by training, Mrudhula started thehyden.art out of a deep love for blending tradition with contemporary aesthetics. What began as a simple wish to capture the beauty of Indian heritage has grown into a studio making wallpapers and art frames that sit easily in modern homes while honouring their cultural roots.</p>
+      <p class="who"><span>Mrudhula, founder</span><span>B.Arch, 2023</span><span>Architect · artist · designer</span></p>
+    </div>
+    <figure class="w06"><img src="img/w06.jpg" width="1100" height="1100" loading="lazy" alt="Motif studies on paper with a brass lamp, from the thehyden.art studio"><figcaption>Motif studies, fresh from the press</figcaption></figure>
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section id="archive" aria-labelledby="h-archive">
+  <div class="head">
+    <h2 class="display" id="h-archive">The archive</h2>
+    <div class="filters" role="group" aria-label="Filter the archive">
+      <button class="ul on" type="button" data-f="all" aria-pressed="true">All<span class="n num"></span></button>
+      <button class="ul" type="button" data-f="room" aria-pressed="false">Rooms<span class="n num"></span></button>
+      <button class="ul" type="button" data-f="art" aria-pressed="false">Artworks<span class="n num"></span></button>
+      <button class="ul" type="button" data-f="studio" aria-pressed="false">Studio<span class="n num"></span></button>
+    </div>
+  </div>
+  <div class="grid" id="grid" data-group="archive"></div>
+  <div class="more"><button class="btn" type="button" id="more">Show more <span class="ar">↓</span></button></div>
+</section>
+
+<!-- ENQUIRE -->
+<section class="enquire" id="enquire" aria-labelledby="h-enquire">
+  <div class="rv">
+    <h2 class="display" id="h-enquire">Begin with <span class="it">your wall.</span></h2>
+    <p class="lede">Orders and custom designs happen over Instagram DMs. Send a photo of your wall and we’ll take it from there.</p>
+    <div class="acts">
+      <a class="btn" href="https://ig.me/m/thehyden.art" target="_blank" rel="noopener">Message @thehyden.art <span class="ar">→</span></a>
+      <a class="btn" id="wa" href="#" target="_blank" rel="noopener" hidden>WhatsApp <span class="ar">→</span></a>
+    </div>
+  </div>
+  <div class="logo rv"><img src="brand/logo-full.png" width="922" height="922" loading="lazy" alt="thehyden.art logo"></div>
+</section>
+
+</main>
+
+<footer>
+  <p>© <span id="yr">2026</span> thehyden.art &nbsp;·&nbsp; Hand-painted Indian heritage wallpapers, murals, wall decals and wall frames.</p>
+  <div class="links">
+    <a class="ul" href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener">Instagram <span class="ar-ne">↗</span></a>
+    <a class="ul" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-top"><span id="lb-count" class="num"></span><button class="ul" type="button" data-close>Close</button></div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous image"><span class="ar">←</span></button>
+    <img id="lb-img" alt="">
+    <button class="lb-nav lb-next" type="button" aria-label="Next image"><span class="ar">→</span></button>
+  </div>
+  <div class="lb-bot"><span id="lb-cap"></span><a class="ul" id="lb-ig" href="#" target="_blank" rel="noopener" hidden>View on Instagram <span class="ar-ne">↗</span></a></div>
+</div>
+
+<script src="settings.js"></script>
+<script src="gallery.js"></script>
+<script src="compare.js"></script>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* hero fade-in once the first image is ready */
+  var hero=$('.hero'), first=$('img',hero);
+  function heroIn(){hero.classList.add('in')}
+  if(first.complete) requestAnimationFrame(heroIn); else {first.addEventListener('load',heroIn);first.addEventListener('error',heroIn)}
+  setTimeout(heroIn,1500);
+
+  /* compact nav appears only after the hero has scrolled away, so it never sits on the artwork */
+  var fl=$('.float');
+  new IntersectionObserver(function(e){
+    var show=!e[0].isIntersecting;
+    fl.classList.toggle('show',show);
+    fl.setAttribute('aria-hidden',show?'false':'true');
+    $$('a,button',fl).forEach(function(a){a.tabIndex=show?0:-1});
+  },{rootMargin:'0px 0px 0px 0px',threshold:0}).observe($('.hero-cap'));
+
+  /* reveal on scroll */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  function watch(el){reduce?el.classList.add('in'):io.observe(el)}
+  $$('.rv').forEach(watch);
+
+  /* mobile menu */
+  var sheet=$('#sheet'), opener=null;
+  function menu(open,btn){
+    sheet.classList.toggle('open',open);
+    $$('.menu-btn').forEach(function(b){b.setAttribute('aria-expanded',open)});
+    document.body.style.overflow=open?'hidden':'';
+    if(open){opener=btn;$('[data-close]',sheet).focus()} else if(opener) opener.focus();
+  }
+  $$('.menu-btn').forEach(function(b){b.addEventListener('click',function(){menu(true,b)})});
+  $('[data-close]',sheet).addEventListener('click',function(){menu(false)});
+  $$('nav a',sheet).concat($$('.sheet-top .brand')).forEach(function(a){a.addEventListener('click',function(){menu(false)})});
+
+  /* WhatsApp only when her number is set in settings.js */
+  var S=window.SETTINGS||{};
+  if(S.whatsapp){var wa=$('#wa');wa.href='https://wa.me/'+String(S.whatsapp).replace(/\D/g,'');wa.hidden=false}
+  $('#yr').textContent=new Date().getFullYear();
+
+  /* archive grid */
+  var W=(window.WORKS||[]), grid=$('#grid'), filter='all', shown=0, STEP=24, list=[];
+  var names={room:'Installed room',art:'Artwork',studio:'From the studio'};
+  $$('.filters button').forEach(function(b){
+    var f=b.dataset.f;
+    $('.n',b).textContent=' '+(f==='all'?W.length:W.filter(function(w){return w[1]===f}).length);
+    b.addEventListener('click',function(){
+      filter=f;
+      $$('.filters button').forEach(function(x){var on=x===b;x.classList.toggle('on',on);x.setAttribute('aria-pressed',on)});
+      grid.innerHTML='';shown=0;render();
+    });
+  });
+  function render(){
+    list=W.filter(function(w){return filter==='all'||w[1]===filter});
+    var end=Math.min(list.length,shown+STEP), frag=document.createDocumentFragment();
+    for(var i=shown;i<end;i++){
+      var w=list[i], b=document.createElement('button');
+      b.type='button';b.className='tile rv';b.dataset.i=i;
+      var alt=w[2]||names[w[1]]+' from thehyden.art';
+      b.setAttribute('aria-label','Open: '+alt);
+      b.innerHTML='<img loading="lazy" decoding="async" width="800" height="800" alt="">';
+      var img=b.firstChild;img.src='img/g/'+w[0]+'.jpg';img.alt=alt;
+      frag.appendChild(b);
+    }
+    grid.appendChild(frag);
+    $$('.tile.rv:not(.in)',grid).forEach(watch);
+    shown=end;
+    $('#more').parentNode.hidden=shown>=list.length;
+  }
+  $('#more').addEventListener('click',function(){render()});
+  render();
+
+  /* lightbox: shared by the design sequence and the archive */
+  var lb=$('#lb'), lbImg=$('#lb-img'), items=[], idx=0, back=null;
+  function show(i){
+    idx=(i+items.length)%items.length;var it=items[idx];
+    lbImg.style.opacity=0;
+    var pre=new Image();pre.onload=pre.onerror=function(){lbImg.src=it.src;lbImg.alt=it.alt;lbImg.style.opacity=1};pre.src=it.src;
+    $('#lb-cap').textContent=it.cap;
+    $('#lb-count').textContent=(idx+1)+' / '+items.length;
+    var ig=$('#lb-ig');ig.hidden=!it.ig;if(it.ig)ig.href=it.ig;
+  }
+  function open(arr,i,from){items=arr;back=from;lb.classList.add('open');document.body.style.overflow='hidden';show(i);$('[data-close]',lb).focus()}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(back)back.focus()}
+  $('[data-close]',lb).addEventListener('click',close);
+  $('.lb-prev').addEventListener('click',function(){show(idx-1)});
+  $('.lb-next').addEventListener('click',function(){show(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('lb-stage'))close()});
+  document.addEventListener('keydown',function(e){
+    if(lb.classList.contains('open')){
+      if(e.key==='Escape')close();
+      else if(e.key==='ArrowLeft')show(idx-1);
+      else if(e.key==='ArrowRight')show(idx+1);
+      else if(e.key==='Tab'){var f=$$('button:not([hidden]),a:not([hidden])',lb);var a=f.indexOf(document.activeElement);if(e.shiftKey&&a<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&a===f.length-1){e.preventDefault();f[0].focus()}}
+    } else if(sheet.classList.contains('open')&&e.key==='Escape') menu(false);
+  });
+  var lbX=null;
+  lb.addEventListener('touchstart',function(e){lbX=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){if(lbX===null)return;var d=e.changedTouches[0].clientX-lbX;if(Math.abs(d)>50)show(idx+(d<0?1:-1));lbX=null});
+
+  /* design sequence: figures become keyboard-openable */
+  var dFigs=$$('#designs .row figure'), dItems=dFigs.map(function(f){
+    var img=$('img',f), piece=f.closest('.piece'), h=$('h3',piece), a=$('.meta a',piece);
+    return {src:img.getAttribute('src'),alt:img.alt,cap:$('.num',piece).textContent+'  '+h.firstChild.textContent.trim()+': '+img.alt,ig:a?a.href:''};
+  });
+  dFigs.forEach(function(f,i){
+    f.tabIndex=0;f.setAttribute('role','button');f.setAttribute('aria-label','Enlarge: '+$('img',f).alt);
+    f.addEventListener('click',function(){open(dItems,i,f)});
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(dItems,i,f)}});
+  });
+  grid.addEventListener('click',function(e){
+    var t=e.target.closest('.tile');if(!t)return;
+    var arr=list.map(function(w){return {src:'img/g/'+w[0]+'.jpg',alt:w[2]||names[w[1]],cap:w[2]||names[w[1]],ig:'https://www.instagram.com/'+w[3]+'/'}});
+    open(arr,+t.dataset.i,t);
+  });
+})();
+</script>
+</body>
+</html>

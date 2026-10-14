@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>thehyden.art · wallpaper shelf (demo)</title>
+<link rel="icon" href="brand/favicon.ico" sizes="any">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400&display=swap">
+<style>
+:root{--serif:"Hoefler Text","EB Garamond",Georgia,serif;--sans:"Instrument Sans",Arial,sans-serif;--paper:#fbfaf7;--wood:#6b4026;--wood2:#4a2a17;--ease:cubic-bezier(.2,.7,.1,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:#000;font-family:var(--serif);font-weight:400;-webkit-font-smoothing:antialiased}
+h1,h2,p{margin:0;font-weight:400}
+.top{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:28px clamp(16px,3vw,40px) 18px}
+.top h1{font-size:clamp(40px,6vw,92px);letter-spacing:-.03em;line-height:.95}
+.top p{font:400 14px/1.5 var(--sans);max-width:26em;text-align:right}
+.room{position:relative;padding:0 clamp(16px,3vw,40px) 40px}
+/* the rack */
+.rack{position:relative;margin:0 auto;max-width:1240px;padding:22px 26px 26px;border-radius:4px;
+  background:linear-gradient(90deg,rgba(0,0,0,.25),transparent 3%,transparent 97%,rgba(0,0,0,.25)),
+  repeating-linear-gradient(90deg,var(--wood) 0 7px,#734529 7px 9px,var(--wood) 9px 23px,#5f381f 23px 24px);
+  box-shadow:0 40px 60px -30px rgba(60,30,10,.55), inset 0 2px 0 rgba(255,255,255,.12)}
+.rack::before{content:"";position:absolute;left:-10px;right:-10px;top:-14px;height:16px;border-radius:3px;background:linear-gradient(var(--wood2),#2e180c);box-shadow:0 6px 10px rgba(0,0,0,.25)}
+.bays{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.bay{background:linear-gradient(#2a170c,#3a2213 12%,#3a2213);padding:14px 10px 10px;border-radius:2px;box-shadow:inset 0 10px 18px rgba(0,0,0,.55);display:flex;flex-direction:column;gap:12px}
+/* a roll */
+.roll{position:relative;height:clamp(56px,6.4vh,74px);border:0;padding:0;cursor:pointer;background:none;display:block;width:100%;transition:transform .55s var(--ease),filter .4s,opacity .4s}
+.roll .body{position:absolute;inset:0 0 0 14px;border-radius:0 22px 22px 0/0 22px 22px 0;background-image:var(--p);background-size:auto 260%;background-position:0 50%;
+  box-shadow:inset 0 9px 10px -6px rgba(255,255,255,.55),inset 0 -12px 12px -6px rgba(0,0,0,.45),0 6px 8px -4px rgba(0,0,0,.6)}
+.roll .body::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(rgba(0,0,0,.18),transparent 30%,rgba(255,255,255,.18) 45%,transparent 60%,rgba(0,0,0,.28))}
+.roll .end{position:absolute;left:0;top:0;width:34px;height:100%;border-radius:50%;background:radial-gradient(circle at 50% 50%,#3b2a1c 0 5px,#e9e1d3 6px 11px,var(--edge,#d9cfbf) 12px);box-shadow:inset -3px 0 4px rgba(0,0,0,.35)}
+.roll .tag{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:var(--paper);font:400 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:4px 7px 3px;opacity:0;transition:opacity .3s}
+.rack:hover .roll{filter:saturate(.6) brightness(.8)}
+.rack .roll:hover,.rack .roll:focus-visible{filter:none;transform:translateX(-14px) scale(1.06);z-index:2}
+.roll:hover .tag,.roll:focus-visible .tag{opacity:1}
+.hint{text-align:center;font:400 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;margin-top:22px}
+/* the unrolled view */
+.stage{position:fixed;inset:0;background:var(--paper);z-index:20;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);padding:clamp(20px,4vw,56px);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s}
+.stage.open{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+.hang{position:relative;display:flex;flex-direction:column;align-items:center}
+.hang .rod{width:100%;height:58px;border-radius:29px;background-image:var(--p);background-size:auto 260%;background-position:0 50%;position:relative;
+  box-shadow:inset 0 12px 12px -8px rgba(255,255,255,.55),inset 0 -16px 16px -8px rgba(0,0,0,.45),0 14px 18px -10px rgba(0,0,0,.5)}
+.hang .sheet{width:94%;height:0;margin-top:-10px;background-image:var(--p);background-size:100% auto;background-repeat:repeat-y;box-shadow:0 30px 40px -24px rgba(0,0,0,.45),inset 0 22px 18px -14px rgba(0,0,0,.35);transition:height 1.4s cubic-bezier(.55,0,.2,1) .15s;transform-origin:top}
+.stage.open .hang .sheet{height:calc(100vh - 170px)}
+.info{display:flex;flex-direction:column;justify-content:center;gap:16px;opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .9s,transform .8s var(--ease) .9s}
+.stage.open .info{opacity:1;transform:none}
+.info .k{font:400 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase}
+.info h2{font-size:clamp(44px,6vw,96px);letter-spacing:-.03em;line-height:.95}
+.info img{width:min(100%,520px);aspect-ratio:1;object-fit:cover;box-shadow:0 30px 50px -30px rgba(0,0,0,.45)}
+.info .cap{font:400 13px/1.4 var(--sans)}
+.back{align-self:flex-start;display:inline-flex;align-items:center;gap:14px;background:#000;color:var(--paper);border:0;border-radius:999px;padding:7px 7px 7px 22px;font:400 14px/1 var(--sans);cursor:pointer}
+.back span{width:38px;height:38px;border-radius:50%;background:#a5715c;color:#000;display:grid;place-items:center}
+@media (max-width:900px){.bays{grid-template-columns:1fr 1fr}.stage{grid-template-columns:1fr;overflow:auto}.stage.open .hang .sheet{height:50vh}}
+</style>
+</head>
+<body>
+<header class="top"><h1>The <i>wallpaper</i> shelf</h1><p>Demo for review. Her designs as rolls on a shop rack. Hover to pull one forward, click to unroll it.</p></header>
+<div class="room"><div class="rack"><div class="bays" id="bays"></div></div><p class="hint">Hover a roll · click to unroll</p></div>
+
+<div class="stage" id="stage" role="dialog" aria-modal="true" aria-label="Unrolled wallpaper">
+  <div class="hang"><div class="rod"></div><div class="sheet"></div></div>
+  <div class="info"><span class="k">thehyden.art · Wallpaper</span><h2 id="nm"></h2><img id="rm" alt=""><span class="cap" id="cp"></span><button class="back" id="back">Back to the shelf <span>↺</span></button></div>
+</div>
+
+<script>
+var D=[ // name, pattern image, room photo
+ ['Parrot garden','img/band/parrot.jpg','img/g/007.jpg'],['Coconut & Kolam','img/band/kolam.jpg','img/g/150.jpg'],['Muggu & pink elephants','img/band/muggu.jpg','img/g/166.jpg'],['Lotus & origami birds','img/band/origami.jpg','img/g/053.jpg'],
+ ['Floral trellis','img/wall-trellis.jpg','img/g/003.jpg'],['Blossoms','img/wall-blossom.jpg','img/g/004.jpg'],['Whispers in Bloom','img/wall-whispers.jpg','img/g/085.jpg'],['Motif & Monkey','img/wall-monkey.jpg','img/g/068.jpg'],
+ ['The Playroom','img/wall-playroom.jpg','img/g/023.jpg'],['Kerosene lamps','img/wall-lamps.jpg','img/g/163.jpg'],['Blush Botanica','img/wall-blush.jpg','img/g/070.jpg'],['White Lotus','img/wall-white-lotus.jpg','img/g/035.jpg'],
+ ['Thota','img/wall-thota.jpg','img/g/017.jpg'],['Folkscape','img/wall-folkscape.jpg','img/g/084.jpg'],['Rooted Reverie','img/wall-rooted.jpg','img/g/047.jpg'],['Lotus Whispers','img/wall-lotus-whispers.jpg','img/g/052.jpg']];
+var bays=document.getElementById('bays'),stage=document.getElementById('stage'),last=null;
+for(var b=0;b<4;b++){var bay=document.createElement('div');bay.className='bay';
+  for(var r=0;r<4;r++){var d=D[b*4+r],el=document.createElement('button');el.className='roll';el.style.setProperty('--p','url('+d[1]+')');el.setAttribute('aria-label','Unroll '+d[0]);
+    el.innerHTML='<span class="body"></span><span class="end"></span><span class="tag"></span>';el.querySelector('.tag').textContent=d[0];
+    el.onclick=(function(d,el){return function(){open(d,el)}})(d,el);bay.appendChild(el)}
+  bays.appendChild(bay)}
+function open(d,el){last=el;stage.style.setProperty('--p','url('+d[1]+')');var sh=stage.querySelector('.sheet'),rep=d[1].indexOf('band/')>-1;sh.style.backgroundSize=rep?'100% auto':'cover';sh.style.backgroundRepeat=rep?'repeat-y':'no-repeat';sh.style.backgroundPosition='50% 0';document.getElementById('nm').textContent=d[0];
+  var rm=document.getElementById('rm');rm.src=d[2];rm.alt=d[0]+' on a wall';document.getElementById('cp').textContent=d[0]+', installed';
+  stage.classList.remove('open');void stage.offsetWidth;stage.classList.add('open');document.getElementById('back').focus()}
+function close(){stage.classList.remove('open');if(last)last.focus()}
+document.getElementById('back').onclick=close;addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Wallpaper Library · thehyden.art</title>
+<link rel="icon" href="brand/favicon.ico" sizes="any">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Instrument+Sans:wght@400&display=swap">
+<style>:root{--serif:"Hoefler Text","EB Garamond",Georgia,serif;--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif}*{box-sizing:border-box}html,body{margin:0}body{background:#f6f1e8;font-family:var(--serif);font-weight:400;-webkit-font-smoothing:antialiased}h1{margin:0;font-weight:400}</style>
+<link rel="stylesheet" href="library.css">
+</head>
+<body>
+<main class="L-lib">
+  <header class="L-head">
+    <div><p class="L-eyebrow">thehyden.art</p><h1>The <i>Wallpaper</i> Library</h1></div>
+    <p>A curated collection of patterns, textures and timeless design, each one hand-painted by thehyden.art.</p>
+  </header>
+  <div class="L-cabinet" aria-label="Wallpaper display cabinet">
+    <div class="L-canopy L-wood-h"></div>
+    <div class="L-carcass"><div class="L-bays" id="lib-bays"></div></div>
+    <div class="L-plinth L-wood-h"></div>
+  </div>
+</main>
+<div class="L-veil" id="lib-veil"></div>
+<div class="L-preview" id="lib-preview" role="dialog" aria-modal="true" aria-labelledby="pv-name">
+  <div class="L-hang" id="lib-hang"></div>
+  <div class="L-info">
+    <p class="L-eyebrow">thehyden.art · Wallpaper</p>
+    <h2 id="lib-pv-name"></h2>
+    <figure><img id="lib-pv-room" alt=""><figcaption id="lib-pv-cap"></figcaption></figure>
+    <button class="L-close" id="lib-close" type="button">Return to the library <i aria-hidden="true">↺</i></button>
+  </div>
+</div>
+<script src="library.js"></script>
+</body>
+</html>

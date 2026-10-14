@@ -1,0 +1,107 @@
+/* The Wallpaper Library: walnut showroom shelf (shared by proposed.html and demo-shelf.html) */
+:root{--ivory:#f6f1e8;
+  --rh:clamp(52px,6.3vh,78px);--board:clamp(14px,1.5vw,20px);--weight:cubic-bezier(.22,.85,.32,1)}
+
+.L-lib{min-height:100svh;display:flex;flex-direction:column;padding:clamp(22px,3.4vh,40px) clamp(16px,3vw,48px) clamp(26px,4vh,48px);
+  background:radial-gradient(120% 70% at 50% 0%,#fbf8f2 0%,var(--ivory) 55%,#ece4d6 100%)}
+.L-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin-bottom:clamp(18px,3vh,34px)}
+.L-eyebrow{font:400 11px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;margin-bottom:14px}
+.L-head h1,.L-head h2{font-size:clamp(44px,6.4vw,104px);line-height:.92;letter-spacing:-.035em}
+.L-head h1 i,.L-head h2 i{letter-spacing:-.02em}
+.L-head p{font:400 15px/1.55 var(--sans);letter-spacing:.01em;max-width:22em;text-align:right;color:#2a2420}
+
+/* ================= cabinet ================= */
+.L-cabinet{position:relative;flex:1;display:flex;flex-direction:column;max-width:1480px;width:100%;margin:0 auto;
+  filter:drop-shadow(0 50px 40px rgba(40,22,10,.28)) drop-shadow(0 12px 10px rgba(40,22,10,.25))}
+.L-cabinet::after{content:"";position:absolute;left:4%;right:4%;bottom:-26px;height:40px;border-radius:50%;background:radial-gradient(closest-side,rgba(30,16,6,.45),transparent);filter:blur(6px);z-index:-1}
+.L-wood-h{background:url(img/shelf/walnut-h.jpg) 0 0/900px auto}
+.L-canopy{position:relative;height:clamp(34px,4.4vh,50px);margin:0 -16px;border-radius:3px 3px 0 0;
+  box-shadow:inset 0 2px 0 rgba(255,220,180,.18),inset 0 -6px 10px rgba(0,0,0,.45)}
+.L-canopy::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,214,170,.16),transparent 35%,rgba(0,0,0,.35));border-radius:inherit}
+.L-canopy::after{content:"";position:absolute;left:12px;right:12px;bottom:-9px;height:9px;background:inherit;background-position:0 -40px;box-shadow:inset 0 -3px 5px rgba(0,0,0,.55),0 5px 8px rgba(0,0,0,.35)}
+.L-carcass{position:relative;flex:1;display:flex;padding:0 clamp(16px,1.6vw,24px);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4)}
+.L-carcass::before,.L-carcass::after{content:"";position:absolute;top:0;bottom:0;width:clamp(16px,1.6vw,24px);background:url(img/shelf/walnut-v.jpg) 0 0/auto 900px}
+.L-carcass::before{left:0;box-shadow:inset -6px 0 10px rgba(0,0,0,.45),inset 2px 0 0 rgba(255,214,170,.14)}
+.L-carcass::after{right:0;box-shadow:inset 6px 0 10px rgba(0,0,0,.45),inset -2px 0 0 rgba(0,0,0,.4)}
+.L-bays{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--board);padding:var(--board) 0;
+  background:url(img/shelf/walnut-h.jpg) 0 0/900px auto}
+.L-bay{position:relative;display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:0;padding:clamp(10px,1.4vh,16px) clamp(8px,.8vw,12px) clamp(8px,1.2vh,14px) clamp(14px,1.2vw,18px);
+  background:linear-gradient(rgba(10,4,1,.72),rgba(18,9,4,.5) 40%,rgba(12,6,2,.62)),url(img/shelf/walnut-v.jpg) 0 0/auto 700px;
+  box-shadow:inset 0 18px 22px -6px rgba(0,0,0,.85),inset 0 -8px 12px -6px rgba(0,0,0,.6),inset 14px 0 18px -10px rgba(0,0,0,.7),inset -14px 0 18px -10px rgba(0,0,0,.7)}
+.L-bay::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 55% at 50% 0%,rgba(255,206,150,.16),transparent 70%);z-index:0}
+.L-bay::after{content:"";position:absolute;left:-1px;right:-1px;bottom:calc(var(--board) * -1);height:5px;background:linear-gradient(rgba(255,214,170,.28),transparent);pointer-events:none}
+.L-plinth{height:clamp(22px,3vh,32px);margin:0 -8px;border-radius:0 0 3px 3px;box-shadow:inset 0 3px 0 rgba(255,214,170,.16),inset 0 -8px 12px rgba(0,0,0,.5)}
+
+/* ================= a roll of wallpaper ================= */
+.L-roll{--h:calc(var(--rh) * var(--d,1));position:relative;z-index:1;display:block;width:100%;height:var(--rh);border:0;padding:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.L-roll .L-r{position:absolute;left:var(--off,0);right:0;top:50%;height:var(--h);margin-top:calc(var(--h) / -2);transform:translate3d(0,0,0);transition:transform .75s var(--weight)}
+.L-roll .L-shade{position:absolute;left:calc(var(--h) * .2);right:2%;bottom:calc(var(--h) * -.18);height:calc(var(--h) * .5);border-radius:50%;
+  background:radial-gradient(closest-side,rgba(0,0,0,.75),rgba(0,0,0,0));filter:blur(3px);transition:transform .75s var(--weight),opacity .75s var(--weight),filter .75s var(--weight)}
+.L-roll .L-body{position:absolute;top:0;bottom:0;left:calc(var(--h) * .18);right:0;overflow:hidden;
+  border-radius:0 calc(var(--h) * .2) calc(var(--h) * .2) 0 / 0 50% 50% 0;
+  background:var(--p) var(--x,0) 50%/auto 116% repeat-x}
+.L-roll .L-body::before{content:"";position:absolute;inset:0;border-radius:inherit;background:
+  linear-gradient(180deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.08) 14%,rgba(255,250,240,.38) 27%,rgba(255,250,240,.06) 40%,rgba(0,0,0,0) 55%,rgba(0,0,0,.22) 74%,rgba(0,0,0,.62) 100%),
+  linear-gradient(90deg,rgba(255,240,220,.14),rgba(0,0,0,0) 30%,rgba(0,0,0,.12) 100%)}
+.L-roll .L-body::after{content:"";position:absolute;left:0;right:0;top:64%;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.0),rgba(255,255,255,.55) 8%,rgba(0,0,0,.18) 9%,rgba(255,255,255,.35) 60%,rgba(255,255,255,0));opacity:.55}
+.L-roll .L-end{position:absolute;left:0;top:0;width:calc(var(--h) * .38);height:100%;border-radius:50%;
+  background:
+    radial-gradient(closest-side,#0d0703 0 30%,#3a2614 33%,#9b7247 36%,#b58955 44%,#8e6438 47%,rgba(0,0,0,0) 48%),
+    repeating-radial-gradient(closest-side,var(--paper,#efe8db) 0 1.6px,rgba(120,100,80,.55) 1.6px 2.1px),
+    var(--paper,#efe8db);
+  box-shadow:inset calc(var(--h) * -.05) 0 calc(var(--h) * .07) rgba(0,0,0,.4),inset calc(var(--h) * .03) calc(var(--h) * -.04) calc(var(--h) * .06) rgba(255,255,255,.4),-1px 2px 3px rgba(0,0,0,.45)}
+.L-roll .L-tag{position:absolute;right:calc(var(--h) * .5);top:50%;transform:translate(8px,-50%);opacity:0;background:rgba(246,241,232,.94);color:#1b1612;
+  font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 10px 5px;white-space:nowrap;transition:opacity .45s var(--weight),transform .6s var(--weight);box-shadow:0 6px 12px -6px rgba(0,0,0,.6)}
+@media (hover:hover){
+  .L-roll:hover .L-r,.L-roll:focus-visible .L-r{transform:translate3d(calc(var(--h) * -.34),-3px,0) scale(1.045)}
+  .L-roll:hover .L-shade,.L-roll:focus-visible .L-shade{transform:translate(calc(var(--h) * -.18),calc(var(--h) * .22)) scale(1.08,1.25);opacity:.75;filter:blur(7px)}
+  .L-roll:hover .L-tag,.L-roll:focus-visible .L-tag{opacity:1;transform:translate(0,-50%)}
+  .L-roll:hover{z-index:3}
+}
+.L-roll:focus-visible{outline:none}
+.L-roll:focus-visible .L-body{box-shadow:0 0 0 2px var(--ivory)}
+.L-roll.L-stock{cursor:default;pointer-events:none}
+.L-roll.L-away .L-r{opacity:0}
+
+/* ================= unrolled preview ================= */
+.L-veil{position:fixed;inset:0;z-index:90;background:rgba(246,241,232,0);visibility:hidden;transition:background .6s ease,backdrop-filter .6s ease,visibility 0s .6s}
+.L-veil.L-open{visibility:visible;background:rgba(246,241,232,.97);backdrop-filter:blur(6px);transition:background .6s ease,backdrop-filter .6s ease}
+.L-preview{position:fixed;inset:0;z-index:91;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,72px);padding:clamp(24px,5vh,56px) clamp(20px,5vw,80px);pointer-events:none}
+.L-preview.L-open{pointer-events:auto}
+.L-hang{position:relative;align-self:start;height:1px}
+.L-fly{position:fixed;z-index:92;left:0;top:0;transform-origin:0 0;will-change:transform}
+.L-fly .L-roll-in{position:absolute;inset:0;pointer-events:none}
+.L-sheet{position:absolute;left:calc(var(--sh) * .2);right:2.5%;top:calc(var(--sh) * .62);height:0;overflow:hidden;z-index:-1;
+  background:var(--sp) 50% 0/var(--ss) var(--sr);
+  box-shadow:0 40px 50px -30px rgba(40,22,10,.55),0 10px 14px -10px rgba(40,22,10,.4);transition:height 1.25s cubic-bezier(.6,0,.15,1)}
+.L-sheet::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.42),rgba(0,0,0,.08) 5%,transparent 12%),linear-gradient(90deg,rgba(0,0,0,.12),transparent 8%,transparent 92%,rgba(0,0,0,.14));pointer-events:none}
+.L-sheet.L-down{height:var(--sheetH)}
+.L-info{align-self:center;display:flex;flex-direction:column;gap:18px;opacity:0;transform:translateY(16px);transition:opacity .7s var(--weight),transform .9s var(--weight)}
+.L-preview.L-shown .L-info{opacity:1;transform:none;transition-delay:.15s}
+.L-info .L-eyebrow{margin:0}
+.L-info h2{font-size:clamp(46px,6vw,100px);letter-spacing:-.035em;line-height:.93}
+.L-info figure{margin:0;width:min(100%,460px)}
+.L-info img{width:100%;aspect-ratio:4/3.4;object-fit:cover;display:block;box-shadow:0 34px 50px -34px rgba(40,22,10,.6)}
+.L-info figcaption{font:400 12px/1.4 var(--sans);letter-spacing:.04em;margin-top:10px;color:#3a322b}
+.L-close{align-self:flex-start;display:inline-flex;align-items:center;gap:16px;background:#14100c;color:var(--ivory);border:0;border-radius:999px;padding:7px 7px 7px 24px;
+  font:400 14px/1 var(--sans);letter-spacing:.02em;cursor:pointer;position:relative;overflow:hidden;isolation:isolate;transition:color .45s ease}
+.L-close i{font-style:normal;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#000;position:relative}
+.L-close i::before{content:"";position:absolute;inset:0;border-radius:50%;background:#a5715c;z-index:-1;transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.L-close:hover{color:#000}.L-close:hover i::before{transform:scale(14)}
+
+@media (max-width:1100px){.L-bays{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:860px){
+  :root{--rh:clamp(48px,7vw,64px)}
+  .L-head{grid-template-columns:1fr}.L-head p{text-align:left}
+  .L-bays{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .L-preview{grid-template-columns:1fr;grid-template-rows:auto auto;overflow:auto;align-content:start}
+  .L-hang{height:40vh}
+  .L-info{gap:12px}
+  .L-info h2{font-size:42px}
+  .L-info img{aspect-ratio:16/9}
+}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+.L-lib h2{font-weight:400;margin:0}.L-lib p,.L-preview p,.L-preview h2{margin:0;font-weight:400}
+
+/* no italics anywhere (client preference) */
+.L-lib *,.L-preview *{font-style:normal!important}

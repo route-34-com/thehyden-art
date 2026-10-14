@@ -1,0 +1,1080 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>thehyden.art — Indian heritage, reimagined</title>
+<link rel="icon" href="brand/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="brand/fav-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="brand/fav-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="brand/fav-180.png">
+
+<meta name="description" content="Hand-painted Indian heritage wallpapers, wall decals and wall frames. Custom designs, shipped across India and worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f6efe2;--paper:#fbf7ef;--ink:#2d2a26;--pink:#d9577a;--blush:#f2c9c4;--sage:#7d9b80;--teal:#5f9c9a;--terra:#c96f4a;--gold:#c9a24a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--cream);color:var(--ink);font:400 17px/1.6 "Hoefler Text","EB Garamond",Garamond,Georgia,serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.01em}
+em{font-style:italic;color:var(--pink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:700}
+
+/* nav */
+nav{position:fixed;inset:14px 14px auto;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:10px 14px 10px 20px;background:rgba(251,247,239,.82);backdrop-filter:blur(10px);border:1px solid rgba(45,42,38,.08);border-radius:999px}
+.logo{font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:22px;text-decoration:none}
+.logo b{font-weight:600;color:var(--pink)}
+nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+nav ul a{text-decoration:none}nav ul a:hover{color:var(--pink)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border:0;padding:12px 22px;border-radius:999px;font:500 15px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{background:var(--pink);transform:translateY(-2px) rotate(-1.5deg)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:120px 20px 60px;max-width:1180px;margin:0 auto;position:relative}
+.hero h1{font-size:clamp(48px,7.4vw,104px)}
+.hero h1 .swash{display:inline-block;font-style:italic;color:var(--pink);transform:rotate(-3deg)}
+.hero p{max-width:440px;margin:22px 0 30px;font-size:19px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:30px;margin-top:40px;font-size:14px}
+.stats b{display:block;font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:32px;font-weight:400}
+.frame-stack{position:relative;height:min(620px,72vh)}
+.frame-stack figure{position:absolute;border-radius:200px 200px 14px 14px;overflow:hidden;border:8px solid var(--paper);box-shadow:0 30px 60px -25px rgba(80,40,20,.45);transition:transform .5s cubic-bezier(.2,.9,.3,1.3)}
+.frame-stack figure img{width:100%;height:100%;object-fit:cover}
+.f1{width:58%;height:82%;right:6%;top:0;transform:rotate(3deg)}
+.f2{width:44%;height:55%;left:0;bottom:0;transform:rotate(-6deg)}
+.f3{width:30%;aspect-ratio:1;border-radius:50%!important;right:0;bottom:4%;transform:rotate(8deg)}
+.frame-stack:hover .f1{transform:rotate(-1deg) translateY(-8px)}
+.frame-stack:hover .f2{transform:rotate(-10deg) translateX(-10px)}
+.frame-stack:hover .f3{transform:rotate(16deg) scale(1.06)}
+.lotus{position:absolute;width:120px;left:-40px;top:-30px;z-index:3}
+.lotus path{transform-origin:60px 80px;animation:bloom 1.6s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes bloom{from{transform:rotate(0) scale(.2);opacity:0}}
+.sticker{position:absolute;right:-6px;top:-16px;z-index:4;width:116px;height:116px;animation:spin 18s linear infinite}
+.sticker text{font:700 12.5px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;letter-spacing:.2em;fill:var(--ink)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.marquee{background:var(--pink);color:var(--paper);overflow:hidden;padding:16px 0;transform:rotate(-1.2deg);margin:20px -10px}
+.marquee div{display:flex;gap:40px;width:max-content;animation:slide 28s linear infinite;font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:28px;font-style:italic}
+.marquee span::after{content:"✿";margin-left:40px;font-style:normal;color:var(--blush)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:110px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(38px,5vw,64px);max-width:640px}
+.sec-head p{max-width:360px}
+
+/* offerings */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.offer{background:var(--paper);border-radius:22px;padding:14px 14px 26px;transition:transform .35s cubic-bezier(.2,.9,.3,1.4)}
+.offer:nth-child(1):hover{transform:rotate(-2deg) translateY(-6px)}
+.offer:nth-child(2):hover{transform:rotate(1.5deg) translateY(-6px)}
+.offer:nth-child(3):hover{transform:rotate(-1deg) translateY(-6px)}
+.offer img{aspect-ratio:4/5;object-fit:cover;border-radius:14px;margin-bottom:18px}
+.offer h3{font-size:30px;padding:0 8px}
+.offer p{padding:4px 8px 0;font-size:15.5px;opacity:.8}
+.offer .num{float:right;font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-style:italic;color:var(--terra)}
+
+/* try-on room */
+.tryon{background:var(--paper)}
+.room-wrap{display:grid;grid-template-columns:1fr 330px;gap:30px;align-items:start}
+.room{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;background:#e9dfcf;box-shadow:0 30px 70px -40px rgba(80,40,20,.6)}
+.wall{position:absolute;inset:0 0 22% 0;background-size:cover;background-position:center;transition:opacity .45s, filter .45s}
+.wall.swap{opacity:0;filter:blur(8px)}
+.light{position:absolute;inset:0 0 22% 0;pointer-events:none;background:radial-gradient(ellipse 40% 55% at 17% 30%,rgba(255,226,170,.38),transparent 70%),linear-gradient(180deg,rgba(40,25,10,.18),transparent 22%,transparent 72%,rgba(40,25,10,.28)),linear-gradient(90deg,rgba(40,25,10,.2),transparent 14%,transparent 86%,rgba(40,25,10,.22))}
+.skirt{position:absolute;left:0;right:0;bottom:22%;height:2.6%;background:#f4ece0;box-shadow:0 -1px 0 rgba(0,0,0,.08),0 3px 6px rgba(0,0,0,.18)}
+.floor{position:absolute;inset:78% 0 0;background:repeating-linear-gradient(90deg,#d7c3a6 0 90px,#cdb796 90px 92px);box-shadow:inset 0 10px 18px -8px rgba(0,0,0,.25)}
+.room svg{position:absolute;inset:0;width:100%;height:100%}
+.room .tag{position:absolute;left:18px;top:16px;background:var(--paper);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;box-shadow:0 6px 16px -8px rgba(0,0,0,.3)}
+.swatches{display:grid;gap:12px}
+.swatch{display:flex;align-items:center;gap:14px;background:var(--cream);border:2px solid transparent;border-radius:16px;padding:8px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:border-color .2s, transform .2s}
+.swatch:hover{transform:translateX(4px)}
+.swatch[aria-pressed=true]{border-color:var(--pink);background:#fff}
+.swatch i{width:56px;height:56px;border-radius:12px;background-size:cover;flex:none}
+.swatch b{display:block;font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-weight:500;font-size:19px}
+.swatch small{opacity:.7}
+.shuffle{margin-top:6px;width:100%;justify-content:center}
+.swatches{display:grid;gap:8px}
+.swatch{padding:6px!important;gap:12px!important}
+.swatch i{width:46px!important;height:46px!important}
+.swatch b{font-size:17px!important}
+.tints,.shuffle{grid-column:1/-1}
+.tints{background:var(--cream);border-radius:16px;padding:12px 14px;margin-top:4px}
+.tints p{font-weight:700;font-size:14px;margin-bottom:8px}
+.tints p small{font-weight:400;opacity:.65;margin-left:4px}
+.tints div{display:flex;gap:8px;flex-wrap:wrap}
+.tints button{width:30px;height:30px;border-radius:50%;border:2px solid rgba(45,42,38,.2);cursor:pointer;transition:transform .2s}
+.tints button:hover{transform:scale(1.15)}
+.tints button[aria-pressed=true]{border-color:var(--pink);box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--pink)}
+.tints .note{display:none;font-weight:400;font-size:13px;opacity:.7;margin:8px 0 0}
+.tints.off div{opacity:.35;pointer-events:none}
+.tints.off .note{display:block}
+
+
+
+/* try-on v2 */
+.rooms{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.rooms button,.rooms label,.chip{border:1.5px solid var(--ink);background:none;color:var(--ink);border-radius:999px;padding:8px 16px;font:500 14px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;cursor:pointer}
+.rooms [aria-pressed=true],.chip[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.own-btn{background:var(--pink)!important;color:#fff!important;border-color:var(--pink)!important}
+.room .f-living,.room .f-bedroom,.room .f-entry{display:none}
+.room[data-room=living] .f-living,.room[data-room=bedroom] .f-bedroom,.room[data-room=entry] .f-entry{display:inline}
+.own-photo,.own-hint,.grip,.handle{display:none}
+.room.own .own-photo{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.room.own .floor,.room.own .skirt,.room.own .light,.room.own svg,.room.own .plain{display:none}
+.room.own .wall{mix-blend-mode:multiply;cursor:move;outline:2px dashed rgba(255,255,255,.9);touch-action:none;opacity:.92}
+.room.own .grip{display:block;position:absolute;right:-9px;bottom:-9px;width:22px;height:22px;border-radius:50%;background:var(--pink);border:3px solid #fff;cursor:nwse-resize}
+.room.own .own-hint{display:block;position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:rgba(0,0,0,.6);color:#fff;font-size:13px;padding:6px 12px;border-radius:999px;white-space:nowrap;pointer-events:none}
+.plain{position:absolute;inset:0 0 22% 0;background:#efe6d8;clip-path:inset(0 100% 0 0)}
+.room.comparing .handle{display:block;position:absolute;top:0;bottom:22%;width:3px;background:#fff;transform:translateX(-50%);cursor:ew-resize;touch-action:none;z-index:3}
+.handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:#fff;display:grid;place-items:center;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.room.own~.under #compare{display:none}
+.under{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.scale{display:flex;gap:10px;align-items:center;font-size:14px;font-weight:500}
+.scale input{accent-color:var(--pink);width:160px}
+.scale.off{opacity:.35;pointer-events:none}
+.panel{display:grid;gap:12px;align-content:start}
+.tabs{display:flex;background:var(--cream);border-radius:999px;padding:4px}
+.tabs button{flex:1;border:0;background:none;padding:8px;border-radius:999px;font:600 14px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--ink);color:var(--paper)}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.thumbs button{border:0;background:none;padding:0;cursor:pointer;text-align:center;font:500 11px/1.2 "Hoefler Text","EB Garamond",Garamond,Georgia,serif;color:var(--ink)}
+.thumbs button[hidden]{display:none}
+.thumbs i{display:block;aspect-ratio:1;border-radius:12px;background-size:cover;border:2px solid transparent;transition:transform .2s;margin-bottom:4px}
+.thumbs button:hover i{transform:scale(1.06)}
+.thumbs button[aria-pressed=true] i{border-color:var(--pink);box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--pink)}
+.thumbs span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pick{background:var(--cream);border-radius:16px;padding:14px}
+.pick b{display:block;font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:21px;font-weight:500}
+.pick small{opacity:.7;font-size:13px}
+.pick span{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px;font-size:13px}
+.pick .btn{padding:9px 16px;font-size:13px}
+.more{display:flex;margin:28px auto 0}
+.more[hidden]{display:none}
+
+/* gallery */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{border:1.5px solid var(--ink);background:none;border-radius:999px;padding:8px 18px;font:500 14px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;cursor:pointer;color:var(--ink)}
+.filters button.on{background:var(--ink);color:var(--paper)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;grid-auto-flow:dense}
+.tile{position:relative;aspect-ratio:1;border-radius:18px;overflow:hidden;cursor:zoom-in;transition:opacity .3s, transform .3s}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile.big{grid-column:span 2;grid-row:span 2}
+.tile:hover img{transform:scale(1.05)}
+.tile figcaption{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(251,247,239,.92);padding:8px 14px;border-radius:12px;font-size:14px;transform:translateY(130%);transition:transform .35s}
+.tile:hover figcaption,.tile:focus-visible figcaption{transform:none}
+.tile.hide{display:none}
+
+
+/* estimator + form */
+.plan{background:var(--cream)}
+.plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.card{background:var(--paper);border-radius:24px;padding:26px;box-shadow:0 20px 50px -35px rgba(80,40,20,.5)}
+.units{display:inline-flex;background:var(--cream);border-radius:999px;padding:4px;margin-bottom:18px}
+.units button{border:0;background:none;padding:7px 16px;border-radius:999px;font:600 13px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;cursor:pointer;color:var(--ink)}
+.units [aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.dims{display:flex;align-items:end;gap:12px;margin-bottom:14px}
+.dims .x{font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:28px;padding-bottom:6px}
+.dims label,.enq label,.row{display:block;font-size:13px;font-weight:600;flex:1;position:relative}
+.dims input{font:500 30px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;padding:8px 44px 8px 14px}
+.dims .u{position:absolute;right:14px;bottom:14px;font-size:14px;opacity:.6}
+.plan input:not([type=checkbox]):not([type=file]),.plan select,.plan textarea{display:block;width:100%;margin-top:6px;border:1.5px solid rgba(45,42,38,.18);background:var(--cream);color:var(--ink);border-radius:12px;padding:11px 14px;font:400 15px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;outline:none;transition:border-color .2s}
+.plan input:focus,.plan select:focus,.plan textarea:focus{border-color:var(--pink)}
+.row{margin-bottom:12px}
+.check{display:flex;gap:8px;align-items:center;font-size:14px;margin-bottom:16px;cursor:pointer}
+.check input{accent-color:var(--pink);width:18px;height:18px}
+.mini{background:var(--cream);border-radius:16px;padding:16px;display:grid;place-items:center;gap:8px;height:210px}
+.mini-wall{position:relative;max-width:100%;max-height:150px;height:150px;border-radius:6px;background-size:cover;background-color:#fff;background-blend-mode:multiply;box-shadow:0 10px 20px -12px rgba(0,0,0,.5);transition:aspect-ratio .3s}
+.mini .person{position:absolute;bottom:0;left:12%;fill:var(--ink);opacity:.75}
+.mini small{opacity:.65;font-size:12px}
+.result{display:grid;grid-template-columns:1fr 1.6fr;gap:12px;margin:16px 0 8px}
+.result div{background:var(--cream);border-radius:14px;padding:12px 14px}
+.result small{display:block;font-size:12px;opacity:.7}
+.result b{font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:24px;font-weight:500}
+#price{color:var(--pink)}
+.plan .dims input{font:500 26px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;padding:8px 40px 8px 14px}
+.fine{font-size:12px;opacity:.65;margin-bottom:16px}
+.est-cta{display:flex;gap:10px;flex-wrap:wrap}
+.enq{display:grid;gap:14px}
+.enq h3{font-size:30px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.file{border:1.5px dashed rgba(45,42,38,.3);border-radius:12px;padding:14px;text-align:center;cursor:pointer;font-weight:500!important}
+.file input{display:none}
+.hp{position:absolute;left:-9999px}
+.form-msg{font-size:14px;min-height:20px}
+.form-msg.ok{color:#2f7a4f}.form-msg.err{color:#b3261e}
+/* whatsapp */
+.wa-fab{position:fixed;right:18px;bottom:18px;z-index:55;display:flex;align-items:center;gap:8px;background:#25d366;color:#fff;text-decoration:none;padding:12px 18px 12px 14px;border-radius:999px;font:600 15px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;box-shadow:0 12px 28px -10px rgba(0,0,0,.45);transition:transform .2s}
+.wa-fab:hover{transform:translateY(-3px) rotate(-2deg)}
+.wa-fab svg{width:26px;height:26px}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.faq h2{font-size:clamp(38px,5vw,60px);margin:6px 0 16px}
+.faq .btn{margin-top:22px}
+.qa details{border-bottom:1px solid rgba(45,42,38,.15);padding:18px 0}
+.qa summary{cursor:pointer;list-style:none;font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:21px;display:flex;justify-content:space-between;gap:16px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:24px;color:var(--pink);transition:transform .3s}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa p{margin-top:10px;opacity:.8;max-width:600px}
+@media (max-width:900px){.plan-grid,.faq-grid{grid-template-columns:1fr}.faq-grid{gap:30px}.two{grid-template-columns:1fr}.wa-fab span{display:none}.result{grid-template-columns:1fr}.result b{font-size:22px}.wa-fab{padding:14px;bottom:76px}.dims input{font-size:24px}}
+
+/* story */
+.story{background:var(--ink);color:var(--paper)}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.story h2{font-size:clamp(40px,5vw,66px)}
+.story em{color:var(--blush)}
+.story p{opacity:.85;margin-top:20px;max-width:480px}
+.story .pics{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.story .pics img{border-radius:18px;aspect-ratio:3/4;object-fit:cover}
+.story .pics img:nth-child(2){margin-top:60px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:80px;counter-reset:s}
+.steps div{border-top:1px solid rgba(251,247,239,.25);padding-top:18px;counter-increment:s}
+.steps div::before{content:"0" counter(s);font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-style:italic;color:var(--blush);font-size:22px}
+.steps h3{font-size:22px;margin:6px 0}
+.steps p{font-size:15px;opacity:.75;margin:0}
+
+
+/* founder */
+.founder .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.portrait{position:relative;max-width:440px;margin:0 auto}
+.portrait img{border-radius:240px 240px 20px 20px;border:10px solid var(--paper);box-shadow:0 40px 70px -35px rgba(80,40,20,.55);transform:rotate(-2.5deg);transition:transform .5s cubic-bezier(.2,.9,.3,1.4)}
+.portrait:hover img{transform:rotate(1deg) scale(1.02)}
+.portrait .hi{position:absolute;right:-14px;top:22%;background:var(--pink);color:var(--paper);font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-style:italic;font-size:22px;padding:10px 18px;border-radius:999px;transform:rotate(8deg);box-shadow:0 10px 20px -10px rgba(0,0,0,.4);animation:wave 3s ease-in-out infinite}
+@keyframes wave{50%{transform:rotate(-4deg) translateY(-6px)}}
+.portrait .leaf{position:absolute;left:-30px;bottom:30px;width:90px;transform:rotate(-20deg)}
+.founder h2{font-size:clamp(46px,6vw,84px)}
+.founder h2 .name{position:relative;display:inline-block;font-style:italic;color:var(--pink)}
+.founder h2 .name svg{position:absolute;left:0;bottom:-12px;width:100%;height:18px}
+.founder h2 .name path{stroke-dasharray:400;stroke-dashoffset:400;transition:stroke-dashoffset 1.4s .3s ease}
+.founder .in h2 .name path{stroke-dashoffset:0}
+.founder blockquote{font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:clamp(22px,2.2vw,28px);line-height:1.35;margin:28px 0;padding-left:22px;border-left:3px solid var(--blush)}
+.founder p{max-width:520px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips span{background:var(--paper);border:1.5px solid rgba(45,42,38,.15);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:500}
+@media (max-width:900px){
+  .gallery{grid-template-columns:repeat(2,1fr);gap:10px}.founder .grid{grid-template-columns:1fr;gap:50px}.portrait .hi{right:0}}
+
+/* cta */
+.cta{text-align:center;position:relative;overflow:hidden}
+.cta h2{font-size:clamp(46px,8vw,120px)}
+.cta p{margin:18px auto 34px;max-width:480px}
+footer{padding:30px 0 40px;font-size:14px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(45,42,38,.12)}
+
+/* lightbox */
+dialog{border:0;background:transparent;max-width:min(92vw,900px);margin:auto;padding:0}
+dialog::backdrop{background:rgba(30,24,20,.82);backdrop-filter:blur(6px)}
+dialog img{max-height:78vh;border-radius:16px;margin:0 auto}
+dialog .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--paper);margin-top:14px}
+dialog .bar button,dialog .bar a{background:var(--paper);color:var(--ink);border:0;border-radius:999px;padding:9px 16px;font:500 14px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;cursor:pointer;text-decoration:none}
+
+/* petal confetti */
+.petal{position:fixed;pointer-events:none;z-index:99;font-size:22px;animation:fall 1.4s ease-in forwards}
+@keyframes fall{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  nav ul{display:none}
+  .hero{grid-template-columns:1fr;padding-top:110px}
+  .frame-stack{height:440px}
+  .offers{grid-template-columns:1fr}
+  .room-wrap{grid-template-columns:1fr}
+  .swatches{grid-template-columns:repeat(2,1fr)}
+  .swatch i{width:44px;height:44px}
+  .story .grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  section{padding:80px 0}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+/* shop */
+.shop{padding:90px 0;background:var(--paper)}
+.shop-filters{display:flex;gap:8px;margin:0 0 26px;flex-wrap:wrap}
+.shop-filters button{border:0;background:var(--cream);padding:9px 18px;border-radius:999px;font:500 14px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;cursor:pointer;color:var(--ink)}
+.shop-filters button.on{background:var(--ink);color:var(--paper)}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.prod{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 1px 0 rgba(0,0,0,.05);transition:transform .25s,box-shadow .25s}
+.prod:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 18px 40px -22px rgba(45,42,38,.35)}
+.prod-img{display:block;width:100%;aspect-ratio:4/3;border:0;background:#eee center/cover;cursor:pointer}
+.prod-info{padding:14px 16px 16px}.prod-info h3{margin:0;font:600 20px "Hoefler Text","EB Garamond",Garamond,Georgia,serif}.prod-info p{margin:2px 0 12px;font-size:14px;opacity:.7}
+.prod-row{display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.btn.small{padding:8px 16px;font-size:14px}
+.cart-btn{position:relative;border:0;background:none;cursor:pointer;font:500 15px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;color:var(--ink);padding:8px}
+.cart-n{position:absolute;top:0;right:-4px;background:var(--pink);color:#fff;font-size:11px;min-width:18px;height:18px;border-radius:9px;display:grid;place-items:center}
+.cart-n[hidden]{display:none}
+dialog.sheet{border:0;border-radius:26px;padding:0;max-width:880px;width:calc(100% - 32px);background:var(--paper);color:var(--ink)}
+dialog.sheet::backdrop{background:rgba(45,42,38,.55)}
+.sheet .x{position:absolute;top:12px;right:14px;border:0;background:#fff;width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer}
+.pd-grid{display:grid;grid-template-columns:1fr 1fr}
+#pd-img{background:#eee center/cover;min-height:420px}
+.pd-body{padding:28px;display:flex;flex-direction:column;gap:14px}
+.pd-body h3{margin:0;font:600 30px "Hoefler Text","EB Garamond",Garamond,Georgia,serif}.pd-body .sku{font-size:12px;letter-spacing:.08em;opacity:.55}
+#pd-mats{display:grid;gap:8px}
+#pd-mats label{display:flex;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:10px 14px;cursor:pointer}
+#pd-mats span{display:flex;justify-content:space-between;flex:1}#pd-mats small{opacity:.65}
+.pd-size{display:flex;gap:10px;align-items:end}.pd-size label{display:grid;font-size:13px;gap:4px}
+.pd-size input{width:90px;font:500 20px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;padding:8px 10px;border:1.5px solid #e2d8c7;border-radius:12px;background:#fff}
+.pd-total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed #d9cdb9;padding-top:12px}
+#pd-price{font:600 28px "Hoefler Text","EB Garamond",Garamond,Georgia,serif}
+.cart-body{padding:28px}.cart-body h3{margin:0 0 14px;font:600 28px "Hoefler Text","EB Garamond",Garamond,Georgia,serif}
+#cart-items{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+#cart-items li{display:grid;grid-template-columns:56px 1fr auto 28px;gap:12px;align-items:center;background:#fff;border-radius:14px;padding:8px}
+#cart-items li.empty{display:block;padding:18px;opacity:.7}
+#cart-items i{width:56px;height:56px;border-radius:10px;background:#eee center/cover}
+#cart-items small{opacity:.65}#cart-items button{border:0;background:none;font-size:20px;cursor:pointer}
+.cart-sum{display:flex;justify-content:space-between;margin:16px 0 4px;font:600 22px "Hoefler Text","EB Garamond",Garamond,Georgia,serif}
+.cart-note{font-size:13px;opacity:.65;margin:0 0 16px}
+#checkout{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#checkout input,#checkout textarea{font:400 15px "Hoefler Text","EB Garamond",Garamond,Georgia,serif;padding:11px 12px;border:1.5px solid #e2d8c7;border-radius:12px;background:#fff}
+#checkout .full{grid-column:1/-1}#checkout[hidden]{display:none}
+#cart-done{text-align:center;padding:18px}#cart-done[hidden]{display:none}
+@media (max-width:760px){.pd-grid{grid-template-columns:1fr}#pd-img{min-height:220px}#checkout{grid-template-columns:1fr}}
+
+/* ===== thehyden.art refresh: white page, pastel accents, black letters only ===== */
+:root{--cream:#ffffff;--paper:#ffffff;--ink:#111111;--pink:#111111;--terra:#111111;
+  --blush:#f7ddd8;--sage:#dfe9da;--teal:#dbe9ee;--gold:#f4eac6;
+  --p-blush:#f7ddd8;--p-sage:#dfe9da;--p-sky:#dbe9ee;--p-butter:#f5ecc8;--p-lilac:#e8e2f1}
+body{background:#fff;color:#111}
+em,.swash,.logo b{color:#111!important}
+.btn{background:var(--p-blush);color:#111;box-shadow:inset 0 0 0 1px #111}
+.btn:hover{background:var(--p-sage);color:#111}
+.btn.ghost{background:#fff;color:#111;box-shadow:inset 0 0 0 1px #111}
+.btn.ghost:hover{background:var(--p-sky);color:#111}
+.rooms [aria-pressed=true],.chip[aria-pressed=true],.tabs button.on,.filters button.on,.units [aria-pressed=true]{background:var(--p-blush);color:#111;border-color:#111}
+.own-btn{background:var(--p-butter)!important;color:#111!important;border-color:#111!important}
+.marquee{background:var(--p-sage);color:#111;transform:none;margin:0}
+.marquee span::after{color:#111}
+.story{background:var(--p-blush);color:#111}
+.story em,.steps div::before{color:#111}
+.story p{opacity:1}
+.portrait .hi{background:var(--p-butter);color:#111}
+.wa-fab{background:#fff;color:#111;box-shadow:0 0 0 1px #111,0 10px 24px -12px rgba(0,0,0,.4)}
+.grip{background:var(--p-blush)!important;border-color:#111!important}
+
+/* hero: one big image, full screen */
+.hero-x{position:relative;height:100svh;min-height:560px;overflow:hidden;background:#f3f1ee}
+.hx-slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.6s ease,transform 7s ease-out}
+.hx-slides img.on{opacity:1;transform:scale(1)}
+.hx-card{position:absolute;left:clamp(16px,4vw,56px);bottom:clamp(16px,6vh,64px);max-width:560px;background:rgba(255,255,255,.94);padding:clamp(22px,3vw,38px);border-radius:4px}
+.hx-card .eyebrow{font-weight:500}
+.hx-card h1{font-size:clamp(34px,4.2vw,62px);margin:14px 0 16px}
+.hx-card p{font-size:17px}
+.hx-card .ctas{margin-top:22px}
+.hx-dots{position:absolute;right:clamp(16px,4vw,56px);bottom:clamp(16px,6vh,64px);display:flex;gap:8px}
+.hx-dots button{width:28px;height:3px;border:0;background:rgba(255,255,255,.6);cursor:pointer;padding:0}
+.hx-dots button[aria-current=true]{background:#fff}
+.hx-cap{position:absolute;right:clamp(16px,4vw,56px);top:96px;background:rgba(255,255,255,.94);padding:7px 13px;border-radius:999px;font-size:13px}
+
+/* trust strip */
+.trust{border-bottom:1px solid #eee}
+.trust ul{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:28px 0;text-align:center}
+.trust li{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:14.5px}
+.trust svg{width:30px;height:30px;stroke:#111;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.trust b{font-weight:500}
+.trust small{color:#111;opacity:.7;font-size:13px}
+
+/* architect-led */
+.arch-led .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.arch-led img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.arch-led h2{font-size:clamp(36px,4.4vw,60px)}
+.arch-led .lead{margin:20px 0 30px;max-width:34em;font-size:17.5px}
+.points{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.points div{padding:22px;border-radius:4px}
+.points div:nth-child(1){background:var(--p-blush)}.points div:nth-child(2){background:var(--p-sage)}
+.points div:nth-child(3){background:var(--p-sky)}.points div:nth-child(4){background:var(--p-butter)}
+.points h3{font-size:21px;margin-bottom:6px}
+.points p{font-size:15px}
+
+/* projects */
+.projects .list{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:10px}
+.proj{padding:26px 22px 22px;border-radius:4px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.proj:hover{transform:translateY(-4px)}
+.proj:nth-child(5n+1){background:var(--p-blush)}.proj:nth-child(5n+2){background:var(--p-sky)}.proj:nth-child(5n+3){background:var(--p-sage)}.proj:nth-child(5n+4){background:var(--p-butter)}.proj:nth-child(5n+5){background:var(--p-lilac)}
+.proj .k{font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.proj h3{font-size:clamp(22px,1.9vw,28px);margin:10px 0 4px}
+.proj .where{font-size:14.5px}
+.reach{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.reach div{border:1px solid #111;border-radius:4px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.reach b{font:400 clamp(20px,2vw,28px)/1.1 "Hoefler Text","EB Garamond",Garamond,Georgia,serif}
+
+/* try-on with real rooms */
+.room.real{aspect-ratio:var(--ar,1);width:min(100%,calc(74svh * var(--ar,1)));margin-inline:auto;background:#eee}
+.room .base{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.room.real:not(.own) .wall{inset:0;clip-path:var(--clip)}
+.room .shade{position:absolute;inset:0;clip-path:var(--clip);pointer-events:none;background:var(--shade);mix-blend-mode:multiply}
+.room.real .plain{inset:0;background:var(--photo) center/cover}
+.room.real.comparing .handle{bottom:0}
+.room.own .base,.room.own .shade{display:none}
+
+@media(max-width:900px){
+  .trust ul{grid-template-columns:1fr 1fr}
+  .arch-led .grid{grid-template-columns:1fr}
+  .points{grid-template-columns:1fr}
+  .projects .list{grid-template-columns:1fr 1fr}
+  .reach{grid-template-columns:1fr}
+  .hx-card{left:12px;right:12px;bottom:12px;max-width:none}
+  .hx-dots{top:84px;bottom:auto}
+  .hx-cap{display:none}
+}
+@media(prefers-reduced-motion:reduce){.hx-slides img{transition:opacity .4s ease;transform:none!important}}
+
+/* ===== round 2: Hoefler Text, no empty space, logo, parrot offer ===== */
+body{font-family:"Hoefler Text","EB Garamond",Garamond,Georgia,serif;font-size:18px;line-height:1.55}
+h1,h2,h3,.logo{font-weight:400!important;letter-spacing:0}
+.logo{display:inline-flex;align-items:center;gap:10px;font-size:21px}
+.logo img{width:40px;height:40px;border-radius:50%;display:block}
+section{padding:34px 0}
+.sec-head{margin-bottom:18px}
+.trust ul{padding:18px 0}
+.marquee{padding:10px 0}
+.offers{gap:12px}.offer img{border-radius:4px;margin-bottom:10px}
+.gallery{gap:8px}
+.projects .list,.points,.reach{gap:10px}
+.story .grid{gap:28px}
+.cta{padding:40px 0}
+.cta p{margin:12px auto 20px}
+footer{padding:20px 0 24px}
+@media(max-width:900px){section{padding:26px 0}}
+
+
+/* ===== round 3 ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1320px}
+/* one calm hover language everywhere: fills, underlines, a slow zoom inside frames. Nothing tilts or jumps. */
+.btn,.btn:hover,.btn:active,.wa-fab,.wa-fab:hover,.offer,.offer:hover,.proj,.proj:hover,.portrait:hover img,.swatch:hover,.prod:hover{transform:none!important}
+.btn{transition:background-color .3s ease,box-shadow .3s ease}
+.btn:hover{background:#f1cbc4}
+.btn.ghost:hover{background:var(--p-blush)}
+.wa-fab{transition:background-color .3s ease}.wa-fab:hover{background:var(--p-blush)}
+nav ul a{position:relative;color:#111!important}
+nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:#111;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.offer{background:none;border-radius:0;padding:0}
+.offer .ph{overflow:hidden;border-radius:4px;margin-bottom:10px}
+.offer img{margin:0;border-radius:0;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.offer:hover img{transform:scale(1.04)}
+.offer h3{padding:0}.offer p{padding:0}
+.proj{transition:box-shadow .3s ease}.proj:hover{box-shadow:inset 0 0 0 1px #111}
+.tile img,.thumbs button i{transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.qa summary{transition:opacity .2s}.qa summary:hover{opacity:.65}
+/* fill the empty space */
+.qa{columns:2;column-gap:40px}.qa details{break-inside:avoid}
+.faq-grid{grid-template-columns:.6fr 1.4fr;gap:40px}
+.cta h2{font-size:clamp(40px,6vw,86px)}
+@media(max-width:900px){.qa{columns:1}}
+
+/* ---- the parrot delivers an offer ---- */
+.parrot-fly{position:fixed;left:0;top:0;width:var(--pw,170px);z-index:70;pointer-events:none;opacity:0;will-change:transform}
+.parrot-fly .pose{transform:rotate(44deg) scaleX(-1)}
+.parrot-fly svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 10px 12px rgba(40,40,20,.28))}
+.env{position:fixed;left:0;top:0;width:132px;height:88px;z-index:69;pointer-events:none;opacity:0;perspective:600px;will-change:transform}
+.env>*{position:absolute;inset:0}
+.env-back{background:#f6eedf;border-radius:4px;box-shadow:0 12px 22px -12px rgba(60,40,20,.45)}
+.env-letter{inset:8px 10px auto;height:70px;background:#fff;border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.12);display:flex;flex-direction:column;gap:6px;padding:10px 12px}
+.env-letter i{display:block;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--p-blush),var(--p-sage),var(--p-sky),var(--p-butter))}
+.env-letter b{display:block;height:3px;width:70%;background:#e7e2da;border-radius:2px}
+.env-front svg{width:100%;height:100%;display:block}
+.env-flap{height:58px;transform-origin:50% 0;transform-style:preserve-3d;z-index:3}
+.env-flap>span{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.env-flap .out{background:linear-gradient(180deg,#efe3cc,#f3e9d7)}
+.env-flap .in{background:var(--p-blush);transform:rotateX(180deg)}
+.env-seal{position:absolute;left:50%;top:40px;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:#111 url(brand/fav-48.png) center/cover;box-shadow:0 2px 4px rgba(0,0,0,.35);z-index:4;backface-visibility:hidden}
+.offer-wrap{position:fixed;left:0;right:0;bottom:0;z-index:68;display:flex;justify-content:center;pointer-events:none;padding:0 12px}
+.offer-sheet{pointer-events:auto;position:relative;width:min(560px,100%);background:#fff;border:1px solid #111;border-bottom:0;border-radius:8px 8px 0 0;padding:22px 24px 22px;box-shadow:0 -18px 40px -24px rgba(0,0,0,.35);transform-origin:50% 100%}
+.offer-sheet[hidden]{display:none}
+.offer-sheet .band{position:absolute;inset:0 0 auto;height:6px;border-radius:8px 8px 0 0;background:linear-gradient(90deg,var(--p-blush),var(--p-sage),var(--p-sky),var(--p-butter))}
+.offer-sheet .k{font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.offer-sheet h3{font-size:26px;margin:4px 0 6px}
+.offer-sheet p{font-size:16px}
+.offer-sheet .acts{margin-top:14px}
+.offer-sheet .x{position:absolute;right:12px;top:14px;width:34px;height:34px;border-radius:50%;border:1px solid #111;background:#fff;color:#111;font-size:18px;line-height:1;cursor:pointer;transition:background-color .3s}
+.offer-sheet .x:hover{background:var(--p-blush)}
+@media(max-width:700px){.parrot-fly{--pw:118px}.env{transform-origin:0 0}}
+
+/* project cards: real storefront photos (fall back to the name if a photo is missing) */
+.proj{justify-content:flex-start;gap:12px;padding:16px 16px 18px;min-height:0}
+.clogo{display:grid;place-items:center;background:#eee;border-radius:4px;overflow:hidden;aspect-ratio:4/5}
+.clogo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.proj:hover .clogo img{transform:scale(1.04)}
+.clogo .cname{display:none;font-size:clamp(22px,1.9vw,28px);text-align:center;line-height:1.1;padding:12px}
+.clogo.none{background:rgba(255,255,255,.6)}.clogo.none .cname{display:block}
+.proj .where{font-size:14.5px}.proj .where b{font-weight:400}
+.proj:has(.clogo.none) .where b{display:none}
+
+/* parrot button in the hero */
+.parrot-btn{position:absolute;left:clamp(16px,4vw,56px);bottom:clamp(20px,6vh,64px);z-index:5;display:flex;align-items:center;gap:12px;padding:8px 18px 8px 8px;border:1px solid #111;border-radius:999px;background:#fff;color:#111;font:inherit;font-size:16px;cursor:pointer;transition:background-color .3s ease}
+.parrot-btn img{width:44px;height:44px;border-radius:50%;display:block;object-fit:cover;background:var(--p-sage);padding:3px}
+.parrot-btn:hover{background:var(--p-blush)}
+.parrot-btn img{animation:nudge 3.2s ease-in-out infinite}
+@keyframes nudge{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-10deg)}90%{transform:rotate(8deg)}95%{transform:rotate(-4deg)}}
+@media(prefers-reduced-motion:reduce){.parrot-btn img{animation:none}}
+/* project cards: no pastel fills behind the photos */
+.proj,.proj:nth-child(n){background:none!important;padding:0;box-shadow:none}
+.proj:hover{box-shadow:none}
+.proj .k{font-size:12px;letter-spacing:.16em}
+.clogo{border-radius:2px}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#top" aria-label="thehyden.art, home"><img src="brand/logo-512.png" alt="" width="40" height="40"><span>thehyden.art</span></a>
+  <ul><li><a href="#work">Collections</a></li><li><a href="#projects">Projects</a></li><li><a href="#tryon">Try it on</a></li><!--shop-hidden <li><a href="shop.html">Shop</a></li> --><li><a href="#gallery">Gallery</a></li><li><a href="#estimate">Estimate</a></li><li><a href="#founder">About</a></li><li><a href="#faq">FAQ</a></li></ul>
+  <a class="btn" href="https://ig.me/m/thehyden.art" target="_blank" rel="noopener">DM to order</a>
+</nav>
+
+<header class="hero-x" id="top">
+  <div class="hx-slides">
+    <img class="on" src="img/w08.jpg" alt="Parrot Garden wallpaper behind a scalloped mirror and green console" fetchpriority="high">
+    <img src="img/w05.jpg" alt="A bedroom wrapped in a botanical wallpaper" loading="lazy">
+    <img src="img/w04.jpg" alt="Floral trellis wallpaper behind a vanity" loading="lazy">
+  </div>
+  <span class="hx-cap" id="hx-cap">Parrot Garden · installed</span>
+  <h1 class="sr">thehyden.art: Indian heritage, reimagined for your walls. Wallpapers, murals and wall frames designed by an architect, for homes and commercial spaces.</h1>
+  <button class="parrot-btn" id="parrotBtn" type="button" aria-label="A note from the studio: tap the parrot"><img src="brand/parrot-icon.png" alt=""><span>Tap the parrot</span></button>
+  <div class="hx-dots" role="group" aria-label="Choose image"><button aria-current="true" aria-label="Image 1"></button><button aria-label="Image 2"></button><button aria-label="Image 3"></button></div>
+</header>
+
+<section class="trust" id="trust" aria-label="Why thehyden.art"><div class="wrap"><ul>
+  <li><svg viewBox="0 0 32 32"><path d="M4 28h24M7 28V13l9-7 9 7v15M13 28v-8h6v8"/></svg><b>Designed by an architect</b><small>Every wall planned like a project</small></li>
+  <li><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c4 4 4 20 0 24M16 4c-4 4-4 20 0 24"/></svg><b>We supply worldwide</b><small>Shipped ready to hang</small></li>
+  <li><svg viewBox="0 0 32 32"><path d="M6 26l6-6M10 18l4 4M14 6l12 12-6 6L8 12z"/></svg><b>We install across India</b><small>Our own installation team</small></li>
+  <li><svg viewBox="0 0 32 32"><path d="M4 28V12l7-4v20M11 28V6l10 4v18M21 28V16l7 3v9M2 28h28"/></svg><b>Homes &amp; commercial spaces</b><small>Restaurants, offices, retail</small></li>
+</ul></div></section>
+
+<section class="arch-led" id="architect"><div class="wrap grid">
+  <img class="reveal" src="img/w06.jpg" alt="Motif studies from the thehyden.art studio, fresh from the press" loading="lazy">
+  <div>
+    <p class="eyebrow reveal">Why thehyden.art</p>
+    <h2 class="reveal">Designed by an <em>architect</em>, not just a seller.</h2>
+    <p class="lead reveal">Mrudhula is an architect by training. Before suggesting a design, she looks at your space the way an architect would: the size of the wall, the light, the furniture, and what the room or the business needs to say.</p>
+    <div class="points reveal">
+      <div><h3>Reads the space</h3><p>Scale, proportion and light come first, so the design suits the room it goes into.</p></div>
+      <div><h3>Understands the brief</h3><p>A home, a restaurant and an office each need something different. She designs for the project, not just the wall.</p></div>
+      <div><h3>Sized to your wall</h3><p>Every design is scaled to your exact measurements and planned around windows, doors and switches.</p></div>
+      <div><h3>Supplied &amp; installed</h3><p>Installed by our team anywhere in India, and shipped worldwide, ready to hang.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Wallpapers</span><span>Wall decals</span><span>Wall frames</span><span>Custom murals</span><span>Pichwai lotuses</span><span>Parrot gardens</span>
+  <span>Wallpapers</span><span>Wall decals</span><span>Wall frames</span><span>Custom murals</span><span>Pichwai lotuses</span><span>Parrot gardens</span>
+</div></div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Three ways to bring a <em>story</em> home.</h2>
+      <p>Every design starts as a painting rooted in Indian art traditions, then gets sized to your room, your furniture, your wall.</p>
+    </div>
+    <div class="offers">
+      <article class="offer reveal"><div class="ph"><img src="img/w05.jpg" alt="Bedroom with a botanical wallpaper feature wall" loading="lazy"></div><h3>Wallpapers <span class="num">01</span></h3><p>Full-wall botanical scenes: trellis gardens, birds, and blooms that wrap a whole room.</p></article>
+      <article class="offer reveal"><div class="ph"><img src="img/w02.jpg" alt="Cabinet doors decorated with heritage decals" loading="lazy"></div><h3>Wall decals <span class="num">02</span></h3><p>Motifs for doors, cabinets, arches and alcoves. A small way to try a big idea.</p></article>
+      <article class="offer reveal"><div class="ph"><img src="img/w11.jpg" alt="Nabhi Kamalam, framed in gold" loading="lazy"></div><h3>Wall frames <span class="num">03</span></h3><p>Framed artworks of temple and devotional motifs, made for pooja rooms and living rooms.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Homes, and the places <em>people gather.</em></h2>
+      <p>Alongside homes across India, thehyden.art creates for restaurants and commercial spaces, in India and abroad.</p>
+    </div>
+    <div class="list">
+      <article class="proj reveal"><span class="k">Neighbourhood café</span>
+        <div class="clogo"><img src="brand/clients/mikro.jpg" alt="Mikro storefront" loading="lazy" onerror="this.parentNode.classList.add('none');this.remove()"><span class="cname">Mikro</span></div>
+        <p class="where"><b>Mikro<span class="sep"> · </span></b>Hyderabad, India</p></article>
+      <article class="proj reveal"><span class="k">Restaurant</span>
+        <div class="clogo"><img src="brand/clients/house-of-telugu.jpg" alt="House of Telugu storefront" loading="lazy" onerror="this.parentNode.classList.add('none');this.remove()"><span class="cname">House of Telugu</span></div>
+        <p class="where"><b>House of Telugu<span class="sep"> · </span></b>Goa, India</p></article>
+      <article class="proj reveal"><span class="k">Indian restaurant</span>
+        <div class="clogo"><img src="brand/clients/peacock-restaurant.jpg" alt="Peacock Restaurant storefront" loading="lazy" onerror="this.parentNode.classList.add('none');this.remove()"><span class="cname">Peacock Restaurant</span></div>
+        <p class="where"><b>Peacock Restaurant<span class="sep"> · </span></b>USA</p></article>
+      <article class="proj reveal"><span class="k">South Indian kitchen</span>
+        <div class="clogo"><img src="brand/clients/godavari-restaurant.jpg" alt="Godavari Restaurant storefront" loading="lazy" onerror="this.parentNode.classList.add('none');this.remove()"><span class="cname">Godavari Restaurant</span></div>
+        <p class="where"><b>Godavari Restaurant<span class="sep"> · </span></b>UK</p></article>
+      <article class="proj reveal"><span class="k">Menu design</span>
+        <div class="clogo"><img src="brand/clients/gaurangs-kitchen.jpg" alt="Gaurang’s Kitchen storefront" loading="lazy" onerror="this.parentNode.classList.add('none');this.remove()"><span class="cname">Gaurang’s Kitchen</span></div>
+        <p class="where"><b>Gaurang’s Kitchen<span class="sep"> · </span></b>Menu designed by Mrudhula</p></article>
+    </div>
+    <div class="reach reveal">
+      <div><b>We supply all over the world.</b><span>Made to order, shipped ready to hang.</span></div>
+      <div><b>We install all over India.</b><span>Homes, restaurants, offices and retail.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="tryon" id="tryon">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Go on, <em>try one</em> on your wall.</h2>
+      <p>Pick a room, pick a design, or upload a photo of your own wall. Once you've found the one, send us your wall size.</p>
+    </div>
+    <div class="rooms reveal" role="group" aria-label="Choose a room">
+      <button data-room="living" aria-pressed="true">Living hall</button><button data-room="lounge">Lounge</button><button data-room="bedroom">Bedroom</button><label class="own-btn">📷 Your wall<input type="file" accept="image/*" id="own-file" hidden></label>
+    </div>
+    <div class="room-wrap reveal">
+      <div>
+        <div class="room real" id="room" data-room="living" aria-live="polite">
+          <img class="base" id="base" src="img/g/051.jpg" alt="A real living hall from a thehyden.art project">
+          <img class="own-photo" id="own-photo" alt="Your uploaded wall">
+          <div class="wall" id="wall"><span class="grip" aria-hidden="true"></span></div>
+          <div class="shade" aria-hidden="true"></div>
+          <div class="plain" id="plain"></div>
+          <div class="handle" id="handle" aria-hidden="true"><span>⇆</span></div>
+          <span class="tag" id="tag"></span>
+          <p class="own-hint">Drag the wallpaper onto your wall · pull the corner to resize</p>
+        </div>
+        <div class="under">
+          <button class="chip" id="compare">⇆ Before / after</button>
+          <label class="scale" id="scale-wrap">Pattern size <input type="range" id="scale" min="0.5" max="1.8" step="0.05" value="1"></label>
+        </div>
+      </div>
+      <div class="panel" id="panel">
+        <div class="tabs" role="tablist"><button data-kind="pattern" class="on">Patterns</button><button data-kind="mural">Murals</button></div>
+        <div class="thumbs" id="thumbs"></div>
+        <div class="pick" id="pick"></div>
+        <div class="tints" id="tints"><p>Wall colour <small>custom colourways on request</small></p><div></div><p class="note">Murals come as painted. Pick a pattern to recolour it.</p></div>
+        <button class="btn shuffle" id="shuffle">Surprise me 🎲</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="plan" id="estimate">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>What will <em>my wall</em> cost?</h2>
+      <p>Measure your wall, get a ballpark in seconds, then send it to us. We'll reply with an exact quote.</p>
+    </div>
+    <div class="plan-grid reveal">
+      <div class="est card">
+        <div class="units" role="group" aria-label="Units"><button data-u="ft" aria-pressed="true">Feet</button><button data-u="m">Metres</button></div>
+        <div class="dims">
+          <label>Width<input type="number" id="w" value="10" min="1" max="100" step="0.5" inputmode="decimal"><span class="u">ft</span></label>
+          <span class="x">×</span>
+          <label>Height<input type="number" id="h" value="9" min="1" max="30" step="0.5" inputmode="decimal"><span class="u">ft</span></label>
+        </div>
+        <label class="row">Design<select id="est-design"></select></label>
+        <label class="check"><input type="checkbox" id="install" checked> Include installation</label>
+        <div class="mini" id="mini"><div class="mini-wall" id="mini-wall"><svg class="person" viewBox="0 0 20 60" aria-hidden="true"><circle cx="10" cy="6" r="5"/><path d="M4 14h12l2 22h-4l-1 24h-6l-1-24H2z"/></svg></div><small id="mini-cap"></small></div>
+        <div class="result">
+          <div><small>Wall area</small><b id="area">90 sq ft</b></div>
+          <div><small>Estimated price</small><b id="price">₹0</b></div>
+        </div>
+        <p class="fine">Indicative only. The final price depends on the design, material and site, and we'll confirm everything in your quote.</p>
+        <div class="est-cta"><a class="btn wa-link" id="est-wa" target="_blank" rel="noopener">Send on WhatsApp</a><button class="btn ghost" id="est-form">Use the form instead ↓</button></div>
+      </div>
+      <form class="enq card" id="enq" enctype="multipart/form-data" novalidate>
+        <h3>Tell us about your wall</h3>
+        <div class="two"><label>Your name<input name="name" required autocomplete="name"></label><label>WhatsApp / phone<input name="phone" type="tel" required autocomplete="tel" inputmode="tel"></label></div>
+        <div class="two"><label>City<input name="city" required autocomplete="address-level2"></label><label>Wall size<input name="wall_size" id="f-size" placeholder="e.g. 10 × 9 ft"></label></div>
+        <label>Design you like<select name="design" id="f-design"></select></label>
+        <label>Anything else?<textarea name="message" rows="3" placeholder="Room type, colours you like, timeline…"></textarea></label>
+        <label class="file"><input type="file" name="wall_photo" accept="image/*" id="f-photo"><span id="f-photo-name">📷 Add a photo of your wall (optional)</span></label>
+        <input type="hidden" name="_subject" value="New wall enquiry from the website">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <button class="btn" type="submit">Send enquiry ✿</button>
+        <p class="form-msg" id="form-msg" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>Fresh off the <em>wall</em>.</h2>
+      <p>Every room, mural and illustration from the studio. Tap any piece for a closer look.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter gallery">
+      <button class="on" data-f="all">All</button><button data-f="room">Installed rooms</button><button data-f="art">Artworks</button><button data-f="studio">Studio</button>
+    </div>
+    <div class="gallery" id="gallery-grid"></div>
+    <button class="btn ghost more" id="more">Show more</button>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <p class="eyebrow">Nabhi Kamalam · The Origin of the Cosmos</p>
+        <h2>It starts with a <em>brush</em>, not a template.</h2>
+        <p>Each collection begins by hand (painted, and for Nabhi Kamalam, stitched thread by thread) and is rooted in the old stories: Vishnu resting on the cosmic waters, the lotus rising from his navel, gardens full of parrots and palms. We repaint them in soft, modern colours so they sit as easily in a Bengaluru flat as in a London townhouse.</p>
+        <p>And if the wall you have in mind needs something that doesn't exist yet, we'll paint it.</p>
+      </div>
+      <div class="pics reveal"><img src="img/w09.jpg" alt="A hand stitching beads onto the Nabhi Kamalam lotus" loading="lazy"><img src="img/w11.jpg" alt="Nabhi Kamalam artwork with a lotus rising over water" loading="lazy"></div>
+    </div>
+    <div class="steps reveal">
+      <div><h3>Say hello</h3><p>DM us on Instagram with a photo of your wall.</p></div>
+      <div><h3>Pick or customise</h3><p>Choose a design, or ask for a custom piece in your colours.</p></div>
+      <div><h3>We size it</h3><p>Every print is scaled to your exact measurements.</p></div>
+      <div><h3>It ships</h3><p>Delivered across India and worldwide, ready to install.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="founder">
+  <div class="wrap grid">
+    <div class="portrait reveal">
+      <img src="img/mrudula.jpg" alt="Mrudhula, founder of thehyden.art, smiling on a sofa in front of a living plant wall" loading="lazy">
+      <span class="hi">hi there 👋</span>
+      <svg class="leaf" viewBox="0 0 100 60" aria-hidden="true"><path d="M5 55C20 10 70 0 95 8 80 40 40 60 5 55z" fill="#7d9b80"/><path d="M5 55C35 35 60 22 95 8" stroke="#f6efe2" stroke-width="2" fill="none"/></svg>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Meet the founder</p>
+      <h2>Hi, I'm <span class="name">Mrudhula<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 12C60 3 140 2 297 9" stroke="#c9a24a" stroke-width="5" fill="none" stroke-linecap="round"/></svg></span>.</h2>
+      <blockquote>&ldquo;Thehyden.art isn&rsquo;t just about artworks and wallpapers; it&rsquo;s about storytelling, connection, and the celebration of timeless beauty.&rdquo;</blockquote>
+      <p>An architect by training, Mrudhula started thehyden.art out of a deep love for blending tradition with contemporary aesthetics. What began as a simple wish to capture the beauty of Indian heritage has grown into a studio making wallpapers and art frames that sit easily in modern homes while honouring their cultural roots.</p>
+      <div class="chips"><span>🏛️ B.Arch, 2023</span><span>🎨 Artist &amp; founder</span><span>🪷 Indian heritage, reimagined</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ answers are placeholders: confirm every answer with Mrudhula before launch -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="reveal">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions, <em>answered</em>.</h2>
+      <p>Still curious? Message us. We usually reply within a day.</p>
+      <a class="btn wa-link" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+    <div class="qa reveal">
+      <details open><summary>Can I get a design in my own size and colours?</summary><p>Yes. Every wallpaper and mural is made to order for your exact wall measurements, and most designs can be recoloured to suit your room.</p></details>
+      <details><summary>How do I measure my wall?</summary><p>Measure the full width and height in feet or metres, skirting to ceiling. Send us a photo of the wall too, and we'll double-check the measurements and plan around switches, windows and doors.</p></details>
+      <details><summary>What material is the wallpaper printed on?</summary><p>We'll recommend the right finish for your room. Ask us about the options for bedrooms, living rooms, kids' rooms and humid spaces.</p></details>
+      <details><summary>Do you install it?</summary><p>Yes. We install all over India. Outside India we ship worldwide, ready to hang, with instructions any local wallpaper installer can follow.</p></details>
+      <details><summary>How long does it take?</summary><p>Most orders are designed, printed and dispatched within 2–3 weeks of confirming the design. Custom artwork can take a little longer.</p></details>
+      <details><summary>Do you ship outside India?</summary><p>Yes, we ship worldwide. Shipping costs and delivery time depend on your country, so we'll include them in your quote.</p></details>
+      <details><summary>Can you create a completely custom mural?</summary><p>Absolutely. Tell us the story, the room and the mood, and we'll paint something that exists only on your wall.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <p class="eyebrow">Your wall is waiting</p>
+    <h2>Let's make it <em>bloom</em>.</h2>
+    <p>Orders and custom designs happen over Instagram DMs. Send a photo of your wall and we'll take it from there.</p>
+    <a class="btn" href="https://ig.me/m/thehyden.art" target="_blank" rel="noopener">Message @thehyden.art ✿</a>
+  </div>
+</section>
+
+<div class="wrap"><footer><span>© thehyden.art · Indian heritage, reimagined 🪷</span><a href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener">Instagram ↗</a></footer></div>
+
+<a class="wa-fab" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.4 2.3 3.6 5.7 5c2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5s.3-1.3.2-1.5-.3-.2-.6-.4z"/></svg><span>Chat with us</span></a>
+
+<dialog id="lb"><img id="lb-img" alt=""><div class="bar"><span id="lb-cap"></span><span><button id="lb-prev" aria-label="Previous">←</button> <button id="lb-next" aria-label="Next">→</button> <a id="lb-ig" target="_blank" rel="noopener">View on Instagram ↗</a> <button id="lb-x">Close</button></span></div></dialog>
+
+<script src="settings.js"></script>
+<script src="gallery.js"></script>
+<script>
+const works=window.WORKS||[];
+const walls=[
+  // [name, note, image, kind, tile size (% of wall width) or 'cover' for murals, position, instagram path]
+  ['The Playroom','Wooden horses & curious birds','wall-playroom','pattern','40%','0 0','p/DcBsEJWnU9q'],
+  ['Motif & Monkey','Where tradition meets mischief','wall-monkey','pattern','34%','0 0','p/DObbmTnk81l'],
+  ['Whispers in Bloom','Birdsong on teal','wall-whispers','pattern','38%','0 0','p/DLxqWZET1ek'],
+  ['Lotus & Origami Birds','Calm, not crowded','wall-origami','pattern','32%','0 0','p/DUSnnn6kwWB'],
+  ['Muggu & Pink Elephants','Playful muggu frames','wall-muggu','pattern','34%','0 0','p/C8WPCcjPzXY'],
+  ['Kerosene Lamps','Lamps & candle stands','wall-lamps','pattern','60%','0 0','p/C8buStkqcY5'],
+  ['Coconut & Kolam','Tropical, traditional','wall-kolam','pattern','34%','0 0','p/C8zHOmTSrOI'],
+  ['Floral Trellis','Soft florals on cream','wall-trellis','pattern','36%','0 0','p/DeCNRlVHU6R'],
+  ['Parrot Garden','Birds among blossoms','wall-parrot','pattern','34%','0 0','p/DdLXJJkymg4'],
+  ['Songbird Branches','Branches & songbirds','wall-blossom','pattern','40%','0 0','p/DdjEoORyUux'],
+  ['Thota','An old garden, brought home','wall-thota','mural','cover','50% 40%','p/Dcf1YU4SlSd'],
+  ['Rooted Reverie','A South Indian village','wall-rooted','mural','cover','40% 40%','p/DUF1PLPk_ly'],
+  ['Folkscape','Village life, timeless','wall-folkscape','mural','cover','50% 50%','p/DMhgOi3zvX7'],
+  ['White Lotus','Nandi, palms & kolam','wall-white-lotus','mural','cover','40% 50%','p/Da2VGkGyjoe'],
+  ['Lotus Whispers','Lotus vines that flow','wall-lotus-whispers','mural','cover','50% 0%','p/DUA1cRcExpb'],
+  ['Blush Botanica','Soft florals, calm tones','wall-blush','mural','cover','50% 40%','p/DPX_3r8E0Lh'],
+  ['Nabhi Kamalam','The cosmic lotus, in gold','wall-nabhi','mural','cover','50% 50%','p/DdYRtDtHWOC'],
+  ['Nabhi Kamalam · Pastel','The lotus pond','wall-pastel','mural','cover','50% 40%','p/DdFBt24E4U4'],
+  ['Lotus & Palms','Hand-stitched detail','wall-palms','mural','cover','50% 45%','p/DdFBt24E4U4']
+];
+const tints=[['Original','#ffffff'],['Blush','#f4d4cc'],['Sage','#d3dfc9'],['Powder blue','#d2e3e8'],['Butter','#f4e4b8'],['Terracotta','#e6b9a2']];
+const $=id=>document.getElementById(id);
+const room=$('room'),wall=$('wall'),tag=$('tag'),thumbs=$('thumbs'),pick=$('pick'),tg=$('tints'),plain=$('plain'),handle=$('handle');
+let cur=0,tint=0,scale=1,kind='pattern';
+function paint(){
+  const [n,note,f,k,size,pos,link]=walls[cur],mural=k==='mural';
+  Object.assign(wall.style,{backgroundImage:`url(img/${f}.jpg)`,backgroundPosition:pos,backgroundRepeat:mural?'no-repeat':'repeat',
+    backgroundSize:mural?'cover':(parseFloat(size)*scale)+'%',backgroundColor:mural?'':tints[tint][1],backgroundBlendMode:mural?'normal':'multiply'});
+  tg.classList.toggle('off',mural);$('scale-wrap').classList.toggle('off',mural);
+  tg.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-pressed',!mural&&j===tint));
+  tag.textContent=n+(!mural&&tint?` · ${tints[tint][0]}`:'');
+  const msg=encodeURIComponent(`Hi! I'd love to know more about "${n}"${!mural&&tint?` in ${tints[tint][0]}`:''} for my wall.`);
+  pick.innerHTML=`<b>${n}</b><small>${mural?'Mural':'Pattern'} · ${note}</small><span><a class="btn" href="https://ig.me/m/thehyden.art?text=${msg}" target="_blank" rel="noopener">Ask about this design</a><a href="https://www.instagram.com/${link}/" target="_blank" rel="noopener">See it on Instagram ↗</a></span>`;
+}
+function setWall(i){
+  cur=i;wall.classList.add('swap');
+  setTimeout(()=>{paint();wall.classList.remove('swap')},220);
+  thumbs.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===i));
+}
+function showKind(k){
+  kind=k;document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.kind===k));
+  thumbs.querySelectorAll('button').forEach(b=>b.hidden=walls[b.dataset.i][3]!==k);
+}
+walls.forEach(([n,,f,k,,pos],i)=>{
+  const b=document.createElement('button');b.dataset.i=i;b.title=n;b.setAttribute('aria-label',n);
+  b.innerHTML=`<i style="background-image:url(img/${f}.jpg);background-position:${pos==='0 0'?'center':pos}"></i><span>${n}</span>`;
+  b.onclick=()=>setWall(i);thumbs.append(b);
+});
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>showKind(b.dataset.kind));
+tints.forEach(([n,c],j)=>{const b=document.createElement('button');b.title=n;b.setAttribute('aria-label',n+' wall colour');b.style.background=c;b.onclick=()=>{tint=j;paint()};tg.querySelector('div').append(b)});
+$('scale').oninput=e=>{scale=+e.target.value;paint()};
+$('shuffle').onclick=e=>{let n;do n=Math.floor(Math.random()*walls.length);while(n===cur);tint=Math.floor(Math.random()*tints.length);showKind(walls[n][3]);setWall(n);burst(e)};
+showKind('pattern');setWall(0);
+
+// rooms
+// real rooms from her projects: the new design is clipped to the wall, furniture stays in front
+const ROOMS={
+  living:{img:'img/g/051.jpg',ar:783/800,alt:'A real living hall with a day-bed and lounge chair',
+    clip:'polygon(0% 7.75%,76.6% 7.75%,76.1% 58.75%,61.3% 58.75%,60% 50%,54.9% 43.75%,48.5% 46.25%,43.4% 52.5%,42.1% 58.75%,0% 58.75%)',
+    shade:'linear-gradient(90deg,rgba(60,40,20,.16),rgba(60,40,20,0) 45%,rgba(255,255,255,0) 75%,rgba(60,40,20,.06)),linear-gradient(180deg,rgba(60,40,20,.14),rgba(0,0,0,0) 22%,rgba(0,0,0,0) 85%,rgba(60,40,20,.14))'},
+  lounge:{img:'img/g/044.jpg',ar:640/800,alt:'A real lounge with a cane sofa and side table',
+    clip:'polygon(0% 0%,100% 0%,100% 62.5%,73.1% 62.5%,73.1% 49.4%,69.5% 45.25%,64.1% 44.4%,0% 44.4%)',
+    shade:'linear-gradient(180deg,rgba(60,40,20,.10),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 80%,rgba(60,40,20,.16)),linear-gradient(90deg,rgba(60,40,20,.06),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(60,40,20,.10))'},
+  bedroom:{img:'img/g/108.jpg',ar:1,alt:'A real bedroom with white wainscoting below the wallpaper',
+    clip:'polygon(0% 0%,100% 0%,100% 37.6%,0% 37.6%)',
+    shade:'linear-gradient(180deg,rgba(60,40,20,.12),rgba(0,0,0,0) 40%,rgba(60,40,20,.10)),linear-gradient(90deg,rgba(60,40,20,.08),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,rgba(60,40,20,.08))'}
+};
+const base=$('base');
+function setRoom(k){const r=ROOMS[k];room.dataset.room=k;base.src=r.img;base.alt=r.alt;
+  ['--clip','--shade'].forEach((v,j)=>room.style.setProperty(v,[r.clip,r.shade][j]));
+  room.style.setProperty('--ar',r.ar);room.style.setProperty('--photo',`url(${r.img})`);}
+setRoom('living');
+document.querySelectorAll('.rooms button').forEach(b=>b.onclick=()=>{
+  setRoom(b.dataset.room);room.classList.remove('own');wall.removeAttribute('style');paint();
+  document.querySelectorAll('.rooms button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+});
+// your own wall: photo underneath, wallpaper multiplied on top in a draggable, resizable box
+$('own-file').onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  $('own-photo').src=URL.createObjectURL(f);room.classList.add('own');room.dataset.room='own';
+  Object.assign(wall.style,{left:'10%',top:'6%',width:'80%',height:'60%'});
+  room.classList.remove('comparing');$('compare').setAttribute('aria-pressed',false);setSplit(0);
+  document.querySelectorAll('.rooms button').forEach(x=>x.setAttribute('aria-pressed',false));
+};
+let drag=null;
+wall.addEventListener('pointerdown',e=>{
+  if(!room.classList.contains('own'))return;
+  const r=room.getBoundingClientRect(),w=wall.getBoundingClientRect();
+  drag={resize:e.target.classList.contains('grip'),x:e.clientX,y:e.clientY,l:w.left-r.left,t:w.top-r.top,w:w.width,h:w.height,r};
+  wall.setPointerCapture(e.pointerId);e.preventDefault();
+});
+wall.addEventListener('pointermove',e=>{
+  if(!drag)return;const dx=e.clientX-drag.x,dy=e.clientY-drag.y,R=drag.r,pc=(v,d)=>v/d*100+'%';
+  if(drag.resize)Object.assign(wall.style,{width:pc(Math.max(40,drag.w+dx),R.width),height:pc(Math.max(40,drag.h+dy),R.height)});
+  else Object.assign(wall.style,{left:pc(drag.l+dx,R.width),top:pc(drag.t+dy,R.height)});
+});
+wall.addEventListener('pointerup',()=>drag=null);
+// before / after
+function setSplit(p){p=Math.min(100,Math.max(0,p));plain.style.clipPath=`inset(0 ${100-p}% 0 0)`;handle.style.left=p+'%'}
+$('compare').onclick=()=>{const on=room.classList.toggle('comparing');$('compare').setAttribute('aria-pressed',on);setSplit(on?50:0)};
+handle.addEventListener('pointerdown',e=>{handle.setPointerCapture(e.pointerId);handle.dragging=true});
+handle.addEventListener('pointermove',e=>{if(!handle.dragging)return;const r=room.getBoundingClientRect();setSplit((e.clientX-r.left)/r.width*100)});
+handle.addEventListener('pointerup',()=>handle.dragging=false);
+
+// gallery + lightbox
+const IG='https://www.instagram.com/',LABEL={room:'Installed room',art:'Artwork',studio:'From the studio'};
+const g=document.getElementById('gallery-grid'),lb=document.getElementById('lb'),more=document.getElementById('more');
+let filter='all',shown=24,list=[],at=0;
+function renderGallery(){
+  list=works.filter(w=>filter==='all'||w[1]===filter);
+  g.innerHTML='';
+  list.slice(0,shown).forEach(([f,cat,cap],i)=>{
+    const t=document.createElement('figure');t.className=i?'tile':'tile big';t.tabIndex=0;
+    t.innerHTML=`<img src="img/g/${f}.jpg" alt="${cap||LABEL[cat]+' by thehyden.art'}" loading="lazy"><figcaption>${cap||LABEL[cat]}</figcaption>`;
+    t.onclick=()=>openLb(i);t.onkeydown=e=>{if(e.key==='Enter')openLb(i)};
+    g.append(t);
+  });
+  more.hidden=shown>=list.length;more.textContent=`Show more (${list.length-shown} left)`;
+}
+function openLb(i){
+  at=(i+list.length)%list.length;const [f,cat,cap,link]=list[at];
+  $('lb-img').src=`img/g/${f}.jpg`;$('lb-img').alt=cap||LABEL[cat];
+  $('lb-cap').textContent=(cap||LABEL[cat])+`  ·  ${at+1} / ${list.length}`;$('lb-ig').href=IG+link+'/';
+  if(!lb.open)lb.showModal();
+}
+more.onclick=()=>{shown+=24;renderGallery()};
+$('lb-x').onclick=()=>lb.close();
+$('lb-prev').onclick=()=>openLb(at-1);$('lb-next').onclick=()=>openLb(at+1);
+lb.onclick=e=>{if(e.target===lb)lb.close()};
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')openLb(at-1);if(e.key==='ArrowRight')openLb(at+1)});
+document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.filters button').forEach(x=>x.classList.toggle('on',x===b));
+  filter=b.dataset.f;shown=24;renderGallery();
+});
+renderGallery();
+
+// ===== Business settings: replace the placeholders before launch =====
+const SETTINGS=window.SETTINGS;
+const chatLink=text=>SETTINGS.whatsapp?`https://wa.me/${SETTINGS.whatsapp}?text=${encodeURIComponent(text)}`:`https://ig.me/m/thehyden.art?text=${encodeURIComponent(text)}`;
+document.querySelectorAll('.wa-link').forEach(a=>{if(!a.href)a.href=chatLink("Hi! I'd love to know more about your wallpapers.")});
+const fab=document.querySelector('.wa-fab');fab.href=chatLink("Hi! I found you through your website and I'd love to know more.");
+
+// estimator
+let unit='ft';
+const inr=n=>'₹'+(Math.round(n/100)*100).toLocaleString('en-IN');
+const estSel=$('est-design'),fSel=$('f-design');
+[estSel,fSel].forEach(s=>{s.innerHTML='<option value="">Not sure yet</option>'+walls.map(w=>`<option>${w[0]}</option>`).join('')+'<option>A custom design</option>'});
+function estimate(){
+  const k=unit==='m'?10.764:1,w=+$('w').value||0,h=+$('h').value||0,area=w*h*k;
+  const [lo,hi]=SETTINGS.ratePerSqFt,inst=$('install').checked?SETTINGS.installPerSqFt:0;
+  $('area').textContent=Math.round(area)+' sq ft';
+  $('price').textContent=area?inr(area*(lo+inst))+' – '+inr(area*(hi+inst)):'–';
+  const design=estSel.value||walls[cur][0],d=walls.find(x=>x[0]===design)||walls[cur];
+  const mw=$('mini-wall'),ratio=Math.max(.3,Math.min(4,(w||1)/(h||1)));
+  mw.style.aspectRatio=ratio;mw.style.backgroundImage=`url(img/${d[2]}.jpg)`;
+  mw.style.backgroundSize=d[3]==='mural'?'cover':(parseFloat(d[4])*1.4)+'%';
+  const hFt=(h||1)*(unit==='m'?3.281:1);mw.querySelector('.person').style.height=Math.min(100,5.5/hFt*100)+'%';
+  $('mini-cap').textContent=`${design} · a 5.5 ft person for scale`;
+  const size=`${w} × ${h} ${unit}`;$('f-size').value=size;
+  $('est-wa').href=chatLink(`Hi! I'd like a quote for "${design}" on a ${size} wall (about ${Math.round(area)} sq ft)${$('install').checked?', with installation':''}.`);
+}
+document.querySelectorAll('.units button').forEach(b=>b.onclick=()=>{
+  const nu=b.dataset.u;if(nu===unit)return;const f=nu==='m'?0.3048:3.281;
+  ['w','h'].forEach(id=>$(id).value=Math.round(+$(id).value*f*10)/10);unit=nu;
+  document.querySelectorAll('.units button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  document.querySelectorAll('.dims .u').forEach(s=>s.textContent=nu);estimate();
+});
+['w','h','install','est-design'].forEach(id=>$(id).addEventListener('input',estimate));
+thumbs.addEventListener('click',()=>setTimeout(()=>{estSel.value=walls[cur][0];fSel.value=walls[cur][0];estimate()},0));
+$('est-form').onclick=()=>{fSel.value=estSel.value;$('enq').scrollIntoView({behavior:'smooth',block:'start'})};
+estSel.value=walls[cur][0];estimate();
+
+// enquiry form
+$('f-photo').onchange=e=>{$('f-photo-name').textContent=e.target.files[0]?'📷 '+e.target.files[0].name:'📷 Add a photo of your wall (optional)'};
+$('enq').onsubmit=async e=>{
+  e.preventDefault();const f=e.target,msg=$('form-msg');
+  if(!f.checkValidity()){msg.textContent='Please add your name, phone and city.';msg.className='form-msg err';f.reportValidity();return}
+  const btn=f.querySelector('[type=submit]');btn.disabled=true;btn.textContent='Sending…';
+  try{
+    if(SETTINGS.formEndpoint){const r=await fetch(SETTINGS.formEndpoint,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}});if(!r.ok)throw 0}
+    else await new Promise(r=>setTimeout(r,600));
+    f.reset();$('f-photo-name').textContent='📷 Add a photo of your wall (optional)';estimate();
+    msg.textContent=SETTINGS.formEndpoint?"Thank you! We've got your wall details and will be in touch within a day.":'Demo mode: the form works, but it is not connected to an inbox yet.';msg.className='form-msg ok';burst({clientX:innerWidth/2,clientY:innerHeight/2});
+  }catch(_){msg.innerHTML='Something went wrong. Please <a class="wa-inline" target="_blank" rel="noopener">message us on WhatsApp</a> instead.';msg.querySelector('a').href=chatLink('Hi! I tried your website form.');msg.className='form-msg err'}
+  btn.disabled=false;btn.textContent='Send enquiry ✿';
+};
+
+// petal burst on order buttons
+function burst(e){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  for(let i=0;i<14;i++){const p=document.createElement('span');p.className='petal';p.textContent=['🌸','🪷','✿','🍃'][i%4];
+    p.style.left=e.clientX+'px';p.style.top=e.clientY+'px';
+    p.style.setProperty('--dx',(Math.random()*240-120)+'px');p.style.setProperty('--dy',(Math.random()*-200+60)+'px');p.style.setProperty('--r',(Math.random()*540)+'deg');
+    document.body.append(p);setTimeout(()=>p.remove(),1500);}
+}
+
+
+// reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<!--vs--><div id="vs"><b>Design</b><a href="index.html">1<span> · Original</span></a><a href="v2-temple-night.html">2<span> · Temple Night</span></a><a href="v3-pop-bazaar.html">3<span> · Pop Bazaar</span></a><a href="v4-gallery-minimal.html">4<span> · Gallery Minimal</span></a><a href="v5-sage-garden.html">5<span> · Sage Garden</span></a><button id="vs-x" title="Hide">×</button></div><button id="vs-show" title="Show design switcher">Designs</button>
+<style>#vs{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;gap:4px;align-items:center;background:#111;color:#fff;padding:6px;border-radius:999px;font:500 13px system-ui;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}#vs b{padding:0 8px 0 10px;opacity:.6;font-weight:500}#vs a{color:#fff;text-decoration:none;white-space:nowrap;padding:7px 12px;border-radius:999px}#vs a:hover{background:#333}#vs a.on{background:#fff;color:#111}#vs-x{all:unset;cursor:pointer;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;font-size:18px;opacity:.7;margin-left:2px}#vs-x:hover{background:#333;opacity:1}#vs-show{all:unset;cursor:pointer;position:fixed;left:16px;bottom:16px;z-index:60;background:#111;color:#fff;padding:8px 14px;border-radius:999px;font:500 13px system-ui;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);display:none}html.vs-hide #vs{display:none}html.vs-hide #vs-show{display:block}@media(max-width:700px){#vs span{display:none}}</style>
+<script>document.querySelectorAll('#vs a').forEach(a=>{if(location.pathname.endsWith('/'+a.getAttribute('href'))||(a.getAttribute('href')==='index.html'&&location.pathname.endsWith('/')))a.classList.add('on')});const vsH=h=>{document.documentElement.classList.toggle('vs-hide',h);try{localStorage.setItem('vsHide',h?'1':'')}catch(e){}};try{if(localStorage.getItem('vsHide'))vsH(true)}catch(e){};document.getElementById('vs-x').onclick=()=>vsH(true);document.getElementById('vs-show').onclick=()=>vsH(false)</script><!--/vs-->
+
+<script>
+(()=>{const imgs=[...document.querySelectorAll('.hx-slides img')],dots=[...document.querySelectorAll('.hx-dots button')],cap=document.getElementById('hx-cap');
+const caps=['Parrot Garden · installed','A bedroom wrapped in blossoms','Floral Trellis · installed'];let k=0,t;
+const show=n=>{k=(n+imgs.length)%imgs.length;imgs.forEach((im,i)=>im.classList.toggle('on',i===k));dots.forEach((d,i)=>d.setAttribute('aria-current',i===k));cap.textContent=caps[k]};
+const auto=()=>{clearInterval(t);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(()=>show(k+1),6000)};
+dots.forEach((d,i)=>d.onclick=()=>{show(i);auto()});auto();})();
+</script>
+
+
+<div class="parrot-fly" id="parrot" aria-hidden="true"><div class="pose">
+  <svg viewBox="460 48 1285 1987">
+    <defs><filter id="farwing"><feColorMatrix type="matrix" values=".72 0 0 0 0  0 .72 0 0 0  0 0 .72 0 0  0 0 0 1 0"/></filter></defs>
+    <g id="wFar" filter="url(#farwing)"><image href="brand/parrot-wing.png" x="693" y="424" width="742" height="594"/></g>
+    <image href="brand/parrot-body.png" x="460" y="48" width="1285" height="1987"/>
+    <g id="wNear"><image href="brand/parrot-wing.png" x="693" y="424" width="742" height="594"/></g>
+    <circle id="beak" cx="478" cy="262" r="4" fill="none"/>
+  </svg></div></div>
+<div class="env" id="env" aria-hidden="true">
+  <div class="env-back"></div>
+  <div class="env-letter" id="envLetter"><i></i><b></b><b style="width:50%"></b></div>
+  <div class="env-front"><svg viewBox="0 0 132 88" preserveAspectRatio="none"><path d="M0 4 L58 50 Q66 56 74 50 L132 4 L132 84 Q132 88 128 88 L4 88 Q0 88 0 84 Z" fill="#fbf5ea"/><path d="M0 88 L56 44 M132 88 L76 44" stroke="#e3d6bf" stroke-width="1.2" fill="none"/></svg></div>
+  <div class="env-flap" id="envFlap"><span class="out"></span><span class="in"></span></div>
+  <span class="env-seal" id="envSeal"></span>
+</div>
+<div class="offer-wrap"><aside class="offer-sheet" id="offer" role="dialog" aria-modal="false" aria-labelledby="offer-title" hidden>
+  <span class="band"></span>
+  <button class="x" id="offer-x" aria-label="Close offer">×</button>
+  <p class="k" id="offer-k"></p><h3 id="offer-title"></h3><p id="offer-text"></p>
+  <div class="acts"><a class="btn" id="offer-cta" target="_blank" rel="noopener"></a></div>
+</aside></div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script>
+(()=>{
+const O=Object.assign({show:true,label:'A note from the studio',title:'Your offer here',text:'Edit this in settings.js.',cta:'Ask on WhatsApp',delay:2.5},(window.SETTINGS||{}).offer||{});
+const $=id=>document.getElementById(id), sheet=$('offer');
+const fill=()=>{$('offer-k').textContent=O.label;$('offer-title').textContent=O.title;$('offer-text').textContent=O.text;
+  const a=$('offer-cta');a.textContent=O.cta;const msg=encodeURIComponent('Hi! I saw the offer on thehyden.art: '+O.title);
+  a.href=O.link||((window.SETTINGS||{}).whatsapp?`https://wa.me/${SETTINGS.whatsapp}?text=${msg}`:`https://ig.me/m/thehyden.art?text=${msg}`)};
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function openSheet(fromEnv){fill();sheet.hidden=false;
+  if(!window.gsap||reduce){if(window.gsap)gsap.fromTo(sheet,{opacity:0},{opacity:1,duration:.3});return}
+  gsap.fromTo(sheet,{y:40,scaleX:fromEnv?.28:1,scaleY:fromEnv?.2:1,opacity:0},{y:0,scaleX:1,scaleY:1,opacity:1,duration:.75,ease:'expo.out'})}
+function closeSheet(){
+  if(window.gsap&&!reduce)gsap.to(sheet,{y:'110%',duration:.5,ease:'power2.in',onComplete:()=>sheet.hidden=true});else sheet.hidden=true}
+$('offer-x').onclick=closeSheet;addEventListener('keydown',e=>{if(e.key==='Escape'&&!sheet.hidden)closeSheet()});
+// for now the flight starts only when the parrot button in the hero is clicked
+const btn=$('parrotBtn');
+if(!window.gsap){btn&&(btn.onclick=()=>openSheet(false));return}
+const slow=+new URLSearchParams(location.search).get('slow')||1;if(slow>1)gsap.globalTimeline.timeScale(1/slow);   // ?slow=4 for reviewing
+const P=$('parrot'),E=$('env'),beak=$('beak');
+let tl=null,flap=null;
+function fly(){
+  if(tl&&tl.isActive())return;
+  if(tl)tl.kill(); if(flap)flap.kill();
+  if(!sheet.hidden){gsap.set(sheet,{clearProps:'all'});sheet.hidden=true}
+  if(reduce){openSheet(false);return}
+  const W=innerWidth,H=innerHeight,mob=W<700;
+  // reset the envelope for a fresh delivery
+  gsap.set(E,{scale:mob?.8:1,transformOrigin:'50% 50%',opacity:0,rotation:0});
+  gsap.set('#envFlap',{rotationX:0,zIndex:3}); gsap.set('#envLetter',{y:0}); gsap.set('#envSeal',{scale:1,opacity:1});
+  flap=gsap.timeline({repeat:-1,yoyo:true,defaults:{ease:'sine.inOut',duration:.17}})
+    .fromTo('#wNear',{rotation:14,scaleY:1,svgOrigin:'720 480'},{rotation:-78,scaleY:.92,svgOrigin:'720 480'},0)
+    .fromTo('#wFar',{rotation:4,svgOrigin:'720 480'},{rotation:-96,svgOrigin:'720 480'},0);
+  const carry={on:true};
+  const stick=()=>{if(!carry.on)return;const r=beak.getBoundingClientRect();gsap.set(E,{x:r.left-58,y:r.top+4,rotation:-6})};
+  const pw=P.getBoundingClientRect().width||170, y0=H*(mob?.16:.2), x0=-pw-60, x1=W+pw, dur=mob?3.6:4.6;
+  const tRel=dur*((W*.5-pw*.5)-x0)/(x1-x0);
+  tl=gsap.timeline({onUpdate:stick});
+  tl.set(P,{x:x0,y:y0,opacity:1,rotation:0}).set(E,{opacity:1})
+    .to(P,{x:x1,duration:dur,ease:'none'},0)
+    .to(P,{y:y0-30,rotation:-3,duration:dur/6,yoyo:true,repeat:5,ease:'sine.inOut'},0)
+    .add(()=>{carry.on=false},tRel)
+    .to(E,{x:W/2-66,duration:1.5,ease:'sine.inOut'},tRel)
+    .to(E,{y:H-(mob?118:132),duration:1.5,ease:'power1.in'},tRel)
+    .to(E,{keyframes:{rotation:[-6,14,-10,7,-3,0]},duration:1.5,ease:'none'},tRel)
+    .add(()=>{flap.pause();gsap.set(P,{opacity:0})},dur)
+    .to('#envSeal',{scale:0,opacity:0,duration:.25,ease:'back.in(2)'},tRel+1.55)
+    .to('#envFlap',{rotationX:180,duration:.55,ease:'power2.inOut'},tRel+1.7)
+    .set('#envFlap',{zIndex:0},tRel+1.98)
+    .to('#envLetter',{y:-52,duration:.5,ease:'power2.out'},tRel+2.05)
+    .add(()=>openSheet(true),tRel+2.45)
+    .to(E,{y:H+60,opacity:0,duration:.5,ease:'power2.in'},tRel+2.5);
+  window.__offerTl=tl;
+}
+if(btn)btn.onclick=fly;
+window.__fly=fly;
+})();
+</script>
+</body>
+</html>

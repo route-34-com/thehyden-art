@@ -1,0 +1,202 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "thehyden.art" [ref=e3] [cursor=pointer]:
+      - /url: "#top"
+    - list [ref=e4]:
+      - listitem [ref=e5]:
+        - link "Work" [ref=e6] [cursor=pointer]:
+          - /url: "#work"
+      - listitem [ref=e7]:
+        - link "Try it on" [ref=e8] [cursor=pointer]:
+          - /url: "#tryon"
+      - listitem [ref=e9]:
+        - link "Gallery" [ref=e10] [cursor=pointer]:
+          - /url: "#gallery"
+      - listitem [ref=e11]:
+        - link "Process" [ref=e12] [cursor=pointer]:
+          - /url: "#story"
+    - link "DM to order" [ref=e13] [cursor=pointer]:
+      - /url: https://ig.me/m/thehyden.art
+  - banner [ref=e14]:
+    - generic [ref=e15]:
+      - paragraph [ref=e16]: Wallpapers · Wall decals · Wall frames
+      - heading "Indian heritage, reimagined for your walls." [level=1] [ref=e17]:
+        - text: Indian heritage,
+        - generic [ref=e18]: reimagined
+        - text: for your walls.
+      - paragraph [ref=e19]: Hand-painted-style lotuses, temple motifs and parrot gardens, turned into wallpaper you can actually live with. Made to order, shipped across India and worldwide.
+      - generic [ref=e20]:
+        - link "Try a wall ✿" [ref=e21] [cursor=pointer]:
+          - /url: "#tryon"
+        - link "See the work" [ref=e22] [cursor=pointer]:
+          - /url: "#gallery"
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: 26.8k
+          - text: people following along
+        - generic [ref=e26]:
+          - generic [ref=e27]: 185+
+          - text: designs & installs shared
+        - generic [ref=e28]:
+          - generic [ref=e29]: 🌎
+          - text: India & worldwide
+    - generic [ref=e30]:
+      - img [aria-hidden] [ref=e38]:
+        - generic [ref=e40]: CUSTOM · MADE TO ORDER ·
+        - generic [ref=e41]: 🪷
+      - figure [ref=e42]:
+        - img "Floral heritage wallpaper behind a vanity with a pink dresser" [ref=e43]
+      - figure [ref=e44]:
+        - img "Aranya mural with deer and palm trees on wardrobe doors" [ref=e45]
+      - figure [ref=e46]:
+        - img "Close-up of a pink lotus from the Nabhi Kamalam artwork" [ref=e47]
+  - generic [ref=e49]:
+    - generic [ref=e50]: Wallpapers✿
+    - generic [ref=e51]: Wall decals✿
+    - generic [ref=e52]: Wall frames✿
+    - generic [ref=e53]: Custom murals✿
+    - generic [ref=e54]: Pichwai lotuses✿
+    - generic [ref=e55]: Parrot gardens✿
+    - generic [ref=e56]: Wallpapers✿
+    - generic [ref=e57]: Wall decals✿
+    - generic [ref=e58]: Wall frames✿
+    - generic [ref=e59]: Custom murals✿
+    - generic [ref=e60]: Pichwai lotuses✿
+    - generic [ref=e61]: Parrot gardens✿
+  - generic [ref=e63]:
+    - generic [ref=e64]:
+      - heading [level=2] [ref=e65]:
+        - text: Three ways to bring a
+        - emphasis [ref=e66]: story
+        - text: home.
+      - paragraph [ref=e67]: Every design starts as a painting rooted in Indian art traditions, then gets sized to your room, your furniture, your wall.
+    - generic [ref=e68]:
+      - article [ref=e69]:
+        - img "Bedroom with a botanical wallpaper feature wall" [ref=e70]
+        - heading "Wallpapers 01" [level=3] [ref=e71]:
+          - text: Wallpapers
+          - generic [ref=e72]: "01"
+        - paragraph [ref=e73]: "Full-wall botanical scenes: trellis gardens, birds, and blooms that wrap a whole room."
+      - article [ref=e74]:
+        - img "Cabinet doors decorated with heritage decals" [ref=e75]
+        - heading "Wall decals 02" [level=3] [ref=e76]:
+          - text: Wall decals
+          - generic [ref=e77]: "02"
+        - paragraph [ref=e78]: Motifs for doors, cabinets, arches and alcoves. A small way to try a big idea.
+      - article [ref=e79]:
+        - img "Illustrated tilak art with temple elephants" [ref=e80]
+        - heading "Wall frames 03" [level=3] [ref=e81]:
+          - text: Wall frames
+          - generic [ref=e82]: "03"
+        - paragraph [ref=e83]: Framed artworks of temple and devotional motifs, made for pooja rooms and living rooms.
+  - generic [ref=e85]:
+    - generic [ref=e86]:
+      - heading [level=2] [ref=e87]:
+        - text: Go on,
+        - emphasis [ref=e88]: try one
+        - text: on your wall.
+      - paragraph [ref=e89]: Pick a design and see how it looks behind a sofa. Once you've found the one, send us your wall size.
+    - generic [ref=e90]:
+      - generic [ref=e91]: Aranya
+      - generic [ref=e113]:
+        - button "Aranya Deer, palms & wildflowers mural" [pressed] [ref=e114] [cursor=pointer]:
+          - generic [ref=e116]:
+            - generic [ref=e117]: Aranya
+            - text: Deer, palms & wildflowers mural
+        - button "Trellis Garden Soft florals on cream" [ref=e118] [cursor=pointer]:
+          - generic [ref=e120]:
+            - generic [ref=e121]: Trellis Garden
+            - text: Soft florals on cream
+        - button "Parrot Grove Birds among blossoms" [ref=e122] [cursor=pointer]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: Parrot Grove
+            - text: Birds among blossoms
+        - button "Nabhi Kamalam The cosmic lotus mural" [ref=e126] [cursor=pointer]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: Nabhi Kamalam
+            - text: The cosmic lotus mural
+        - button "Lotus Bloom A single giant flower" [ref=e130] [cursor=pointer]:
+          - generic [ref=e132]:
+            - generic [ref=e133]: Lotus Bloom
+            - text: A single giant flower
+        - button "Blossom Room Branches & songbirds" [ref=e134] [cursor=pointer]:
+          - generic [ref=e136]:
+            - generic [ref=e137]: Blossom Room
+            - text: Branches & songbirds
+        - button "Surprise me 🎲" [ref=e138] [cursor=pointer]
+  - generic [ref=e140]:
+    - generic [ref=e141]:
+      - heading [level=2] [ref=e142]:
+        - text: Fresh off the
+        - emphasis [ref=e143]: wall
+        - text: .
+      - paragraph [ref=e144]: Recent installs and artworks. Tap any piece for a closer look.
+    - group "Filter gallery" [ref=e145]:
+      - button "All" [ref=e146] [cursor=pointer]
+      - button "Installed rooms" [ref=e147] [cursor=pointer]
+      - button "Artworks" [ref=e148] [cursor=pointer]
+      - button "Studio" [ref=e149] [cursor=pointer]
+    - generic [ref=e150]:
+      - figure "Vanity nook in a floral trellis wallpaper" [ref=e151]:
+        - img "Vanity nook in a floral trellis wallpaper" [ref=e152]
+      - 'figure "Aranya: deer and palms across wardrobe doors" [ref=e154]':
+        - 'img "Aranya: deer and palms across wardrobe doors" [ref=e155]'
+      - 'figure "Nabhi Kamalam: The Origin of the Cosmos"':
+        - 'img "Nabhi Kamalam: The Origin of the Cosmos"'
+      - figure "A bedroom wrapped in blossoms" [ref=e158]:
+        - img "A bedroom wrapped in blossoms" [ref=e159]
+      - figure "The lotus, up close" [ref=e161]:
+        - img "The lotus, up close" [ref=e162]
+      - figure "Parrot garden behind a scalloped mirror":
+        - img "Parrot garden behind a scalloped mirror"
+      - figure "Tilak with temple elephants" [ref=e165]:
+        - img "Tilak with temple elephants" [ref=e166]
+      - figure "Motif studies, fresh from the press":
+        - img "Motif studies, fresh from the press"
+      - figure "Decals on a glass cabinet" [ref=e169]:
+        - img "Decals on a glass cabinet" [ref=e170]
+      - figure "Vishnu on the cosmic waters":
+        - img "Vishnu on the cosmic waters"
+      - figure "Painting the first lotus":
+        - img "Painting the first lotus"
+      - figure "From the studio":
+        - img "From the studio"
+  - generic [ref=e176]:
+    - generic [ref=e177]:
+      - generic [ref=e178]:
+        - paragraph [ref=e179]: Nabhi Kamalam · The Origin of the Cosmos
+        - heading [level=2] [ref=e180]:
+          - text: It starts with a
+          - emphasis [ref=e181]: brush
+          - text: ", not a template."
+        - paragraph [ref=e182]: "Each collection begins as a painting rooted in the old stories: Vishnu resting on the cosmic waters, the lotus rising from his navel, gardens full of parrots and palms. We repaint them in soft, modern colours so they sit as easily in a Bengaluru flat as in a London townhouse."
+        - paragraph [ref=e183]: And if the wall you have in mind needs something that doesn't exist yet, we'll paint it.
+      - generic [ref=e184]:
+        - img "An artist's hand painting a lotus"
+        - img "Nabhi Kamalam artwork with a lotus rising over water"
+    - generic [ref=e185]:
+      - generic [ref=e186]:
+        - heading "Say hello" [level=3] [ref=e187]
+        - paragraph [ref=e188]: DM us on Instagram with a photo of your wall.
+      - generic [ref=e189]:
+        - heading "Pick or customise" [level=3] [ref=e190]
+        - paragraph [ref=e191]: Choose a design, or ask for a custom piece in your colours.
+      - generic [ref=e192]:
+        - heading "We size it" [level=3] [ref=e193]
+        - paragraph [ref=e194]: Every print is scaled to your exact measurements.
+      - generic [ref=e195]:
+        - heading "It ships" [level=3] [ref=e196]
+        - paragraph [ref=e197]: Delivered across India and worldwide, ready to install.
+  - generic [ref=e199]:
+    - paragraph [ref=e200]: Your wall is waiting
+    - heading [level=2] [ref=e201]:
+      - text: Let's make it
+      - emphasis [ref=e202]: bloom
+      - text: .
+    - paragraph [ref=e203]: Orders and custom designs happen over Instagram DMs. Send a photo of your wall and we'll take it from there.
+    - link "Message @thehyden.art ✿" [ref=e204] [cursor=pointer]:
+      - /url: https://ig.me/m/thehyden.art
+  - contentinfo [ref=e206]:
+    - generic [ref=e207]: © The Hyden Art · Indian heritage, reimagined 🪷
+    - link "Instagram ↗" [ref=e208] [cursor=pointer]:
+      - /url: https://www.instagram.com/thehyden.art/
