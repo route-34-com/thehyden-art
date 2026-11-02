@@ -13,16 +13,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="brand/fav-32.png">
 <link rel="apple-touch-icon" href="brand/fav-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="preload" as="image" href="img/wall-pastel-tall.jpg" fetchpriority="high">
 <style>
 :root{
   /* palette and type from the live coming-soon page: cream, warm ink, walnut brown, terracotta */
   --ink:#2d2a26; --ink-2:#3a3631; --bone:#f4f1ec; --paper:#ffffff; --w2:#faf8f5; --w3:#f4f1ec; --w4:#efebe4;
   --vermilion:#2d2a26; --turmeric:#e6d8c8; --leaf:#2d2a26; --temple:#f6efe2; --sky:#f6efe2; --gold:#7a4a2a; --terra:#c96f4a;
-  --display:"DM Serif Display",Georgia,serif;
-  --serif:"DM Serif Display",Georgia,serif;
-  --sans:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --display:"Newsreader",Georgia,serif;
+  --serif:"Newsreader",Georgia,serif;
+  --sans:"Manrope","Helvetica Neue",Arial,sans-serif;
   --pad:clamp(18px,4vw,64px); --ease:cubic-bezier(.16,1,.3,1);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -384,8 +384,8 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 @media (max-width:760px){.man-top{grid-template-columns:1fr}.man-fig{max-width:420px}}
 /* ================= batch 3 ================= */
 /* hero headline: Playfair Display bold, all black */
-.hero-long h1{font-family:"Playfair Display",var(--display)!important;font-weight:700!important;letter-spacing:-.015em;line-height:1.02;color:#000!important;font-size:clamp(48px,6.6vw,112px)!important;line-height:1.04}
-.hero-long h1 em{color:#000!important;font-style:italic;font-weight:600}
+.hero-long h1{font-family:var(--display)!important;font-weight:500!important;letter-spacing:-.02em;color:#000!important;font-size:clamp(48px,6.6vw,112px)!important;line-height:1.04}
+.hero-long h1 em{color:#000!important;font-style:italic;font-weight:400}
 .hero-long .hero-side p{color:#000;font:500 12px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase}
 /* buttons: brown fill on hover, white text (no transform on .btn i: it would lift the fill above the label) */
 .btn i::before,.btn.light i::before{background:var(--gold)}
@@ -423,6 +423,19 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 .murals{padding-bottom:clamp(30px,3vw,50px)!important}
 .libwrap .L-lib{padding-top:clamp(30px,4vw,60px)!important}
 @media (max-width:700px){.motif-band img:nth-child(2),.motif-band img:nth-child(4){display:none}}
+/* collections strip */
+.cols{background:var(--paper)}
+.col-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.4vw,20px);padding:0 var(--pad) clamp(60px,7vw,110px)}
+.col-grid a{display:block}
+.col-grid figure{aspect-ratio:3/4;overflow:hidden;background:var(--w3)}
+.col-grid img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.col-grid a:hover img{transform:scale(1.04)}
+.col-grid b{display:flex;justify-content:space-between;align-items:baseline;font:400 clamp(22px,1.9vw,30px)/1.1 var(--display);margin-top:14px;padding-bottom:.08em}
+.col-grid b small{font:500 12px/1 var(--sans);letter-spacing:.14em;opacity:.55}
+.col-grid span{display:block;font-size:14px;opacity:.7;margin-top:4px}
+@media (max-width:900px){.col-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.col-grid li{scroll-snap-align:start}}
+.enq .btn+.btn{margin-left:10px}
+.T-dm{display:inline-block;font-size:14px;margin-left:14px;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:1000px){
   .links{display:none}.menu{display:block}
   .pillars{grid-template-columns:1fr 1fr}.pillars li:nth-child(2){border-right:0}.pillars li:nth-child(3){padding-left:0}
@@ -459,13 +472,13 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 <header class="nav" id="nav">
   <a class="brand" href="#top" aria-label="thehyden.art, home"><img src="brand/logo-512.png" width="40" height="40" alt="">thehyden.art</a>
   <nav class="links" aria-label="Main">
-    <a href="#murals">Murals</a><a href="#patterns">Library</a><a href="#tryon">Try it on</a><a href="#projects">Projects</a><a href="#gallery">Gallery</a><a href="#founder">Founder</a><a href="#enquire">Enquire</a>
+    <a href="collection.html">Collections</a><a href="#murals">Murals</a><a href="#tryon">Try it on</a><a href="#projects">Projects</a><a href="#gallery">Gallery</a><a href="#founder">Founder</a><a href="#enquire">Enquire</a>
   </nav>
   <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
 </header>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
   <button class="x" type="button" id="x">Close</button>
-  <a href="#murals">Murals</a><a href="#patterns">Library</a><a href="#tryon">Try it on</a><a href="#projects">Projects</a><a href="#gallery">Gallery</a><a href="#founder">Founder</a><a href="#enquire">Enquire</a>
+  <a href="collection.html">Collections</a><a href="#murals">Murals</a><a href="#tryon">Try it on</a><a href="#projects">Projects</a><a href="#gallery">Gallery</a><a href="#founder">Founder</a><a href="#enquire">Enquire</a>
 </div>
 
 <main id="main">
@@ -496,10 +509,16 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 
 <div class="mq" aria-hidden="true"><div><span>Thota</span><span>Rooted Reverie</span><span>White Lotus</span><span>Lotus Whispers</span><span>Whispers in Bloom</span><span>Blush Botanica</span><span>Folkscape</span><span>Nabhi Kamalam</span><span>Parrot Garden</span><span>Thota</span><span>Rooted Reverie</span><span>White Lotus</span><span>Lotus Whispers</span><span>Whispers in Bloom</span><span>Blush Botanica</span><span>Folkscape</span><span>Nabhi Kamalam</span><span>Parrot Garden</span></div></div>
 
+<!-- COLLECTIONS -->
+<section class="cols" id="collections" aria-labelledby="h-col">
+  <div class="sh"><h2 class="d rv" id="h-col">The <em>collections</em></h2><p class="rv">Wallpapers, decals, borders, embroidery and wall frames.</p></div>
+  <ul class="col-grid" id="col-grid"></ul>
+</section>
+
 <!-- THE PAINTED WHEEL -->
 <section class="ring-sec" aria-labelledby="h-ring">
   <div class="sh"><h2 class="d rv" id="h-ring">The Painted <em>Wheel</em></h2><p class="rv">Twelve of her paintings, turning slowly.</p></div>
-  <div class="ring-stage" role="region" aria-label="Rotating gallery of her paintings"><div class="ring"><figure><img decoding="async" src="img/ring/wall-thota.jpg" data-full="img/wall-thota.jpg" alt="Thota" decoding="async" draggable="false"><figcaption>Thota</figcaption></figure><figure><img decoding="async" src="img/ring/wall-rooted.jpg" data-full="img/wall-rooted.jpg" alt="Rooted Reverie" decoding="async" draggable="false"><figcaption>Rooted Reverie</figcaption></figure><figure><img decoding="async" src="img/ring/wall-white-lotus.jpg" data-full="img/wall-white-lotus.jpg" alt="White Lotus" decoding="async" draggable="false"><figcaption>White Lotus</figcaption></figure><figure><img decoding="async" src="img/ring/wall-lotus-whispers.jpg" data-full="img/wall-lotus-whispers.jpg" alt="Lotus Whispers" decoding="async" draggable="false"><figcaption>Lotus Whispers</figcaption></figure><figure><img decoding="async" src="img/ring/wall-whispers.jpg" data-full="img/wall-whispers.jpg" alt="Whispers in Bloom" decoding="async" draggable="false"><figcaption>Whispers in Bloom</figcaption></figure><figure><img decoding="async" src="img/ring/wall-blush.jpg" data-full="img/wall-blush.jpg" alt="Blush Botanica" decoding="async" draggable="false"><figcaption>Blush Botanica</figcaption></figure><figure><img decoding="async" src="img/ring/wall-folkscape.jpg" data-full="img/wall-folkscape.jpg" alt="Folkscape" decoding="async" draggable="false"><figcaption>Folkscape</figcaption></figure><figure><img decoding="async" src="img/ring/w11.jpg" data-full="img/w11.jpg" alt="Nabhi Kamalam" decoding="async" draggable="false"><figcaption>Nabhi Kamalam</figcaption></figure><figure><img decoding="async" src="img/ring/wall-playroom.jpg" data-full="img/wall-playroom.jpg" alt="The Playroom" decoding="async" draggable="false"><figcaption>The Playroom</figcaption></figure><figure><img decoding="async" src="img/ring/wall-muggu.jpg" data-full="img/wall-muggu.jpg" alt="Muggu & pink elephants" decoding="async" draggable="false"><figcaption>Muggu &amp; pink elephants</figcaption></figure><figure><img decoding="async" src="img/ring/wall-parrot.jpg" data-full="img/wall-parrot.jpg" alt="Parrot garden" decoding="async" draggable="false"><figcaption>Parrot garden</figcaption></figure><figure><img decoding="async" src="img/ring/wall-kolam.jpg" data-full="img/wall-kolam.jpg" alt="Coconut & Kolam" decoding="async" draggable="false"><figcaption>Coconut &amp; Kolam</figcaption></figure></div></div>
+  <div class="ring-stage" role="region" aria-label="Rotating gallery of her paintings"><div class="ring"><figure><img decoding="async" src="img/ring/wall-thota.jpg" data-full="img/wall-thota.jpg" alt="Thota" draggable="false"><figcaption>Thota</figcaption></figure><figure><img decoding="async" src="img/ring/wall-rooted.jpg" data-full="img/wall-rooted.jpg" alt="Rooted Reverie" draggable="false"><figcaption>Rooted Reverie</figcaption></figure><figure><img decoding="async" src="img/ring/wall-white-lotus.jpg" data-full="img/wall-white-lotus.jpg" alt="White Lotus" draggable="false"><figcaption>White Lotus</figcaption></figure><figure><img decoding="async" src="img/ring/wall-lotus-whispers.jpg" data-full="img/wall-lotus-whispers.jpg" alt="Lotus Whispers" draggable="false"><figcaption>Lotus Whispers</figcaption></figure><figure><img decoding="async" src="img/ring/wall-whispers.jpg" data-full="img/wall-whispers.jpg" alt="Whispers in Bloom" draggable="false"><figcaption>Whispers in Bloom</figcaption></figure><figure><img decoding="async" src="img/ring/wall-blush.jpg" data-full="img/wall-blush.jpg" alt="Blush Botanica" draggable="false"><figcaption>Blush Botanica</figcaption></figure><figure><img decoding="async" src="img/ring/wall-folkscape.jpg" data-full="img/wall-folkscape.jpg" alt="Folkscape" draggable="false"><figcaption>Folkscape</figcaption></figure><figure><img decoding="async" src="img/ring/w11.jpg" data-full="img/w11.jpg" alt="Nabhi Kamalam" draggable="false"><figcaption>Nabhi Kamalam</figcaption></figure><figure><img decoding="async" src="img/ring/wall-playroom.jpg" data-full="img/wall-playroom.jpg" alt="The Playroom" draggable="false"><figcaption>The Playroom</figcaption></figure><figure><img decoding="async" src="img/ring/wall-muggu.jpg" data-full="img/wall-muggu.jpg" alt="Muggu & pink elephants" draggable="false"><figcaption>Muggu &amp; pink elephants</figcaption></figure><figure><img decoding="async" src="img/ring/wall-parrot.jpg" data-full="img/wall-parrot.jpg" alt="Parrot garden" draggable="false"><figcaption>Parrot garden</figcaption></figure><figure><img decoding="async" src="img/ring/wall-kolam.jpg" data-full="img/wall-kolam.jpg" alt="Coconut & Kolam" draggable="false"><figcaption>Coconut &amp; Kolam</figcaption></figure></div></div>
 </section>
 
 <!-- MURALS -->
@@ -516,17 +535,6 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
   <img src="img/motif/lamp.png" alt="" style="left:93%;height:62%" loading="lazy">
 </div>
 
-<!-- WALLPAPER <section class="L-lib" id="patterns" aria-labelledby="h-lib">
-  <header class="L-head">
-    <div><h2 id="h-lib">The <i>Wallpaper</i> Library</h2></div>
-    <p>A curated collection of patterns, textures and timeless design, each one hand-painted by thehyden.art.</p>
-  </header>
-  <div class="L-cabinet" aria-label="Wallpaper display cabinet">
-    <div class="L-canopy L-wood-h"></div>
-    <div class="L-carcass"><div class="L-bays" id="lib-bays"></div></div>
-    <div class="L-plinth L-wood-h"></div>
-  </div>
-</section> -->
 <div class="libwrap">
 <section class="L-lib" id="patterns" aria-labelledby="h-lib">
   <header class="L-head">
@@ -640,6 +648,7 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 </div>
 
 <script src="settings.js"></script>
+<script src="collections.js"></script>
 <script src="gallery.js"></script>
 <script>
 (function(){
@@ -730,7 +739,14 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -12% 0px'});
   $$('.rv,.wipe').forEach(function(el){io.observe(el)});
 
-  var S=window.SETTINGS||{}; if(S.whatsapp){var wa=$('#wa');wa.href='https://wa.me/'+String(S.whatsapp).replace(/\D/g,'');wa.hidden=false}
+  var ask=window.hydenAsk('Hi! I came across thehyden.art and would love to talk about a design for my wall.');
+  if(ask.wa){var wa=$('#wa');wa.href=ask.wa;wa.hidden=false}
+
+  /* collections strip */
+  var cg=$('#col-grid');
+  if(cg&&window.COLLECTIONS) cg.innerHTML=window.COLLECTIONS.map(function(c,i){
+    return '<li class="rv" style="transition-delay:'+(i*.08)+'s"><a href="collection.html#'+c.key+'"><figure><img src="'+c.cover+'" alt="'+c.name+'" loading="lazy"></figure><b>'+c.name+'</b><span>'+(c.subs.length?c.subs.map(function(s){return s[1]}).join(' · '):c.line)+'</span></a></li>'}).join('');
+  $$('#col-grid .rv').forEach(function(el){io.observe(el)});
   $('#yr').textContent=new Date().getFullYear();
 })();
 </script>

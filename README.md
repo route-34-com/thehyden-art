@@ -21,6 +21,7 @@ The site is a static website with no build step and no backend that combines:
 ## Features
 
 - **The Painted Wheel** — a 3D rotating ring of paintings; drag or scroll sideways, tap to open
+- **Collections** — `COLLECTIONS` in `collections.js` (category, sub-categories, designs and their photos in `img/c/`)
 - **Murals grid** — each design shown as the painting beside a room photo, with a lightbox
 - **The Wallpaper Library** — a walnut cabinet of wallpaper rolls
 - **Try it on your wall** — real rooms, your own photo or live camera, with zoom and before/after
@@ -30,7 +31,7 @@ The site is a static website with no build step and no backend that combines:
 
 ## Live Site
 
-**[thehyden.art](https://thehyden.art)** currently shows the **coming-soon page** only. The main site (`index.html`) is not deployed yet.
+**[thehyden.art](https://thehyden.art)** currently shows the **coming-soon page** only. The main site is deployed on Vercel from `main`.
 
 ## Installation
 
@@ -88,10 +89,11 @@ Then open http://127.0.0.1:8811/index.html (use `python3` on macOS/Linux).
 
 ## Changing the Content
 
+- **Collections** — `COLLECTIONS` in `collections.js` (category, sub-categories, designs and their photos in `img/c/`)
 - **Murals grid** — `MU` list in `index.html` (name, Telugu name, type, painting, room photo, Instagram post)
 - **Try-on designs and rooms** — `walls` and `ROOMS` in `tryon.js`
 - **Gallery** — `WORKS` in `gallery.js`
-- **WhatsApp button** — set `whatsapp` in `settings.js` (country code, digits only). Empty falls back to Instagram DM
+- **WhatsApp** — `whatsapp` in `settings.js` (country code, digits only). Every "Ask" button builds its prefilled message through `hydenAsk()` in `collections.js`
 - **Colours** — `--gold` (accent), `--turmeric` (pale accent) and the hero italic colour in `index.html`. Preview options at `/mocks/colours.html`
 
 **Important:** client rules (brand name spelling, logo, what not to invent) are in `CLAUDE.md`. Read them before changing copy or design.
@@ -107,9 +109,9 @@ npx wrangler deploy
 
 `wrangler.toml` pins the Cloudflare account and the thehyden.art and www custom domains. Needs a wrangler login for the account that owns the domain.
 
-### Main site (not deployed yet)
+### Main site (Vercel)
 
-Only with the client's go-ahead. Deploy it as a static-assets Worker from a folder that holds only the site files, leaving out `CLAUDE.md`, `README.md`, `backups/`, `coming-soon/`, `mocks/` and `recordings/`, then move the custom domains over from the coming-soon worker.
+Every push to `main` deploys automatically on Vercel. No build step; `vercel.json` serves the folder as is and `.vercelignore` leaves out `CLAUDE.md`, `README.md`, `backups/`, `coming-soon/`, `mocks/`, `recordings/` and `data/`. Manual deploy: `vercel --prod`.
 
 ## Troubleshooting
 
@@ -123,6 +125,8 @@ Only with the client's go-ahead. Deploy it as a static-assets Worker from a fold
 ```
 thehyden-art/
 ├── index.html               # The site (inline CSS and JS for every section)
+├── collection.html          # Collections: wallpapers, decals, borders, embroidery, wall frames
+├── collections.js           # Collections data and the WhatsApp/Instagram enquiry helper
 ├── tryon.js                 # "Try it on your wall": rooms, own photo, live camera
 ├── library.css              # The Wallpaper Library styles
 ├── library.js               # The Wallpaper Library (walnut cabinet of rolls)

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collections · thehyden.art</title>
+<meta name="description" content="thehyden.art collections: hand-painted wallpapers, decals, borders, embroidery and wall frames, designed by an architect.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="brand/fav-32.png">
+<link rel="apple-touch-icon" href="brand/fav-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#2d2a26;--paper:#fff;--w2:#faf8f5;--w3:#f4f1ec;--w4:#efebe4;--gold:#7a4a2a;--line:rgba(45,42,38,.14);
+  --display:"Newsreader",Georgia,serif;--sans:"Manrope","Helvetica Neue",Arial,sans-serif;--pad:clamp(18px,4vw,64px);--ease:cubic-bezier(.16,1,.3,1)}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,figure,ul{margin:0;padding:0}ul{list-style:none}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 var(--pad);background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font:500 22px/1 var(--display)}
+.brand img{width:38px;height:38px}
+.links{display:flex;gap:clamp(14px,2.2vw,32px);font:500 14px/1 var(--sans);letter-spacing:.03em}
+.links a{padding:6px 0;border-bottom:1px solid transparent;transition:border-color .3s}
+.links a:hover,.links a[aria-current]{border-color:currentColor}
+.menu{display:none;font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.sheet{position:fixed;inset:0;z-index:60;background:var(--paper);display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 var(--pad);transform:translateY(-100%);transition:transform .6s var(--ease)}
+.sheet.open{transform:none}
+.sheet a{font:400 clamp(36px,10vw,56px)/1.15 var(--display)}
+.sheet .x{position:absolute;top:22px;right:var(--pad);font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+
+.head{padding:clamp(48px,7vw,110px) var(--pad) 0}
+.kicker{font:600 12px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+.head h1{font:400 clamp(52px,8vw,128px)/1.02 var(--display);letter-spacing:-.02em;margin-top:18px;padding-bottom:.08em}
+.head p{max-width:34em;margin-top:14px;font-size:17px;color:rgba(45,42,38,.78)}
+.cats{display:flex;gap:clamp(18px,3vw,40px);margin:clamp(36px,4vw,56px) var(--pad) 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.cats a{flex:none;padding:0 0 14px;font:500 15px/1 var(--sans);letter-spacing:.02em;color:rgba(45,42,38,.6);border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .3s,border-color .3s}
+.cats a:hover{color:var(--ink)}
+.cats a[aria-current]{color:var(--ink);border-color:var(--ink)}
+.cats sup{font-size:11px;margin-left:4px;opacity:.6}
+.subs{display:flex;flex-wrap:wrap;gap:8px;padding:22px var(--pad) 0}
+.subs a{border:1px solid var(--line);border-radius:999px;padding:9px 16px 8px;font:500 14px/1 var(--sans);transition:background .3s,color .3s,border-color .3s}
+.subs a:hover{border-color:var(--ink)}
+.subs a[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:clamp(28px,3vw,44px) clamp(14px,1.8vw,26px);padding:clamp(28px,3vw,44px) var(--pad) clamp(80px,9vw,140px)}
+.card{text-align:left;display:block;width:100%}
+.card figure{aspect-ratio:4/5;overflow:hidden;background:var(--w3)}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover img{transform:scale(1.035)}
+.card b{display:block;font:400 clamp(22px,1.8vw,27px)/1.15 var(--display);margin-top:14px}
+.card span{display:block;font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(45,42,38,.55);margin-top:8px}
+.card{opacity:0;transform:translateY(18px);animation:in .8s var(--ease) forwards}
+@keyframes in{to{opacity:1;transform:none}}
+
+.v{position:fixed;inset:0;z-index:120;background:var(--paper);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s}
+.v.open{opacity:1;visibility:visible;transition:opacity .35s}
+.v-stage{position:relative;background:var(--w3);display:flex;align-items:center;justify-content:center;min-height:0;padding:clamp(16px,3vw,40px)}
+.v-stage img{max-width:100%;max-height:calc(100svh - 2*clamp(16px,3vw,40px));object-fit:contain}
+.v-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:var(--paper);box-shadow:0 2px 12px rgba(0,0,0,.12);font-size:18px}
+.v-prev{left:14px}.v-next{right:14px}
+.v-side{display:flex;flex-direction:column;padding:clamp(24px,3vw,48px);overflow:auto}
+.v-x{align-self:flex-end;font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.v-side h2{font:400 clamp(36px,3.6vw,56px)/1.05 var(--display);margin-top:auto;padding-bottom:.08em}
+.v-side .kicker{margin-top:24px}
+.v-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}
+.v-thumbs button{width:64px;height:64px;overflow:hidden;opacity:.55;outline:1px solid transparent;outline-offset:2px;transition:opacity .25s,outline-color .25s}
+.v-thumbs button[aria-pressed="true"]{opacity:1;outline-color:var(--ink)}
+.v-thumbs img{width:100%;height:100%;object-fit:cover}
+.v-act{display:flex;flex-direction:column;gap:10px;margin-bottom:auto}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:999px;font:600 15px/1 var(--sans);letter-spacing:.02em;transition:background .3s,color .3s}
+.btn.wa{background:var(--ink);color:var(--paper)}.btn.wa:hover{background:var(--gold)}
+.btn.ig{border:1px solid var(--ink)}.btn.ig:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:18px;height:18px}
+.v-ig{font-size:14px;margin-top:16px;text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+
+footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:28px var(--pad);font-size:14px;color:rgba(45,42,38,.75)}
+@media (max-width:1000px){.links{display:none}.menu{display:block}}
+@media (max-width:820px){.v{grid-template-columns:1fr;grid-template-rows:minmax(0,58svh) auto;overflow:auto}.v-stage img{max-height:calc(58svh - 32px)}.v-side h2{margin-top:8px}.v-x{position:absolute;top:14px;right:14px;background:var(--paper);padding:10px 14px;border-radius:999px}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="thehyden.art, home"><img src="brand/logo-512.png" width="38" height="38" alt="">thehyden.art</a>
+  <nav class="links" aria-label="Main">
+    <a href="collection.html" aria-current="page">Collections</a><a href="index.html#murals">Murals</a><a href="index.html#tryon">Try it on</a><a href="index.html#projects">Projects</a><a href="index.html#gallery">Gallery</a><a href="index.html#founder">Founder</a><a href="index.html#enquire">Enquire</a>
+  </nav>
+  <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
+</header>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="x" type="button" id="x">Close</button>
+  <a href="collection.html">Collections</a><a href="index.html#murals">Murals</a><a href="index.html#tryon">Try it on</a><a href="index.html#projects">Projects</a><a href="index.html#gallery">Gallery</a><a href="index.html#founder">Founder</a><a href="index.html#enquire">Enquire</a>
+</div>
+
+<main>
+  <div class="head"><p class="kicker">Collections</p><h1 id="c-name"></h1><p id="c-line"></p></div>
+  <nav class="cats" id="cats" aria-label="Categories"></nav>
+  <nav class="subs" id="subs" aria-label="Sub-categories"></nav>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer><span>© <span id="yr">2026</span> thehyden.art · Hand-painted Indian heritage wallpapers</span><a href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener">@thehyden.art</a></footer>
+
+<div class="v" id="v" role="dialog" aria-modal="true" aria-labelledby="v-name">
+  <div class="v-stage"><button class="v-nav v-prev" type="button" aria-label="Previous photo">←</button><img id="v-img" alt=""><button class="v-nav v-next" type="button" aria-label="Next photo">→</button></div>
+  <div class="v-side">
+    <button class="v-x" type="button" id="v-x">Close</button>
+    <p class="kicker" id="v-kick"></p>
+    <h2 id="v-name"></h2>
+    <div class="v-thumbs" id="v-thumbs"></div>
+    <div class="v-act" id="v-act"></div>
+  </div>
+</div>
+
+<script src="settings.js"></script>
+<script src="collections.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)}, C=window.COLLECTIONS, cat, sub, list=[];
+  var WA='<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>';
+  function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+  function subName(c,k){var s=c.subs.filter(function(x){return x[0]===k})[0];return s?s[1]:''}
+  function route(){
+    var h=location.hash.slice(1).split('/');
+    cat=C.filter(function(c){return c.key===h[0]})[0]||C[0];
+    sub=cat.subs.some(function(s){return s[0]===h[1]})?h[1]:'';
+    document.title=cat.name+' · thehyden.art';
+    $('c-name').textContent=cat.name; $('c-line').textContent=cat.line;
+    $('cats').innerHTML=C.map(function(c){return '<a href="#'+c.key+'"'+(c===cat?' aria-current="page"':'')+'>'+c.name+'</a>'}).join('');
+    $('subs').hidden=!cat.subs.length;
+    $('subs').innerHTML=cat.subs.length?['<a href="#'+cat.key+'"'+(sub?'':' aria-current="true"')+'>All</a>'].concat(cat.subs.map(function(s){
+      return '<a href="#'+cat.key+'/'+s[0]+'"'+(s[0]===sub?' aria-current="true"':'')+'>'+s[1]+'</a>'})).join(''):'';
+    list=cat.items.filter(function(it){return !sub||it[1]===sub});
+    $('grid').innerHTML=list.map(function(it,i){
+      var t=it[2][0].indexOf('img/c/')===0?it[2][0].replace(/-1\.jpg$/,'-t.jpg'):it[2][0];
+      return '<button class="card" type="button" data-i="'+i+'" style="animation-delay:'+Math.min(i,10)*.05+'s"><figure><img src="'+t+'" alt="'+esc(it[0])+'" loading="lazy"></figure><b>'+esc(it[0])+'</b>'+(it[1]?'<span>'+esc(subName(cat,it[1]))+'</span>':'')+'</button>'}).join('');
+    var a=$('cats').querySelector('[aria-current]'); if(a&&a.scrollIntoView)a.scrollIntoView({block:'nearest',inline:'nearest'});
+  }
+  addEventListener('hashchange',function(){route();scrollTo(0,0)}); route();
+  $('grid').onclick=function(e){var b=e.target.closest('.card');if(b)openV(list[+b.dataset.i])};
+
+  var v=$('v'), cur, at=0, back;
+  function showImg(i){at=(i+cur[2].length)%cur[2].length;$('v-img').src=cur[2][at];$('v-img').alt=cur[0]+', photo '+(at+1);
+    [].forEach.call($('v-thumbs').children,function(b,j){b.setAttribute('aria-pressed',j===at)})}
+  function openV(it){
+    cur=it; back=document.activeElement;
+    var label=cat.name+(it[1]?' · '+subName(cat,it[1]):'');
+    $('v-kick').textContent=label; $('v-name').textContent=it[0];
+    $('v-thumbs').innerHTML=it[2].length>1?it[2].map(function(s,j){return '<button type="button" aria-label="Photo '+(j+1)+'"><img src="'+s+'" alt=""></button>'}).join(''):'';
+    [].forEach.call($('v-thumbs').children,function(b,j){b.onclick=function(){showImg(j)}});
+    var multi=it[2].length>1; [].forEach.call(v.querySelectorAll('.v-nav'),function(b){b.hidden=!multi});
+    var ask=window.hydenAsk('Hi! I would love to know more about "'+it[0]+'" ('+label+') from thehyden.art for my wall.');
+    $('v-act').innerHTML=(ask.wa?'<a class="btn wa" href="'+ask.wa+'" target="_blank" rel="noopener">'+WA+'Ask on WhatsApp</a>':'')+
+      '<a class="btn ig" href="'+ask.ig+'" target="_blank" rel="noopener">Message on Instagram</a>'+
+      (it[3]?'<a class="v-ig" href="https://www.instagram.com/'+it[3]+'/" target="_blank" rel="noopener">See the post</a>':'');
+    showImg(0); v.classList.add('open'); document.body.style.overflow='hidden'; $('v-x').focus();
+  }
+  function closeV(){v.classList.remove('open');document.body.style.overflow='';if(back)back.focus()}
+  $('v-x').onclick=closeV; v.querySelector('.v-prev').onclick=function(){showImg(at-1)}; v.querySelector('.v-next').onclick=function(){showImg(at+1)};
+  addEventListener('keydown',function(e){if(!v.classList.contains('open'))return;if(e.key==='Escape')closeV();if(e.key==='ArrowLeft')showImg(at-1);if(e.key==='ArrowRight')showImg(at+1)});
+
+  var sheet=$('sheet');
+  $('menu').onclick=function(){sheet.classList.add('open');this.setAttribute('aria-expanded','true')};
+  $('x').onclick=function(){sheet.classList.remove('open');$('menu').setAttribute('aria-expanded','false')};
+  [].forEach.call(sheet.querySelectorAll('a'),function(a){a.onclick=function(){sheet.classList.remove('open')}});
+  $('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

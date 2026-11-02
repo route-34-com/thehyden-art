@@ -47,9 +47,10 @@
     tg.classList.toggle('off',mural); mu.style.transform=mural?'scale('+Math.max(1,scale)+')':'';
     tg.querySelectorAll('button').forEach(function(b,j){b.setAttribute('aria-pressed',!mural&&j===tint)});
     var tn=!mural&&tint?', '+tints[tint][0]:''; tag.textContent=n+tn;
-    var msg=encodeURIComponent('Hi! I would love to know more about "'+n+'"'+(tn?' in '+tints[tint][0]:'')+' for my wall.');
+    var ask=window.hydenAsk?window.hydenAsk('Hi! I would love to know more about "'+n+'"'+(tn?' in '+tints[tint][0]:'')+' from thehyden.art for my wall.'):{ig:'https://ig.me/m/thehyden.art'};
     pick.innerHTML='<b>'+esc(n)+'</b><small>'+(mural?'Mural':'Pattern')+'. '+esc(w[1])+'</small>'+
-      '<a class="btn" href="https://ig.me/m/thehyden.art?text='+msg+'" target="_blank" rel="noopener">Ask about this design <i>→</i></a>'+
+      '<a class="btn" href="'+(ask.wa||ask.ig)+'" target="_blank" rel="noopener">'+(ask.wa?'Ask on WhatsApp':'Ask about this design')+' <i>→</i></a>'+
+      (ask.wa?'<a class="T-dm" href="'+ask.ig+'" target="_blank" rel="noopener">or message on Instagram</a>':'')+
       '<a class="ig-link" aria-label="See it on Instagram" href="https://www.instagram.com/'+w[6]+'/" target="_blank" rel="noopener">'+IGI+'</a>';
   }
   function setWall(i){cur=i;wall.classList.add('swap');setTimeout(function(){paint();wall.classList.remove('swap')},200);

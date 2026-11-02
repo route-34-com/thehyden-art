@@ -33,8 +33,12 @@ library.css/js The Wallpaper Library (walnut cabinet of rolls; classes L-, ids l
 tryon.js       "Try it on your wall" (3 real rooms with CSS clip-path walls, your own photo or live camera mapped with four corner dots via matrix3d, "Hold this view" freezes the camera frame, before/after, tints). Used
 netmap.js      World + India maps (world: India to 20 countries in black; India: outline + 18 cities). Used
 gallery.js     159 Instagram works (img/g/NNN.jpg), categories room/art/studio
-settings.js    WhatsApp number (button appears when set); other fields unused
-site.css/js    from the other session's "fresh build" (saved as backups/2026-10-14/index.fresh-build.html); NOT used now
+settings.js    WhatsApp number 917032382063 (Mrudhula, given 2 Nov 2026). All enquiry links go through window.hydenAsk(text) in collections.js (wa.me + ig.me with a prefilled message)
+collection.html  Collections page (Hari + Mrudhula, 2 Nov 2026): Wallpapers (Patterns, Murals), Decals (Single motifs, Pairings, Repeats, Scenes),
+               Borders (Single bands, Layered borders), Embroidery, Wall frames. Hash routes #decals/pairings. Viewer = photos + WhatsApp/Instagram ask
+collections.js the data for it. Decal/border photos from her Drive zips (data/, gitignored) resized into img/c/<slug>-N.jpg (+ -t.jpg card).
+               Sub-category names were chosen by us from her list (stand alone/combination/repetition/story; simple/combination borders); design names
+               are descriptive placeholders (Blackbuck, Lotus vine...) for her to confirm. Embroidery and Wall frames only have Nabhi Kamalam so far
 img/           w*.jpg rooms, wall-*.jpg flat designs, g/ gallery, ring/ (480px carousel images), shelf/ (walnut + roll textures),
                motif/ cut-outs, band/ strips, hero-trellis.jpg (cropped trellis, unused now), mrudula.jpg
 brand/         logo, favicons, client photos
@@ -47,10 +51,11 @@ backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the
 ```
 
 ## Homepage sections (current index.html)
-- **Type and colour:** headings DM Serif Display (400, italic accents), body DM Sans; hero headline in Playfair Display 700 (italic 600), all black. Tried and rejected: Bodoni Moda (too thin), Fraunces (right thickness, wrong face), Cormorant Garamond. Button hover fills walnut brown with white label (green was rejected). Never put a transform on .btn i (it lifts the fill over the label). Instagram links are the small gradient Instagram logo (svg .igi, gradient #ig-g defined after <body>). Whites only: #ffffff, #faf8f5, #f4f1ec, #efebe4 by section; text charcoal #2d2a26; accent walnut brown #7a4a2a (--gold; pale --turmeric #e6d8c8; deeper #5a3219 in the hero italic). Pink, then indigo, were replaced on Hari's request, 14 Oct.
-1. **Nav**: logo + thehyden.art, links (Murals, Library, Try it on, Projects, Gallery, Founder, Enquire); frosted white once you scroll; full-screen menu on phones.
+- **Type and colour:** since 2 Nov 2026 (Hari asked for new fonts, "professional and clean"): headings and hero Newsreader (opsz, 400/500, italic accents), body Manrope. Before that: DM Serif Display + DM Sans with a Playfair Display hero. Tried and rejected: Bodoni Moda (too thin), Fraunces (right thickness, wrong face), Cormorant Garamond. Button hover fills walnut brown with white label (green was rejected). Never put a transform on .btn i (it lifts the fill over the label). Instagram links are the small gradient Instagram logo (svg .igi, gradient #ig-g defined after <body>). Whites only: #ffffff, #faf8f5, #f4f1ec, #efebe4 by section; text charcoal #2d2a26; accent walnut brown #7a4a2a (--gold; pale --turmeric #e6d8c8; deeper #5a3219 in the hero italic). Pink, then indigo, were replaced on Hari's request, 14 Oct.
+1. **Nav**: logo + thehyden.art, links (Collections → collection.html, Murals, Try it on, Projects, Gallery, Founder, Enquire); frosted white once you scroll; full-screen menu on phones.
 2. **Hero (long scroll)**: Nabhi Kamalam pastel mural pinned in a 420svh section (image 300svh tall); the painting pans upward with scroll; the headline block is fixed at the viewport centre the whole time (no easing); once the hero's bottom edge rises to meet it, it stops there and leaves with the hero (JS: y=min(y1, y0+scroll past the pin)). No white wash over the art. Uses `img/wall-pastel-tall.jpg` (1600x2164): her original on top, unchanged, plus ~900px of extra water below built WITHOUT AI from her own water texture and lotus cut-outs, with the kolam borders tiled (407px repeat). Script: `backups/2026-10-14/extend-hero.py`. Mirroring/repeating the whole mural looked bad and was dropped. AI outpainting (Runway) was blocked: 0 credits. A taller file from her is still best.
 3. **Manifesto** (heading + room photo img/g/043 at 5:4 on the right) + four selling points with black line icons (compass, networked globe (9 nodes), networked India outline from netmap.js (18 cities, 28 links), house + office); **marquee** of design names.
+3b. **The collections** (#collections): 5 tiles from collections.js linking to collection.html#<key>.
 4. **The Painted Wheel**: 3D rotating ring of 12 paintings (backs visible), drag or sideways scroll, tap to open.
 5. **The murals**: 8 designs in a 2-column grid; each card = painting (2/3) + room photo (1/3) side by side, name row with Instagram logo; wipe-in reveals; lightbox.
 5b. **Motif band** (.motif-band) between murals and library: her kolam (img/motif/kolam.png, repeat-x) with lamp, lotus, elephant, origami bird, lamp cut-outs.
@@ -66,7 +71,11 @@ backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the
 - Accent colour change is still open: mocks/colours.html shows eight options from her paintings. Pink and indigo were already replaced once (14 Oct), so check with Hari before picking those.
 - Research behind the concepts (competitor sites, visualiser tech, conversion data) is in the Route34 workspace at reports/Interactive wallpaper site concepts.md, not in this repo.
 
-## Deployment (Cloudflare)
+## Deployment (Vercel, from 2 Nov 2026)
+- Main site deploys on **Vercel** (Sharan's team "Sharan Kumar R's projects"), auto-deployed on every push to `main` of route-34-com/thehyden-art. Static, no build (`vercel.json`); `.vercelignore` keeps CLAUDE.md, README, backups, coming-soon, mocks, recordings, data out.
+- The thehyden.art domain still points at the Cloudflare coming-soon worker; moving it to Vercel needs Hari's go-ahead.
+
+## Deployment (Cloudflare, coming-soon)
 - Domain **thehyden.art** is registered at **GoDaddy**; nameservers point to Cloudflare (`emely`/`kurt.ns.cloudflare.com`). `.art` can't be transferred to Cloudflare Registrar.
 - Hosting is on the **route34official@gmail.com** Cloudflare account (ID `c23ea81bff07813e7402cccf14d0527b`). Don't use the other accounts the wrangler login can see (harikrishnasaravana23, Curiodotfun).
 - **Live now: the coming-soon page only.** Worker `thehyden-coming-soon`, deployed from `coming-soon/` with `npx wrangler deploy` (its `wrangler.toml` pins the account and the custom domains thehyden.art + www). The page is in the classic style with a phone layout that centres everything.
