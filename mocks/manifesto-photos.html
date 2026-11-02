@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifesto photo options</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Manrope:wght@400;500;600&display=swap">
+<style>
+:root{--ink:#2d2a26;--gold:#7a4a2a;--pad:clamp(18px,4vw,64px)}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.6 Manrope,sans-serif}
+.bar{position:sticky;top:0;z-index:5;background:#2d2a26;color:#fff;padding:12px var(--pad);font:600 14px/1.4 Manrope,sans-serif;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.bar a{color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 12px}
+.opt{background:#f4f1ec;padding:clamp(48px,6vw,96px) var(--pad);border-bottom:6px solid #fff}
+.tag{font:600 12px/1 Manrope,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.top{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(28px,5vw,90px);align-items:center}
+h2{margin:0;font:400 clamp(34px,5.4vw,84px)/1.08 Newsreader,serif;max-width:17ch;padding-bottom:.1em}
+h2 em{color:var(--gold)}
+img{width:100%;aspect-ratio:5/4;object-fit:cover;display:block}
+@media (max-width:760px){.top{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="bar">Pick one: <a href="#now">Now</a><a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a><a href="#F">F</a><a href="#G">G</a><a href="#H">H</a></div>
+<script>
+var O=[['now','043','Current: temple outline mural'],['A','007','Madhumalika, woman in a pink saree'],['B','003','Vanam, vanity nook'],['C','017','Thota, bedroom'],['D','035','White Lotus, living room'],
+       ['E','047','Rooted Reverie, village mural'],['F','006','Aranya, cupboard and hall'],['G','004','Songbird Branches, bedroom'],['H','070','Blush Botanica, lounge']];
+document.write(O.map(function(o){return '<section class="opt" id="'+o[0]+'"><p class="tag">'+(o[0]==='now'?'Now':'Option '+o[0])+' · '+o[2]+'</p><div class="top"><h2>Wallpapers, murals, decals and frames, painted by hand and drawn by an <em>architect.</em></h2><img src="../img/g/'+o[1]+'.jpg" alt=""></div></section>'}).join(''));
+</script>
+</body>
+</html>

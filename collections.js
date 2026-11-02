@@ -106,6 +106,19 @@
       ['Chitra Varusa','',[g('033')],'p/DZmuPvIyPvr']]}
   ];
 
+  /* extra English words so search finds Telugu-named designs (name -> words) */
+  window.KEYWORDS={
+    'Madhumalika':'parrot garden birds','Vanam':'floral trellis flowers','Krishna Jinka':'blackbuck deer antelope','Nandi Kamalam':'nandi bull lotus',
+    'Mandaram':'hibiscus flower','Mandara Kommalu':'hibiscus flowers branch','Chirutha':'cheetah leopard arches','Jinka Pilla':'fawn deer niche',
+    'Jinka Jodi':'fawns deer shelf pair','Hamsa Jodi':'swans swan pair','Ambari':'elephants elephant howdah temple','Pitta Katha':'birds vine arches story',
+    'Pachha Pittalu':'green birds branch','Kamala Theega':'lotus vine','Chilaka Anchu':'parrot band','Poola Anchu':'flowers blossom band',
+    'Matti Anchu':'terracotta earth band','Malle Anchu':'jasmine mogra cornice gold','Theega Anchu':'vine leaf band','Sannani Anchu':'thin floral band peacock',
+    'Gulabi Anchu':'pink floral band','Gadapa':'door frame doorway threshold','Neeli Varusa':'blue indigo bands stripes','Chiguru Varusa':'leaf motifs line',
+    'Pachha Anchu':'green band elephants palms','Toranam':'arches arch floral','Neeli Jali':'blue lattice tiles','Seeta Ramakalyanam':'sita rama wedding kalyanam under sacred skies',
+    'Gaja Seva':'elephant parasol umbrella devotees','Alankaram':'deity lotus jewellery','Veena':'music veena','Nrityam':'dance dancer',
+    'Poola Gadulu':'flowers botanical grid tiles','Chitra Varusa':'miniature frames row','Heirloom Weave':'weave textile print'
+  };
+
   /* one place that builds every enquiry link on the site */
   window.hydenAsk=function(text){
     var S=window.SETTINGS||{}, n=String(S.whatsapp||'').replace(/\D/g,''), t=encodeURIComponent(text);
