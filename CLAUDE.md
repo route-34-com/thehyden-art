@@ -23,7 +23,7 @@ Website for **thehyden.art**: hand-painted Indian heritage wallpapers, murals, w
 - `brand/logo-master.png` 3688px print master, `brand/logo-full.png` 2048px, `brand/logo-512.png` nav.
 - Favicons from the same sharp logo without the wordmark: `brand/favicon.ico` (16/32/48), `fav-32.png`, `fav-180.png` + `fav-192.png` (on white).
 - The live coming-soon page (`coming-soon/public/`) still has the OLD favicons; update only with a deploy Hari approves.
-- `brand/clients/*.jpg`: storefront photos of her commercial projects, cropped 4:5 on each sign.
+- `brand/clients/*.jpg`: storefront photos of her commercial projects, cropped 4:5 on each sign. Source not recorded (ask Hari).
 - High-res parrot painting (transparent PNG, faces left, perched): `~/Downloads/Parrot.png`. It's the source for any future parrot animation.
 
 ## Files
