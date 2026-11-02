@@ -92,7 +92,7 @@
      subs:[],
      items:[
       ['Seeta Ramakalyanam','',[g('074'),g('080'),g('076')],'p/DNqPV4kT9iY'],
-      [N.name,'',[N.img.stitch,N.img.stitching,N.img.threads],N.igFrame]]},
+      [N.name,'',[N.img.stitch,'img/g/011.jpg',N.img.stitching,N.img.threads],N.igFrame]]},
     {key:'frames',cover:N.img.framed,name:'Wall frames',line:'Her paintings, framed for the wall.',
      subs:[],
      items:[
