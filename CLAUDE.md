@@ -36,7 +36,9 @@ gallery.js     159 Instagram works (img/g/NNN.jpg), categories room/art/studio
 settings.js    WhatsApp number 917032382063 (Mrudhula, given 2 Nov 2026). All enquiry links go through window.hydenAsk(text) in collections.js (wa.me + ig.me with a prefilled message)
 collection.html  Collections page (Hari + Mrudhula, 2 Nov 2026): Wallpapers (Patterns, Murals), Decals (Single motifs, Pairings, Repeats, Scenes),
                Borders (Single bands, Layered borders), Embroidery, Wall frames. Hash routes #decals/pairings. Viewer = photos + WhatsApp/Instagram ask
-collections.js the data for it. Decal/border photos from her Drive zips (data/, gitignored) resized into img/c/<slug>-N.jpg (+ -t.jpg card).
+collections.js THE ONE DESIGN LIST: window.DESIGNS (key = Library shelf slug: name, Telugu, note, kind, try-on tile/pos, Instagram, images) and
+               window.SHOW (which designs appear, in order, in murals grid, Painted Wheel, marquee, Library, try-on). index.html, library.js, tryon.js
+               and collection.html all read from it; never re-list names elsewhere. Also the collection page data. Decal/border photos from her Drive zips (data/, gitignored) resized into img/c/<slug>-N.jpg (+ -t.jpg card).
                Sub-category names were chosen by us from her list (stand alone/combination/repetition/story; simple/combination borders); design names
                are descriptive placeholders (Blackbuck, Lotus vine...) for her to confirm. Embroidery and Wall frames only have Nabhi Kamalam so far
 img/           w*.jpg rooms, wall-*.jpg flat designs, g/ gallery, ring/ (480px carousel images), shelf/ (walnut + roll textures),

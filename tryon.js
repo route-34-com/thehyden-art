@@ -4,25 +4,8 @@
   var $=function(id){return document.getElementById(id)}, room=$('T-room'); if(!room) return;
   var wall=$('T-wall'), tag=$('T-tag'), thumbs=$('T-thumbs'), pick=$('T-pick'), tg=$('T-tints'), plain=$('T-plain'), handle=$('T-handle'), base=$('T-base');
   // [name, note, image, kind, tile size (% of wall width) or 'cover', position, instagram path]
-  var walls=[
-    ['The Playroom','Wooden horses and curious birds','wall-playroom','pattern','40%','0 0','p/DcBsEJWnU9q'],
-    ['Motif & Monkey','Where tradition meets mischief','wall-monkey','pattern','34%','0 0','p/DObbmTnk81l'],
-    ['Whispers in Bloom','Birdsong on teal','wall-whispers','pattern','38%','0 0','p/DLxqWZET1ek'],
-    ['Lotus & Origami Birds','Calm, not crowded','wall-origami','pattern','32%','0 0','p/DUSnnn6kwWB'],
-    ['Muggu & Pink Elephants','Playful muggu frames','wall-muggu','pattern','34%','0 0','p/C8WPCcjPzXY'],
-    ['Kerosene Lamps','Lamps and candle stands','wall-lamps','pattern','60%','0 0','p/C8buStkqcY5'],
-    ['Coconut & Kolam','Tropical, traditional','wall-kolam','pattern','34%','0 0','p/C8zHOmTSrOI'],
-    ['Floral Trellis','Soft florals on cream','wall-trellis','pattern','36%','0 0','p/DeCNRlVHU6R'],
-    ['Parrot Garden','Birds among blossoms','wall-parrot','pattern','34%','0 0','p/DdLXJJkymg4'],
-    ['Songbird Branches','Branches and songbirds','wall-blossom','pattern','40%','0 0','p/DdjEoORyUux'],
-    ['Thota','An old garden, brought home','wall-thota','mural','cover','50% 40%','p/Dcf1YU4SlSd'],
-    ['Rooted Reverie','A South Indian village','wall-rooted','mural','cover','40% 40%','p/DUF1PLPk_ly'],
-    ['Folkscape','Village life, timeless','wall-folkscape','mural','cover','50% 50%','p/DMhgOi3zvX7'],
-    ['White Lotus','Nandi, palms and kolam','wall-white-lotus','mural','cover','40% 50%','p/Da2VGkGyjoe'],
-    ['Lotus Whispers','Lotus vines that flow','wall-lotus-whispers','mural','cover','50% 0%','p/DUA1cRcExpb'],
-    ['Blush Botanica','Soft florals, calm tones','wall-blush','mural','cover','50% 40%','p/DPX_3r8E0Lh'],
-    ['Nabhi Kamalam','The cosmic lotus, in gold','wall-nabhi','mural','cover','50% 50%','p/DdYRtDtHWOC']
-  ];
+  /* from collections.js: [name, note, artwork, kind, tile size, position, instagram path] */
+  var walls=window.SHOW.tryon.map(function(k){var x=window.DESIGNS[k];return [x.name,x.note,x.img.art,x.kind,x.tile,x.pos,x.ig]});
   var tints=[['Original','#ffffff'],['Blush','#f4d4cc'],['Sage','#d3dfc9'],['Powder blue','#d2e3e8'],['Butter','#f4e4b8'],['Terracotta','#e6b9a2']];
   var IGI=document.querySelector('.igi')?document.querySelector('.igi').outerHTML:'Instagram';
   var ROOMS={
@@ -40,8 +23,8 @@
   function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
   function paint(){
     var w=walls[cur], n=w[0], mural=w[3]==='mural';
-    var mu=$('T-mu'); wall.classList.toggle('is-mural',mural); mu.style.backgroundImage=mural?'url(img/'+w[2]+'.jpg)':''; mu.style.backgroundPosition=w[5];
-    wall.style.backgroundImage=mural?'none':'url(img/'+w[2]+'.jpg)'; wall.style.backgroundPosition=w[5];
+    var mu=$('T-mu'); wall.classList.toggle('is-mural',mural); mu.style.backgroundImage=mural?'url('+w[2]+')':''; mu.style.backgroundPosition=w[5];
+    wall.style.backgroundImage=mural?'none':'url('+w[2]+')'; wall.style.backgroundPosition=w[5];
     wall.style.backgroundRepeat=mural?'no-repeat':'repeat'; wall.style.backgroundSize=mural?'cover':(parseFloat(w[4])*scale)+'%';
     wall.style.backgroundColor=mural?'':tints[tint][1]; wall.style.backgroundBlendMode=mural?'normal':'multiply';
     tg.classList.toggle('off',mural); mu.style.transform=mural?'scale('+Math.max(1,scale)+')':'';
@@ -58,7 +41,7 @@
   function showKind(k){document.querySelectorAll('.T-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.kind===k)});
     thumbs.querySelectorAll('button').forEach(function(b){b.hidden=walls[b.dataset.i][3]!==k})}
   walls.forEach(function(w,i){var b=document.createElement('button');b.type='button';b.dataset.i=i;b.setAttribute('aria-label',w[0]);
-    b.innerHTML='<i style="background-image:url(img/'+w[2]+'.jpg);background-position:'+(w[5]==='0 0'?'center':w[5])+'"></i>'+esc(w[0]);
+    b.innerHTML='<i style="background-image:url('+w[2]+');background-position:'+(w[5]==='0 0'?'center':w[5])+'"></i>'+esc(w[0]);
     b.onclick=function(){setWall(i)};thumbs.appendChild(b)});
   document.querySelectorAll('.T-tabs button').forEach(function(b){b.onclick=function(){showKind(b.dataset.kind)}});
   tints.forEach(function(t,j){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',t[0]+' wall colour');b.style.background=t[1];

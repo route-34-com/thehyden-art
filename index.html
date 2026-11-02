@@ -507,7 +507,7 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
   </ul>
 </section>
 
-<div class="mq" aria-hidden="true"><div><span>Thota</span><span>Rooted Reverie</span><span>White Lotus</span><span>Lotus Whispers</span><span>Whispers in Bloom</span><span>Blush Botanica</span><span>Folkscape</span><span>Nabhi Kamalam</span><span>Parrot Garden</span><span>Thota</span><span>Rooted Reverie</span><span>White Lotus</span><span>Lotus Whispers</span><span>Whispers in Bloom</span><span>Blush Botanica</span><span>Folkscape</span><span>Nabhi Kamalam</span><span>Parrot Garden</span></div></div>
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
 
 <!-- COLLECTIONS -->
 <section class="cols" id="collections" aria-labelledby="h-col">
@@ -518,7 +518,7 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 <!-- THE PAINTED WHEEL -->
 <section class="ring-sec" aria-labelledby="h-ring">
   <div class="sh"><h2 class="d rv" id="h-ring">The Painted <em>Wheel</em></h2><p class="rv">Twelve of her paintings, turning slowly.</p></div>
-  <div class="ring-stage" role="region" aria-label="Rotating gallery of her paintings"><div class="ring"><figure><img decoding="async" src="img/ring/wall-thota.jpg" data-full="img/wall-thota.jpg" alt="Thota" draggable="false"><figcaption>Thota</figcaption></figure><figure><img decoding="async" src="img/ring/wall-rooted.jpg" data-full="img/wall-rooted.jpg" alt="Rooted Reverie" draggable="false"><figcaption>Rooted Reverie</figcaption></figure><figure><img decoding="async" src="img/ring/wall-white-lotus.jpg" data-full="img/wall-white-lotus.jpg" alt="White Lotus" draggable="false"><figcaption>White Lotus</figcaption></figure><figure><img decoding="async" src="img/ring/wall-lotus-whispers.jpg" data-full="img/wall-lotus-whispers.jpg" alt="Lotus Whispers" draggable="false"><figcaption>Lotus Whispers</figcaption></figure><figure><img decoding="async" src="img/ring/wall-whispers.jpg" data-full="img/wall-whispers.jpg" alt="Whispers in Bloom" draggable="false"><figcaption>Whispers in Bloom</figcaption></figure><figure><img decoding="async" src="img/ring/wall-blush.jpg" data-full="img/wall-blush.jpg" alt="Blush Botanica" draggable="false"><figcaption>Blush Botanica</figcaption></figure><figure><img decoding="async" src="img/ring/wall-folkscape.jpg" data-full="img/wall-folkscape.jpg" alt="Folkscape" draggable="false"><figcaption>Folkscape</figcaption></figure><figure><img decoding="async" src="img/ring/w11.jpg" data-full="img/w11.jpg" alt="Nabhi Kamalam" draggable="false"><figcaption>Nabhi Kamalam</figcaption></figure><figure><img decoding="async" src="img/ring/wall-playroom.jpg" data-full="img/wall-playroom.jpg" alt="The Playroom" draggable="false"><figcaption>The Playroom</figcaption></figure><figure><img decoding="async" src="img/ring/wall-muggu.jpg" data-full="img/wall-muggu.jpg" alt="Muggu & pink elephants" draggable="false"><figcaption>Muggu &amp; pink elephants</figcaption></figure><figure><img decoding="async" src="img/ring/wall-parrot.jpg" data-full="img/wall-parrot.jpg" alt="Parrot garden" draggable="false"><figcaption>Parrot garden</figcaption></figure><figure><img decoding="async" src="img/ring/wall-kolam.jpg" data-full="img/wall-kolam.jpg" alt="Coconut & Kolam" draggable="false"><figcaption>Coconut &amp; Kolam</figcaption></figure></div></div>
+  <div class="ring-stage" role="region" aria-label="Rotating gallery of her paintings"><div class="ring" id="ring"></div></div>
 </section>
 
 <!-- MURALS -->
@@ -665,15 +665,8 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
   $$('#sheet a').forEach(function(a){a.onclick=function(){sheet.classList.remove('open')}});
 
   /* murals */
-  var MU=[
-    ['Thota','తోట','Mural','img/wall-thota.jpg','img/g/017.jpg','p/Dcf1YU4SlSd'],
-    ['Rooted Reverie','','Mural','img/wall-rooted.jpg','img/g/047.jpg','p/DUF1PLPk_ly'],
-    ['White Lotus','','Mural','img/wall-white-lotus.jpg','img/g/035.jpg','p/Da2VGkGyjoe'],
-    ['Lotus Whispers','','Mural','img/wall-lotus-whispers.jpg','img/g/052.jpg','p/DUA1cRcExpb'],
-    ['Whispers in Bloom','','Wallpaper','img/wall-whispers.jpg','img/g/085.jpg','p/DLxqWZET1ek'],
-    ['Blush Botanica','','Mural','img/wall-blush.jpg','img/g/070.jpg','p/DPX_3r8E0Lh'],
-    ['Folkscape','','Mural','img/wall-folkscape.jpg','img/g/084.jpg','p/DMhgOi3zvX7'],
-    ['Nabhi Kamalam','నాభి కమలం','Wall frame','img/w11.jpg','img/w09.jpg','p/DdFBt24E4U4']];
+  var DS=window.DESIGNS, SH=window.SHOW;
+  var MU=SH.murals.map(function(m){var x=DS[m[0]];return [x.name,x.te,m[1],x.img[m[2]||'art'],x.img[m[3]||'room'],x[m[4]||'ig']]});
   var muItems=[];
   $('#mu-list').innerHTML=MU.map(function(m,i){
     muItems.push({src:m[3],cap:m[0]+', as painted',ig:'https://www.instagram.com/'+m[5]+'/'},{src:m[4],cap:m[0]+', on the wall',ig:'https://www.instagram.com/'+m[5]+'/'});
@@ -712,6 +705,11 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
     var travel=Math.max(0,hli.offsetHeight-innerHeight);hli.style.transform='translate3d(-50%,'+(-p*travel).toFixed(1)+'px,0)';var th=hlt.offsetHeight,y0=innerHeight/2-th/2,y1=innerHeight-th-Math.max(28,innerHeight*.05);var e=Math.max(0,-r.top-run);hlt.style.transform='translate3d(-50%,'+Math.min(y1,y0+e).toFixed(1)+'px,0)'}
     addEventListener('scroll',function(){if(!panQ){panQ=true;requestAnimationFrame(pan)}},{passive:true});addEventListener('resize',pan);hli.addEventListener('load',pan);pan()}
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* marquee and Painted Wheel, from collections.js */
+  var names=SH.marquee.map(function(k){return '<span>'+DS[k].name+'</span>'}).join('');
+  $('#mq').innerHTML=names+names;
+  $('#ring').innerHTML=SH.ring.map(function(r){var x=DS[r[0]],full=x.img[r[1]||'art'],e=x.name.replace(/&/g,'&amp;');
+    return '<figure><img decoding="async" src="img/ring/'+full.split('/').pop()+'" data-full="'+full+'" alt="'+e+'" draggable="false"><figcaption>'+e+'</figcaption></figure>'}).join('');
 /* ---- in the round: a 3D ring that turns slowly, drag to spin ---- */
   var stage=$('.ring-stage'), ring=$('.ring'), rf=$$('.ring figure');
   if(stage){

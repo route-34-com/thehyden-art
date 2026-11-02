@@ -89,9 +89,9 @@ Then open http://127.0.0.1:8811/index.html (use `python3` on macOS/Linux).
 
 ## Changing the Content
 
-- **Collections** — `COLLECTIONS` in `collections.js` (category, sub-categories, designs and their photos in `img/c/`)
-- **Murals grid** — `MU` list in `index.html` (name, Telugu name, type, painting, room photo, Instagram post)
-- **Try-on designs and rooms** — `walls` and `ROOMS` in `tryon.js`
+- **Designs (one list for the whole site)** — `DESIGNS` in `collections.js`: name, Telugu name, note, Instagram post and images for each design. `SHOW` picks which designs appear, and in what order, in the murals grid, Painted Wheel, marquee, Library and try-on. Change a name once there and it changes everywhere
+- **Collections page** — `COLLECTIONS` in `collections.js` (categories, sub-categories, decal and border photos in `img/c/`)
+- **Try-on rooms** — `ROOMS` in `tryon.js`
 - **Gallery** — `WORKS` in `gallery.js`
 - **WhatsApp** — `whatsapp` in `settings.js` (country code, digits only). Every "Ask" button builds its prefilled message through `hydenAsk()` in `collections.js`
 - **Colours** — `--gold` (accent), `--turmeric` (pale accent) and the hero italic colour in `index.html`. Preview options at `/mocks/colours.html`

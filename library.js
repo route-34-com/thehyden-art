@@ -1,12 +1,7 @@
 /* The Wallpaper Library */
 (function(){
-  /* key, name, room photo, full artwork, repeat? (1 = repeating pattern, 0 = one continuous mural) */
-  var D=[
-    ['parrot','Parrot garden','img/g/007.jpg','img/wall-parrot.jpg',1],['thota','Thota','img/g/017.jpg','img/wall-thota.jpg',0],['whispers','Whispers in Bloom','img/g/085.jpg','img/wall-whispers.jpg',0],['muggu','Muggu & pink elephants','img/g/166.jpg','img/wall-muggu.jpg',1],
-    ['white-lotus','White Lotus','img/g/035.jpg','img/wall-white-lotus.jpg',0],['trellis','Floral trellis','img/g/003.jpg','img/wall-trellis.jpg',0],['rooted','Rooted Reverie','img/g/047.jpg','img/wall-rooted.jpg',0],['origami','Lotus & origami birds','img/g/053.jpg','img/wall-origami.jpg',1],
-    ['blossom','Blossoms','img/g/004.jpg','img/wall-blossom.jpg',0],['folkscape','Folkscape','img/g/084.jpg','img/wall-folkscape.jpg',0],['kolam','Coconut & Kolam','img/g/150.jpg','img/wall-kolam.jpg',1],['blush','Blush Botanica','img/g/070.jpg','img/wall-blush.jpg',0],
-    ['nabhi','Nabhi Kamalam','img/w11.jpg','img/wall-nabhi.jpg',0],['monkey','Motif & Monkey','img/g/068.jpg','img/wall-monkey.jpg',0],['lotus-whispers','Lotus Whispers','img/g/052.jpg','img/wall-lotus-whispers.jpg',0],['playroom','The Playroom','img/g/023.jpg','img/wall-playroom.jpg',0],
-    ['lamps','Kerosene lamps','img/g/163.jpg','img/wall-lamps.jpg',0],['pastel','Nabhi Kamalam, pastel','img/g/009.jpg','img/wall-pastel.jpg',0],['palms','Lotus & palms','img/w09.jpg','img/wall-palms.jpg',0],['linen','','','',0]];
+  /* key, name, room photo, full artwork, repeat? (1 = repeating pattern, 0 = one continuous mural); from collections.js */
+  var D=window.SHOW.library.map(function(k){var x=window.DESIGNS[k];return [k,x.name,x.img.room,x.img.art,x.rep]}).concat([['linen','','','',0]]);
   var bays=document.getElementById('lib-bays'), per=7, seed=7;
   function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
   /* a showroom keeps several rolls of each design: every design once, then repeats, plus two plain stock rolls */
