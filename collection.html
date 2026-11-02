@@ -53,7 +53,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:clamp(28px,3vw,44px) clamp(14px,1.8vw,26px);padding:clamp(28px,3vw,44px) var(--pad) clamp(80px,9vw,140px)}
 .card{text-align:left;display:block;width:100%}
-.card figure{aspect-ratio:4/5;overflow:hidden;background:var(--w3);position:relative}
+.card figure{aspect-ratio:4/5;overflow:hidden;background:var(--w3);position:relative;border-radius:10px;isolation:isolate}
 .card .alt{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--ease),transform 1.2s var(--ease)}
 .card:hover .alt{opacity:1}
 .card i{position:absolute;right:12px;top:12px;background:var(--paper);border-radius:999px;padding:6px 10px 5px;font:600 11px/1 var(--sans);letter-spacing:.08em;font-style:normal}
@@ -75,7 +75,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .v-side h2{font:400 clamp(36px,3.6vw,56px)/1.05 var(--display);margin-top:auto;padding-bottom:.08em}
 .v-side .kicker{margin-top:24px}
 .v-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}
-.v-thumbs button{width:64px;height:64px;overflow:hidden;opacity:.55;outline:1px solid transparent;outline-offset:2px;transition:opacity .25s,outline-color .25s}
+.v-thumbs button{width:64px;height:64px;overflow:hidden;border-radius:6px;opacity:.55;outline:1px solid transparent;outline-offset:2px;transition:opacity .25s,outline-color .25s}
 .v-thumbs button[aria-pressed="true"]{opacity:1;outline-color:var(--ink)}
 .v-thumbs img{width:100%;height:100%;object-fit:cover}
 .v-act{display:flex;flex-direction:column;gap:10px;margin-bottom:auto}
@@ -96,7 +96,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .d-panel h2{font:400 40px/1.05 var(--display);margin:6px 0 22px;padding-bottom:.08em}
 .d-list{flex:1;overflow:auto;display:flex;flex-direction:column;gap:14px}
 .d-list li{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center}
-.d-list img{width:64px;height:80px;object-fit:cover}
+.d-list img{width:64px;height:80px;object-fit:cover;border-radius:6px}
 .d-list b{display:block;font:400 22px/1.15 var(--display)}
 .d-list span{font-size:13px;color:rgba(45,42,38,.6)}
 .d-list button{font-size:13px;text-decoration:underline;text-underline-offset:3px;color:rgba(45,42,38,.7)}
