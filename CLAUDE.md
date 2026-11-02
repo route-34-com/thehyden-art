@@ -47,6 +47,8 @@ brand/         logo, favicons, client photos
 mocks/         review mocks, NOT part of the site, never deploy: animations.html (kolam draw, brush reveal, lightbox grow, roller swap, brush underline),
                signature.html (5 concepts: paint the wall, blueprint to room, camera on your wall, mural diorama, made-to-measure Thota),
                colours.html (live accent switcher over index.html: walnut, kumkum, lotus rani, peacock teal, parrot green, temple ochre, jamun, indigo)
+fonts.js       client font preview (2 Nov 2026): hidden unless a page is opened with ?fonts (remembered in localStorage, ?fonts=off removes it).
+               6 pairings; switches --display/--serif/--sans; "Send choice on WhatsApp". Remove once Mrudhula picks, and set the winner in index.html + collection.html
 README.md      how to run, change content and deploy (same format as other Route34 client repos)
 coming-soon/   SOURCE OF THE LIVE SITE, don't delete
 backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the older v5+Library commit
