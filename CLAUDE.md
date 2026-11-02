@@ -40,7 +40,10 @@ collections.js THE ONE DESIGN LIST: window.DESIGNS (key = Library shelf slug: na
                window.SHOW (which designs appear, in order, in murals grid, Painted Wheel, marquee, Library, try-on). index.html, library.js, tryon.js
                and collection.html all read from it; never re-list names elsewhere. Also the collection page data. Decal/border photos from her Drive zips (data/, gitignored) resized into img/c/<slug>-N.jpg (+ -t.jpg card).
                Sub-category names were chosen by us from her list (stand alone/combination/repetition/story; simple/combination borders); design names
-               are descriptive placeholders (Blackbuck, Lotus vine...) for her to confirm. Embroidery and Wall frames only have Nabhi Kamalam so far
+               are descriptive placeholders (Blackbuck, Lotus vine...) for her to confirm. Embroidery: Seeta Ramakalyanam (her IG 'Under Sacred Skies', img/g/074,080,076) + Nabhi Kamalam. Wall frames: 8 from her IG (img/g). Borders: 7 from her Drive + 7 from IG.
+               Names: South Indian (Telugu) per Mrudhula 2 Nov ('South Indian but a little contemporary'); IG names where readable (Madhumalika = parrot, Vanam = trellis).
+               Sub-categories show Telugu + English (Ekam/Solos, Jodi/Duos & Sets, Mala/Patterns, Katha/Storyscapes; Anchu/Classic Edges, Pattu Anchu/Layered Edges).
+               Collection page has an Enquiry list (localStorage 'hyden-enq'): add designs, send all in one WhatsApp/Instagram message
 img/           w*.jpg rooms, wall-*.jpg flat designs, g/ gallery, ring/ (480px carousel images), shelf/ (walnut + roll textures),
                motif/ cut-outs, band/ strips, hero-trellis.jpg (cropped trellis, unused now), mrudula.jpg
 brand/         logo, favicons, client photos

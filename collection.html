@@ -35,7 +35,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .sheet a{font:400 clamp(36px,10vw,56px)/1.15 var(--display)}
 .sheet .x{position:absolute;top:22px;right:var(--pad);font:600 13px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 
-.head{padding:clamp(28px,3.4vw,52px) var(--pad) 0}
+.head{padding:clamp(28px,3.4vw,52px) var(--pad) 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(24px,4vw,72px);align-items:end}
+.head-img{aspect-ratio:16/10;max-height:380px;width:100%;overflow:hidden;background:var(--w3)}
+.head-img img{width:100%;height:100%;object-fit:cover;animation:fade 1s var(--ease)}
+@keyframes fade{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:none}}
 .kicker{font:600 12px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
 .head h1{font:400 clamp(44px,5.4vw,84px)/1.04 var(--display);letter-spacing:-.02em;margin-top:12px;padding-bottom:.08em}
 .head p{max-width:34em;margin-top:6px;font-size:17px;color:rgba(45,42,38,.78)}
@@ -48,11 +51,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .subs{display:flex;flex-wrap:wrap;gap:8px;padding:18px var(--pad) 0}
 .subs a{border:1px solid var(--line);border-radius:999px;padding:9px 16px 8px;font:500 14px/1 var(--sans);transition:background .3s,color .3s,border-color .3s}
 .subs a:hover{border-color:var(--ink)}
+.subs small{font-weight:400;margin-left:7px;opacity:.6}
 .subs a[aria-current]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:clamp(28px,3vw,44px) clamp(14px,1.8vw,26px);padding:clamp(28px,3vw,44px) var(--pad) clamp(80px,9vw,140px)}
 .card{text-align:left;display:block;width:100%}
-.card figure{aspect-ratio:4/5;overflow:hidden;background:var(--w3)}
+.card figure{aspect-ratio:4/5;overflow:hidden;background:var(--w3);position:relative}
+.card .alt{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--ease),transform 1.2s var(--ease)}
+.card:hover .alt{opacity:1}
+.card i{position:absolute;right:12px;top:12px;background:var(--paper);border-radius:999px;padding:6px 10px 5px;font:600 11px/1 var(--sans);letter-spacing:.08em;font-style:normal}
 .card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .card:hover img{transform:scale(1.035)}
 .card b{display:block;font:400 clamp(22px,1.8vw,27px)/1.15 var(--display);margin-top:14px}
@@ -79,6 +86,27 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn.wa{background:var(--ink);color:var(--paper)}.btn.wa:hover{background:var(--gold)}
 .btn.ig{border:1px solid var(--ink)}.btn.ig:hover{background:var(--ink);color:var(--paper)}
 .btn svg{width:18px;height:18px}
+.btn.add{border:1px dashed rgba(45,42,38,.45)}.btn.add:hover{border-style:solid;border-color:var(--ink)}.btn.add.on{background:var(--w3);border-style:solid;border-color:var(--w3)}
+.enq-n{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--ink);border-radius:999px;padding:9px 14px 8px;font:600 13px/1 var(--sans);letter-spacing:.04em;margin-left:clamp(14px,2vw,28px)}
+.enq-n b{display:grid;place-items:center;min-width:20px;height:20px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:11px}
+.navr{display:flex;align-items:center}
+.d{position:fixed;inset:0;z-index:130;visibility:hidden;transition:visibility 0s .5s}
+.d.open{visibility:visible;transition:none}
+.d-bg{position:absolute;inset:0;background:rgba(22,18,15,.35);opacity:0;transition:opacity .4s}
+.d.open .d-bg{opacity:1}
+.d-panel{position:absolute;right:0;top:0;bottom:0;width:min(440px,100vw);background:var(--paper);display:flex;flex-direction:column;padding:clamp(22px,3vw,36px);transform:translateX(100%);transition:transform .5s var(--ease)}
+.d.open .d-panel{transform:none}
+.d-panel h2{font:400 40px/1.05 var(--display);margin:6px 0 22px;padding-bottom:.08em}
+.d-list{flex:1;overflow:auto;display:flex;flex-direction:column;gap:14px}
+.d-list li{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center}
+.d-list img{width:64px;height:80px;object-fit:cover}
+.d-list b{display:block;font:400 22px/1.15 var(--display)}
+.d-list span{font-size:13px;color:rgba(45,42,38,.6)}
+.d-list button{font-size:13px;text-decoration:underline;text-underline-offset:3px;color:rgba(45,42,38,.7)}
+.d-list .d-empty{display:block;color:rgba(45,42,38,.65)}
+.d-act{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid var(--line);margin-top:18px}
+.d-act:empty{display:none}
+@media (max-width:820px){.head{grid-template-columns:1fr}.head-img{max-height:220px}}
 .v-ig{font-size:14px;margin-top:16px;text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
 
 footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:28px var(--pad);font-size:14px;color:rgba(45,42,38,.75)}
@@ -93,6 +121,7 @@ footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-be
   <nav class="links" aria-label="Main">
     <a href="collection.html" aria-current="page">Collections</a><a href="index.html#murals">Murals</a><a href="index.html#tryon">Try it on</a><a href="index.html#projects">Projects</a><a href="index.html#gallery">Gallery</a><a href="index.html#founder">Founder</a><a href="index.html#enquire">Enquire</a>
   </nav>
+  <div class="navr"><button class="enq-n" type="button" id="enq-open" aria-label="Your enquiry list">Enquiry <b id="enq-count">0</b></button></div>
   <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
 </header>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
@@ -101,7 +130,7 @@ footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-be
 </div>
 
 <main>
-  <div class="head"><p class="kicker">Collections</p><h1 id="c-name"></h1><p id="c-line"></p></div>
+  <div class="head"><div><p class="kicker">Collections</p><h1 id="c-name"></h1><p id="c-line"></p></div><figure class="head-img"><img id="c-img" alt=""></figure></div>
   <nav class="cats" id="cats" aria-label="Categories"></nav>
   <nav class="subs" id="subs" aria-label="Sub-categories"></nav>
   <div class="grid" id="grid"></div>
@@ -120,12 +149,33 @@ footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-be
   </div>
 </div>
 
+<div class="d" id="d" role="dialog" aria-modal="true" aria-labelledby="d-h">
+  <div class="d-bg" id="d-bg"></div>
+  <div class="d-panel">
+    <button class="v-x" type="button" id="d-x">Close</button>
+    <p class="kicker">Your enquiry</p><h2 id="d-h">Designs you liked</h2>
+    <ul class="d-list" id="d-list"></ul>
+    <div class="d-act" id="d-act"></div>
+  </div>
+</div>
 <script src="settings.js"></script>
 <script src="collections.js"></script>
 <script>
 (function(){
   var $=function(id){return document.getElementById(id)}, C=window.COLLECTIONS, cat, sub, list=[];
   var WA='<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg>';
+  var ENQ=[]; try{ENQ=JSON.parse(localStorage.getItem('hyden-enq')||'[]')}catch(e){}
+  function saveEnq(){try{localStorage.setItem('hyden-enq',JSON.stringify(ENQ))}catch(e){} $('enq-count').textContent=ENQ.length; renderEnq()}
+  function inEnq(n){return ENQ.some(function(x){return x.n===n})}
+  function toggleEnq(n,c,img){if(inEnq(n))ENQ=ENQ.filter(function(x){return x.n!==n});else ENQ.push({n:n,c:c,img:img});saveEnq();
+    [].forEach.call(document.querySelectorAll('.card'),function(b){var it=list[+b.dataset.i],f=b.querySelector('figure'),tag=f.querySelector('i');
+      if(it&&inEnq(it[0])&&!tag)f.insertAdjacentHTML('beforeend','<i>Added</i>');if(it&&!inEnq(it[0])&&tag)tag.remove()})}
+  function renderEnq(){
+    $('d-list').innerHTML=ENQ.length?ENQ.map(function(x,i){return '<li><img src="'+x.img+'" alt=""><div><b>'+esc(x.n)+'</b><span>'+esc(x.c)+'</span></div><button type="button" data-i="'+i+'">Remove</button></li>'}).join(''):'<li class="d-empty">Nothing added yet.</li>';
+    var txt='Hi! I would love to know more about these designs from thehyden.art for my wall:\n'+ENQ.map(function(x,i){return (i+1)+'. '+x.n+' ('+x.c+')'}).join('\n');
+    var ask=window.hydenAsk(txt);
+    $('d-act').innerHTML=ENQ.length?(ask.wa?'<a class="btn wa" href="'+ask.wa+'" target="_blank" rel="noopener">'+WA+'Send on WhatsApp</a>':'')+'<a class="btn ig" href="'+ask.ig+'" target="_blank" rel="noopener">Message on Instagram</a>':'';
+  }
   function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
   function subName(c,k){var s=c.subs.filter(function(x){return x[0]===k})[0];return s?s[1]:''}
   function route(){
@@ -134,17 +184,24 @@ footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-be
     sub=cat.subs.some(function(s){return s[0]===h[1]})?h[1]:'';
     document.title=cat.name+' · thehyden.art';
     $('c-name').textContent=cat.name; $('c-line').textContent=cat.line;
+    var ci=$('c-img'), cv=cat.cover.replace(/-t\.jpg$/,'-1.jpg'); if(ci.getAttribute('src')!==cv){ci.src=cv;ci.alt=cat.name;ci.style.animation='none';void ci.offsetWidth;ci.style.animation=''}
     $('cats').innerHTML=C.map(function(c){return '<a href="#'+c.key+'"'+(c===cat?' aria-current="page"':'')+'>'+c.name+'</a>'}).join('');
     $('subs').hidden=!cat.subs.length;
     $('subs').innerHTML=cat.subs.length?['<a href="#'+cat.key+'"'+(sub?'':' aria-current="true"')+'>All</a>'].concat(cat.subs.map(function(s){
-      return '<a href="#'+cat.key+'/'+s[0]+'"'+(s[0]===sub?' aria-current="true"':'')+'>'+s[1]+'</a>'})).join(''):'';
+      return '<a href="#'+cat.key+'/'+s[0]+'"'+(s[0]===sub?' aria-current="true"':'')+'>'+s[1]+(s[2]?'<small>'+s[2]+'</small>':'')+'</a>'})).join(''):'';
     list=cat.items.filter(function(it){return !sub||it[1]===sub});
     $('grid').innerHTML=list.map(function(it,i){
       var t=it[2][0].indexOf('img/c/')===0?it[2][0].replace(/-1\.jpg$/,'-t.jpg'):it[2][0];
-      return '<button class="card" type="button" data-i="'+i+'" style="animation-delay:'+Math.min(i,10)*.05+'s"><figure><img src="'+t+'" alt="'+esc(it[0])+'" loading="lazy"></figure><b>'+esc(it[0])+'</b>'+(it[1]?'<span>'+esc(subName(cat,it[1]))+'</span>':'')+'</button>'}).join('');
+      return '<button class="card" type="button" data-i="'+i+'" style="animation-delay:'+Math.min(i,10)*.05+'s"><figure><img src="'+t+'" alt="'+esc(it[0])+'" loading="lazy">'+(it[2][1]?'<img class="alt" src="'+it[2][1]+'" alt="" loading="lazy">':'')+(inEnq(it[0])?'<i>Added</i>':'')+'</figure><b>'+esc(it[0])+'</b>'+(it[1]?'<span>'+esc(subName(cat,it[1]))+'</span>':'')+'</button>'}).join('');
     var a=$('cats').querySelector('[aria-current]'); if(a&&a.scrollIntoView)a.scrollIntoView({block:'nearest',inline:'nearest'});
   }
-  addEventListener('hashchange',function(){route();scrollTo(0,0)}); route();
+  addEventListener('hashchange',function(){route();scrollTo(0,0)}); route(); saveEnq();
+  var dr=$('d'), dback;
+  function openD(){dback=document.activeElement;dr.classList.add('open');document.body.style.overflow='hidden';$('d-x').focus()}
+  function closeD(){dr.classList.remove('open');if(!$('v').classList.contains('open'))document.body.style.overflow='';if(dback)dback.focus()}
+  $('enq-open').onclick=openD; $('d-x').onclick=closeD; $('d-bg').onclick=closeD;
+  $('d-list').onclick=function(e){var b=e.target.closest('button[data-i]');if(!b)return;var x=ENQ[+b.dataset.i];toggleEnq(x.n,x.c,x.img)};
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&dr.classList.contains('open'))closeD()});
   $('grid').onclick=function(e){var b=e.target.closest('.card');if(b)openV(list[+b.dataset.i])};
 
   var v=$('v'), cur, at=0, back;
@@ -160,7 +217,9 @@ footer{background:var(--w3);display:flex;flex-wrap:wrap;justify-content:space-be
     var ask=window.hydenAsk('Hi! I would love to know more about "'+it[0]+'" ('+label+') from thehyden.art for my wall.');
     $('v-act').innerHTML=(ask.wa?'<a class="btn wa" href="'+ask.wa+'" target="_blank" rel="noopener">'+WA+'Ask on WhatsApp</a>':'')+
       '<a class="btn ig" href="'+ask.ig+'" target="_blank" rel="noopener">Message on Instagram</a>'+
-      (it[3]?'<a class="v-ig" href="https://www.instagram.com/'+it[3]+'/" target="_blank" rel="noopener">See the post</a>':'');
+      '<button class="btn add" type="button" id="v-add"></button>'+(it[3]?'<a class="v-ig" href="https://www.instagram.com/'+it[3]+'/" target="_blank" rel="noopener">See the post</a>':'');
+    var add=$('v-add'); function addLabel(){var on=inEnq(it[0]);add.textContent=on?'Added to your enquiry ✓':'Add to enquiry';add.classList.toggle('on',on)}
+    add.onclick=function(){toggleEnq(it[0],label,it[2][0]);addLabel()}; addLabel();
     showImg(0); v.classList.add('open'); document.body.style.overflow='hidden'; $('v-x').focus();
   }
   function closeV(){v.classList.remove('open');document.body.style.overflow='';if(back)back.focus()}

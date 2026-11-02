@@ -9,12 +9,12 @@
     for(var k in more) o[k]=more[k]; return o;
   }
   var D={
-    'parrot':        d('Parrot Garden','Birds among blossoms',P,'34%','0 0','p/DdLXJJkymg4',{rep:1,img:{room:'img/g/007.jpg'}}),
+    'parrot':        d('Madhumalika','Birds among blossoms',P,'34%','0 0','p/DdLXJJkymg4',{rep:1,img:{room:'img/g/007.jpg'}}),
     'thota':         d('Thota','An old garden, brought home',M,'cover','50% 40%','p/Dcf1YU4SlSd',{te:'తోట',img:{room:'img/g/017.jpg'}}),
     'whispers':      d('Whispers in Bloom','Birdsong on teal',P,'38%','0 0','p/DLxqWZET1ek',{img:{room:'img/g/085.jpg'}}),
     'muggu':         d('Muggu & Pink Elephants','Playful muggu frames',P,'34%','0 0','p/C8WPCcjPzXY',{rep:1,img:{room:'img/g/166.jpg'}}),
     'white-lotus':   d('White Lotus','Nandi, palms and kolam',M,'cover','40% 50%','p/Da2VGkGyjoe',{img:{room:'img/g/035.jpg'}}),
-    'trellis':       d('Floral Trellis','Soft florals on cream',P,'36%','0 0','p/DeCNRlVHU6R',{img:{room:'img/g/003.jpg'}}),
+    'trellis':       d('Vanam','Soft florals on cream',P,'36%','0 0','p/DeCNRlVHU6R',{img:{room:'img/g/003.jpg'}}),
     'rooted':        d('Rooted Reverie','A South Indian village',M,'cover','40% 40%','p/DUF1PLPk_ly',{img:{room:'img/g/047.jpg'}}),
     'origami':       d('Lotus & Origami Birds','Calm, not crowded',P,'32%','0 0','p/DUSnnn6kwWB',{rep:1,img:{room:'img/g/053.jpg'}}),
     'blossom':       d('Songbird Branches','Branches and songbirds',P,'40%','0 0','p/DdjEoORyUux',{img:{room:'img/g/004.jpg'}}),
@@ -47,6 +47,7 @@
   };
 
   /* Collections page: category -> sub-categories -> items [name, sub key, images (first = card), instagram path or ''] */
+  var g=function(n){return 'img/g/'+n+'.jpg'};
   var c=function(s,n){var a=[];for(var i=1;i<=n;i++)a.push('img/c/'+s+'-'+i+'.jpg');return a};
   var w=function(key,sub){var x=D[key];return [x.name,sub,[x.img.room,x.img.art],x.ig]};
   var N=D.nabhi;
@@ -56,35 +57,53 @@
      items:['parrot','trellis','blossom','whispers','muggu','origami','kolam','monkey','playroom','lamps'].map(function(k){return w(k,'patterns')})
        .concat(['thota','rooted','white-lotus','lotus-whispers','blush','folkscape'].map(function(k){return w(k,'murals')}))},
     {key:'decals',cover:'img/c/elephants-t.jpg',name:'Decals',line:'Painted motifs for walls, shelves and niches, on their own or together.',
-     subs:[['single','Solos'],['pairings','Duos & Sets'],['repeats','Patterns'],['scenes','Storyscapes']],
+     subs:[['single','Ekam','Solos'],['pairings','Jodi','Duos & Sets'],['repeats','Mala','Patterns'],['scenes','Katha','Storyscapes']],
      items:[
-      ['Blackbuck','single',c('blackbuck',2),''],
-      ['Nandi on a lotus','single',c('nandi-lotus',1),''],
-      ['Hibiscus','single',c('hibiscus',3),''],
-      ['Hibiscus by the window','single',c('hibiscus-window',3),''],
-      ['Cheetah in arches','pairings',c('cheetah-arches',2),''],
-      ['Fawn by the niche','pairings',c('fawn-niche',4),''],
-      ['Fawns on the shelf','pairings',c('fawns-shelf',3),''],
-      ['Swan pair','repeats',c('swans',2),''],
-      ['Temple elephants','repeats',c('elephants',3),''],
-      ['Birds between arches','scenes',c('birds-arches',2),''],
-      ['Green birds on a branch','scenes',c('green-birds',2),'']]},
+      ['Krishna Jinka','single',c('blackbuck',2),''],
+      ['Nandi Kamalam','single',c('nandi-lotus',1),''],
+      ['Mandaram','single',c('hibiscus',3),''],
+      ['Mandara Kommalu','single',c('hibiscus-window',3),''],
+      ['Chirutha','pairings',c('cheetah-arches',2),''],
+      ['Jinka Pilla','pairings',c('fawn-niche',4),''],
+      ['Jinka Jodi','pairings',c('fawns-shelf',3),''],
+      ['Hamsa Jodi','repeats',c('swans',2),''],
+      ['Ambari','repeats',c('elephants',3),''],
+      ['Pitta Katha','scenes',c('birds-arches',2),''],
+      ['Pachha Pittalu','scenes',c('green-birds',2),'']]},
     {key:'borders',cover:'img/c/lotus-vine-t.jpg',name:'Borders',line:'Painted bands for dados, door frames and the line between two finishes.',
-     subs:[['single','Classic Edges'],['layered','Layered Edges']],
+     subs:[['single','Anchu','Classic Edges'],['layered','Pattu Anchu','Layered Edges']],
      items:[
-      ['Lotus vine','single',c('lotus-vine',2),''],
-      ['Parrot band','single',c('parrot-band',2),''],
-      ['Blossom band','single',c('blossom-band',2),''],
-      ['Terracotta band','single',c('terracotta-band',2),''],
-      ['Door frame','layered',c('door-frame',2),''],
-      ['Indigo bands','layered',c('indigo-bands',2),''],
-      ['Motifs on a line','layered',c('motif-line',2),'']]},
-    {key:'embroidery',cover:N.img.stitch,name:'Embroidery',line:'Hand-embroidered artworks from the studio.',
+      ['Kamala Theega','single',c('lotus-vine',2),''],
+      ['Chilaka Anchu','single',c('parrot-band',2),''],
+      ['Poola Anchu','single',c('blossom-band',2),''],
+      ['Matti Anchu','single',c('terracotta-band',2),''],
+      /* from her Instagram feed (img/g) */
+      ['Malle Anchu','single',[g('116')],'p/DHLYf80zRvF'],
+      ['Theega Anchu','single',[g('114')],'p/DFxesGtT3fH'],
+      ['Sannani Anchu','single',[g('112')],'p/DF-e0JZTG0w'],
+      ['Gulabi Anchu','single',[g('046')],'reel/DVwCeqEk1k9'],
+      ['Gadapa','layered',c('door-frame',2),''],
+      ['Neeli Varusa','layered',c('indigo-bands',2),''],
+      ['Chiguru Varusa','layered',c('motif-line',2),''],
+      ['Pachha Anchu','layered',[g('024')],'p/DcNz44USgrm'],
+      ['Toranam','layered',[g('104')],'p/DJlgBiZT1Ce'],
+      ['Neeli Jali','layered',[g('064')],'reel/DQGntNQk8uS']]},
+    {key:'embroidery',cover:g('074'),name:'Embroidery',line:'Hand-embroidered artworks from the studio.',
      subs:[],
-     items:[[N.name,'',[N.img.stitch,N.img.stitching,N.img.threads],N.igFrame]]},
+     items:[
+      ['Seeta Ramakalyanam','',[g('074'),g('080'),g('076')],'p/DNqPV4kT9iY'],
+      [N.name,'',[N.img.stitch,N.img.stitching,N.img.threads],N.igFrame]]},
     {key:'frames',cover:N.img.framed,name:'Wall frames',line:'Her paintings, framed for the wall.',
      subs:[],
-     items:[[N.name+', framed in gold','',[N.img.framed,N.img.frame],N.igFrame]]}
+     items:[
+      [N.name+', framed in gold','',[N.img.framed,N.img.frame],N.igFrame],
+      ['Heirloom Weave','',[g('029')],'p/DbC2W8LHUNd'],
+      ['Gaja Seva','',[g('142')],'p/C91-htazqda'],
+      ['Alankaram','',[g('143')],'p/C9ropsjTw9Y'],
+      ['Veena','',[g('137')],'p/C-IVfhlTy9K'],
+      ['Nrityam','',[g('040')],'p/DXrMj9-E8j7'],
+      ['Poola Gadulu','',[g('125')],'p/DBi7xO-yv3H'],
+      ['Chitra Varusa','',[g('033')],'p/DZmuPvIyPvr']]}
   ];
 
   /* one place that builds every enquiry link on the site */
