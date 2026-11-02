@@ -68,7 +68,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .links a:hover::after{transform:scaleX(1);transform-origin:left}
 .menu{display:none;font:600 14px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase}
 .sheet{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 var(--pad);transform:translateY(-100%);transition:transform .7s var(--ease)}
+.sheet:not(.open){visibility:hidden;transition:transform .7s var(--ease),visibility 0s .7s}
 .sheet.open{transform:none}
+.xb{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;padding:0;transition:background .2s}
+.xb:hover{background:rgba(45,42,38,.07)}
+.xb svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+
 .sheet a{font:400 clamp(40px,11vw,64px)/1.1 var(--display)}
 .sheet .x{position:absolute;top:24px;right:var(--pad);font:600 14px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase}
 
@@ -346,6 +351,7 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 .hero-long .hero-side p{color:var(--ink)}
 .hero-long .btn.light{background:var(--ink);color:var(--paper)}
 .nav:not(.solid){color:var(--ink)}
+.nav:not(.solid) .links a,.nav:not(.solid) .brand{text-shadow:0 0 6px rgba(255,255,255,.95),0 0 16px rgba(255,255,255,.9),0 0 28px rgba(255,255,255,.7)}
 .hero-long .hero-txt{transition:opacity .2s linear}
 /* carousel */
 .ring-sec{background:var(--w2);padding-bottom:clamp(40px,5vw,80px)}
@@ -435,14 +441,15 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 .col-grid span{display:block;font-size:14px;opacity:.7;margin-top:4px}
 @media (max-width:900px){.col-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:62%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.col-grid li{scroll-snap-align:start}}
 .enq .btn+.btn{margin-left:10px}
-.navr{display:flex;align-items:center;gap:2px;margin-left:auto;padding-left:clamp(10px,1.6vw,22px)}
-.links+.navr{margin-left:0}
-.ico{position:relative;width:42px;height:42px;display:grid;place-items:center;border-radius:50%;transition:background .3s}
-.ico:hover{background:rgba(45,42,38,.06)}
-.ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.links{gap:clamp(12px,1.5vw,24px)!important;margin-left:auto}
+.navr{display:flex;align-items:center;gap:0;margin-left:clamp(10px,1.4vw,20px)}
+.ico{position:relative;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;transition:background .3s}
+.ico:hover{background:rgba(45,42,38,.07)}
+.ico svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.nav:not(.solid) .ico svg{filter:drop-shadow(0 0 4px rgba(255,255,255,.95)) drop-shadow(0 0 10px rgba(255,255,255,.8))}
 .ico.on svg{fill:var(--gold);stroke:var(--gold)}
-.ico b{position:absolute;top:3px;right:1px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--ink);color:#fff;font:700 10px/18px var(--sans);text-align:center}
-.menu{margin-left:8px}
+.ico b{position:absolute;top:2px;right:0;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:var(--ink);color:#fff;font:700 10px/17px var(--sans);text-align:center}
+@media (max-width:1000px){.navr{margin-left:auto}.menu{margin-left:6px}}
 .T-dm{display:inline-block;font-size:14px;margin-left:14px;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:1000px){
   .links{display:none}.menu{display:block}
@@ -487,7 +494,7 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
   <button class="menu" id="menu" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
 </header>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
-  <button class="x" type="button" id="x">Close</button>
+  <button class="x xb" type="button" id="x" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   <a href="collection.html">Collections</a><a href="#murals">Murals</a><a href="#tryon">Try it on</a><a href="#projects">Projects</a><a href="#gallery">Gallery</a><a href="#founder">Founder</a><a href="#enquire">Enquire</a>
 </div>
 
@@ -641,7 +648,7 @@ svg[data-map=india] path:first-of-type:not(.im-line){opacity:.35}
 <footer><span>© <span id="yr">2026</span> thehyden.art · Hand-painted Indian heritage wallpapers</span><span><a href="https://www.instagram.com/thehyden.art/" target="_blank" rel="noopener" class="ig-link" aria-label="thehyden.art on Instagram"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig-g)"/><rect x="5.6" y="5.6" width="12.8" height="12.8" rx="3.8" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg></a></span></footer>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
-  <div class="lb-top"><span id="lb-count"></span><button type="button" id="lb-x">Close</button></div>
+  <div class="lb-top"><span id="lb-count"></span><button type="button" class="xb" id="lb-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <div class="lb-stage"><button class="lb-nav lb-prev" type="button" aria-label="Previous">←</button><img id="lb-img" alt=""><button class="lb-nav lb-next" type="button" aria-label="Next">→</button></div>
   <div class="lb-bot"><span id="lb-cap"></span><a id="lb-ig" href="#" target="_blank" rel="noopener" hidden class="ig-link" aria-label="View on Instagram"><svg class="igi" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="6" fill="url(#ig-g)"/><rect x="5.6" y="5.6" width="12.8" height="12.8" rx="3.8" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg></a></div>
 </div>
