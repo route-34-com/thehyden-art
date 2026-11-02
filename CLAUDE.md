@@ -35,7 +35,7 @@ netmap.js      World + India maps (world: India to 20 countries in black; India:
 gallery.js     159 Instagram works (img/g/NNN.jpg), categories room/art/studio
 settings.js    WhatsApp number 917032382063 (Mrudhula, given 2 Nov 2026). All enquiry links go through window.hydenAsk(text) in collections.js (wa.me + ig.me with a prefilled message)
 collection.html  Collections page (Hari + Mrudhula, 2 Nov 2026): Wallpapers (Patterns, Murals), Decals (Solos, Duos & Sets, Patterns, Storyscapes; Sharan's labels, 2 Nov 2026),
-               Borders (Single bands, Layered borders), Embroidery, Wall frames. Hash routes #decals/pairings. Viewer = photos + WhatsApp/Instagram ask
+               Borders (Classic Edges, Layered Edges), Embroidery, Wall frames. Hash routes #decals/pairings. Viewer = photos + WhatsApp/Instagram ask
 collections.js THE ONE DESIGN LIST: window.DESIGNS (key = Library shelf slug: name, Telugu, note, kind, try-on tile/pos, Instagram, images) and
                window.SHOW (which designs appear, in order, in murals grid, Painted Wheel, marquee, Library, try-on). index.html, library.js, tryon.js
                and collection.html all read from it; never re-list names elsewhere. Also the collection page data. Decal/border photos from her Drive zips (data/, gitignored) resized into img/c/<slug>-N.jpg (+ -t.jpg card).

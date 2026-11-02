@@ -70,7 +70,7 @@
       ['Birds between arches','scenes',c('birds-arches',2),''],
       ['Green birds on a branch','scenes',c('green-birds',2),'']]},
     {key:'borders',cover:'img/c/lotus-vine-t.jpg',name:'Borders',line:'Painted bands for dados, door frames and the line between two finishes.',
-     subs:[['single','Single bands'],['layered','Layered borders']],
+     subs:[['single','Classic Edges'],['layered','Layered Edges']],
      items:[
       ['Lotus vine','single',c('lotus-vine',2),''],
       ['Parrot band','single',c('parrot-band',2),''],
