@@ -74,7 +74,7 @@ backups/2026-10-14/  every earlier version (index.before-*.html); GitHub has the
 - Research behind the concepts (competitor sites, visualiser tech, conversion data) is in the Route34 workspace at reports/Interactive wallpaper site concepts.md, not in this repo.
 
 ## Deployment (Vercel, from 2 Nov 2026)
-- Main site deploys on **Vercel** (Sharan's team "Sharan Kumar R's projects"), auto-deployed on every push to `main` of route-34-com/thehyden-art. Static, no build (`vercel.json`); `.vercelignore` keeps CLAUDE.md, README, backups, coming-soon, mocks, recordings, data out.
+- Main site deploys on **Vercel** (Sharan's team "Sharan Kumar R's projects"), auto-deployed on every push to `main` of route-34-com/thehyden-art (GitHub repo connected 2 Nov 2026; other branches get preview URLs). Static, no build (`vercel.json`); `.vercelignore` keeps CLAUDE.md, README, backups, coming-soon, mocks, recordings, data out.
 - The thehyden.art domain still points at the Cloudflare coming-soon worker; moving it to Vercel needs Hari's go-ahead.
 
 ## Deployment (Cloudflare, coming-soon)
