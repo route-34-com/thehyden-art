@@ -45,7 +45,10 @@
       w.querySelector('#fp-cur').textContent=n+'. '+o[1];
       w.querySelector('#fp-send').textContent='Send choice '+n+' on WhatsApp';
       w.querySelector('#fp-send').href='https://wa.me/?text='+encodeURIComponent('thehyden.art font choice: '+n+'. '+o[1]+' + '+o[2])}
-    tog.onclick=function(){box.hidden=!box.hidden;tog.setAttribute('aria-expanded',!box.hidden)};
+    function show(on){box.hidden=!on;tog.setAttribute('aria-expanded',on)}
+    tog.onclick=function(){show(box.hidden)};
+    document.addEventListener('pointerdown',function(e){if(!box.hidden&&!w.contains(e.target))show(false)},true);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!box.hidden){show(false);tog.focus()}});
     [].forEach.call(w.querySelectorAll('.fp-o'),function(b){b.onclick=function(){
       cur=b.dataset.id;store.set(KEY,cur);apply(cur);
       [].forEach.call(w.querySelectorAll('.fp-o'),function(x){x.setAttribute('aria-pressed',x===b)});label();
