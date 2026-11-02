@@ -56,7 +56,7 @@
      items:['parrot','trellis','blossom','whispers','muggu','origami','kolam','monkey','playroom','lamps'].map(function(k){return w(k,'patterns')})
        .concat(['thota','rooted','white-lotus','lotus-whispers','blush','folkscape'].map(function(k){return w(k,'murals')}))},
     {key:'decals',cover:'img/c/elephants-t.jpg',name:'Decals',line:'Painted motifs for walls, shelves and niches, on their own or together.',
-     subs:[['single','Single motifs'],['pairings','Pairings'],['repeats','Repeats'],['scenes','Scenes']],
+     subs:[['single','Solos'],['pairings','Duos & Sets'],['repeats','Patterns'],['scenes','Storyscapes']],
      items:[
       ['Blackbuck','single',c('blackbuck',2),''],
       ['Nandi on a lotus','single',c('nandi-lotus',1),''],
